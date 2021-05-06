@@ -3,12 +3,12 @@
 
 A Telegram Python bot running on python3 forked with saitama with a sqlalchemy database and an entirely themed persona to make fun and good management for you in your groups.
 
-Can be found on telegram as [LyciBot](https://t.me/Sangtei_bot)
+Can be found on telegram as [Miss Sangtei](https://t.me/Sangtei_bot)
 
 The Support group can be reached out to at [Sangtei Support](https://t.me/Sangteisupport), where you can ask for help , discover new features, report bugs, and stay in the loop whenever a new update is available. 
 
 
-Updates channel as at [HiTechRocket](https://t.me/HiTechRocket)
+Updates channel as at [Sangtei Update](https://t.me/Sangteiupdate)
 
 ## How to setup or deploy
 
@@ -27,7 +27,7 @@ The bot is based on the original work done by [PaulSonOfLars](https://github.com
 This repo was just revamped to suit an Anime-centric community. All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
 
 # Sangtei Original Source
-<summary>[Lyci](https://github.com/prabhasha-p/Lyci)</summary>
+• [Lyci](https://github.com/prabhasha-p/Lyci)
 
 # Special Thanks to
-<summary> [Prabha Sha](https://github.com/prabhasha-p)</summary>
+• [Prabha Sha](https://github.com/prabhasha-p)
