@@ -1,4 +1,4 @@
-![Lyci](https://telegra.ph/file/e49146459099415d48157.jpg)
+![Lyci](https://1.bp.blogspot.com/-rsWtl7fFhTs/YJRDqJ3NTRI/AAAAAAAAJBY/1REF6FQLBS8pa4WPaa0RJFr7c7SSHTCDwCLcBGAsYHQ/s0/main-qimg-396b1449a73cd7198c4edc337b5cae80.webp)
 # Sangtei Bot
 
 A Telegram Python bot running on python3 forked with saitama with a sqlalchemy database and an entirely themed persona to make fun and good management for you in your groups.
