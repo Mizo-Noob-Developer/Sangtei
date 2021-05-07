@@ -3,7 +3,7 @@ from functools import wraps
 
 from telegram.ext import CallbackContext
 
-from Lyci.modules.helper_funcs.misc import is_module_loaded
+from Sangtei.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
@@ -13,9 +13,9 @@ if is_module_loaded(FILENAME):
     from telegram.ext import CommandHandler, JobQueue, run_async
     from telegram.utils.helpers import escape_markdown
 
-    from Lyci import EVENT_LOGS, LOGGER, dispatcher
-    from Lyci.modules.helper_funcs.chat_status import user_admin
-    from Lyci.modules.sql import log_channel_sql as sql
+    from Sangtei import EVENT_LOGS, LOGGER, dispatcher
+    from Sangtei.modules.helper_funcs.chat_status import user_admin
+    from Sangtei.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
