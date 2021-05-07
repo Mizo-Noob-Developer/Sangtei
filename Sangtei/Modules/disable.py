@@ -12,9 +12,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown
 
-from Lyci import dispatcher
-from Lyci.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from Lyci.modules.helper_funcs.misc import is_module_loaded
+from Sangtei import dispatcher
+from Sangtei.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from Sangtei.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
@@ -237,7 +237,7 @@ if is_module_loaded(FILENAME):
         chat = update.effective_chat
 
         if len(args) >= 1:
-            enable_module = "Lyci.modules." + args[0].rsplit(".", 1)[0]
+            enable_module = "Sangtei.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(enable_module)
