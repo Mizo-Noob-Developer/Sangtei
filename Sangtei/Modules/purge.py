@@ -2,8 +2,8 @@ import time
 
 from telethon import events
 
-from Lyci import telethn
-from Lyci.modules.helper_funcs.telethn.chatstatus import (
+from Sangtei import telethn
+from Sangtei.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
