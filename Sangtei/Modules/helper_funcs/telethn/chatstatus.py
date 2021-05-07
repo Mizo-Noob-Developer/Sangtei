@@ -1,7 +1,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Lyci import DRAGONS
-from Lyci.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
+from Sangtei import DRAGONS
+from Sangtei.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
 
 
 async def user_is_ban_protected(user_id: int, message):
