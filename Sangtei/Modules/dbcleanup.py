@@ -9,10 +9,10 @@ from telegram.ext import (
     run_async,
 )
 
-import Lyci.modules.sql.global_bans_sql as gban_sql
-import Lyci.modules.sql.users_sql as user_sql
-from Lyci import DEV_USERS, OWNER_ID, dispatcher
-from Lyci.modules.helper_funcs.chat_status import dev_plus
+import Sangtei.modules.sql.global_bans_sql as gban_sql
+import Sangtei.modules.sql.users_sql as user_sql
+from Sangtei import DEV_USERS, OWNER_ID, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import dev_plus
 
 
 def get_invalid_chats(update: Update, context: CallbackContext, remove: bool = False):
