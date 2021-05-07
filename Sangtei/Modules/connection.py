@@ -5,10 +5,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackQueryHandler, CommandHandler, run_async
 
-import Lyci.modules.sql.connection_sql as sql
-from Lyci import DEV_USERS, DRAGONS, dispatcher
-from Lyci.modules.helper_funcs import chat_status
-from Lyci.modules.helper_funcs.alternate import send_message, typing_action
+import Sangtei.modules.sql.connection_sql as sql
+from Sangtei import DEV_USERS, DRAGONS, dispatcher
+from Sangtei.modules.helper_funcs import chat_status
+from Sangtei.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
