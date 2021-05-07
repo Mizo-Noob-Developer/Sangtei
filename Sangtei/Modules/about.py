@@ -1,5 +1,5 @@
 __help__ = """
-*Lyci - A Powerful Telegram Group Manager 🎶
+*Sangtei - A Powerful Telegram Group Manager 🎶
 
 Powerful Abilities*
 
@@ -9,8 +9,8 @@ Powerful Abilities*
 
 • Youtube Downloader 🎵
 
-Developer [𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 •••](http://t.me/prabha_sha) 🇱🇰
+Developer [Nicky Lalrochhara](http://t.me/Nickylrca) 🇮🇳
 
-[GitHub](https://github.com/Prabhasha-p)"""
+[GitHub](https://github.com/lalrochhara)"""
 
-__mod_name__ = "About 🇱🇰"
+__mod_name__ = "About 🇮🇳"
