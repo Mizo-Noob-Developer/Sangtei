@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Numeric, String
 
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):
