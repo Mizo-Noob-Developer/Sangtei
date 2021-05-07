@@ -5,12 +5,12 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.approve_sql as sql
-from Lyci import DRAGONS, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import user_admin
-from Lyci.modules.helper_funcs.extraction import extract_user
-from Lyci.modules.log_channel import loggable
+import Sangtei.modules.sql.approve_sql as sql
+from Sangtei import DRAGONS, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.helper_funcs.extraction import extract_user
+from Sangtei.modules.log_channel import loggable
 
 
 @loggable
