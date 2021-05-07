@@ -5,7 +5,7 @@ from cachetools import TTLCache
 from telegram import Chat, ChatMember, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from Lyci import (
+from Sangtei import (
     DEL_CMDS,
     DEMONS,
     DEV_USERS,
@@ -389,6 +389,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from Lyci.modules import connection
+from Sangtei.modules import connection
 
 connected = connection.connected
