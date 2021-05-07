@@ -3,7 +3,7 @@ import time
 
 import aiohttp
 
-from Lyci.uputils import humanbytes, time_formatter
+from Sangtei.uputils import humanbytes, time_formatter
 
 
 async def download_file(url, file_name, message, start_time, bot):
@@ -32,7 +32,7 @@ async def download_coroutine(session, url, file_name, event, start, bot):
 
 **File Size:** {}
 
-**© @HiTechRocket**""".format(
+**© @SangteiUpdate**""".format(
                 url,
                 os.path.basename(file_name).replace("%20", " "),
                 humanbytes(total_length),
