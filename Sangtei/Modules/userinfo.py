@@ -13,8 +13,8 @@ from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import Lyci.modules.sql.userinfo_sql as sql
-from Lyci import (
+import Sangtei.modules.sql.userinfo_sql as sql
+from Sangtei import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -25,14 +25,14 @@ from Lyci import (
     dispatcher,
     sw,
 )
-from Lyci import telethn as SaitamaTelethonClient
-from Lyci.__main__ import STATS, TOKEN, USER_INFO
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import sudo_plus
-from Lyci.modules.helper_funcs.extraction import extract_user
-from Lyci.modules.sql.afk_sql import check_afk_status, is_afk
-from Lyci.modules.sql.global_bans_sql import is_user_gbanned
-from Lyci.modules.sql.users_sql import get_user_num_chats
+from Sangtei import telethn as SaitamaTelethonClient
+from Sangtei.__main__ import STATS, TOKEN, USER_INFO
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import sudo_plus
+from Sangtei.modules.helper_funcs.extraction import extract_user
+from Sangtei.modules.sql.afk_sql import check_afk_status, is_afk
+from Sangtei.modules.sql.global_bans_sql import is_user_gbanned
+from Sangtei.modules.sql.users_sql import get_user_num_chats
 
 
 def no_by_per(totalhp, percentage):
@@ -308,7 +308,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/HiTechRockets">?</a>]'.format(bot.username)
+        text += ' [<a href="https://t.me/SangteiUpdate">?</a>]'.format(bot.username)
 
     try:
         user_member = chat.get_member(user.id)
