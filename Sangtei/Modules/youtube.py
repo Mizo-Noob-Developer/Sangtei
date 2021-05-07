@@ -14,7 +14,7 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from Sangtei.events import register as Lyci
+from Sangtei.events import register as Sangtei
 
 
 @Sangtei(pattern="^/yt(audio|video) (.*)")
