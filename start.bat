@@ -1,4 +1,4 @@
 @echo off
 TITLE Saitama Robot
 :: Enables virtual env mode and then starts saitama
-env\scripts\activate.bat && py -m Lyci
+env\scripts\activate.bat && py -m Sangtei
