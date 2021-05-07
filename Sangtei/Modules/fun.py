@@ -6,11 +6,11 @@ from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async
 
-import Lyci.modules.fun_strings as fun_strings
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import is_user_admin
-from Lyci.modules.helper_funcs.extraction import extract_user
+import Sangtei.modules.fun_strings as fun_strings
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import is_user_admin
+from Sangtei.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
@@ -31,7 +31,7 @@ def sanitize(update: Update, context: CallbackContext):
         if message.reply_to_message
         else message.reply_text
     )
-    reply_text(f"Lmao {name}, Keep 1 meter distance 😂")
+    reply_text(f"Lmao {name}, Keep 1 meter distance 😷")
 
 
 @run_async
@@ -308,7 +308,7 @@ __help__ = """
  •  /roll *:* Roll a dice
  •  /rlg *:* Join ears, nose, mouth and create an emoji
  •  /shout `<keyword>`*:* write anything you want to give loud shout
- •  /send `<text>`*:* sends the text you given to the group by Lyci
+ •  /send `<text>`*:* sends the text you given to the group by Sangtei
  •  /weebify `<text>`*:* returns a weebified text
  •  /sanitize *:* always use this before `/pat` or any contact
  •  /pat *:* pats a user, or get patted
