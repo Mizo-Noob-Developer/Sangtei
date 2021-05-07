@@ -3,8 +3,8 @@ import threading
 
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
-from Lyci.modules.helper_funcs.msg_types import Types
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei.modules.helper_funcs.msg_types import Types
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class Notes(BASE):
