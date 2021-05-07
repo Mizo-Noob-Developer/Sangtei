@@ -5,9 +5,9 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from Lyci import StartTime, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import sudo_plus
+from Sangtei import StartTime, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import sudo_plus
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
