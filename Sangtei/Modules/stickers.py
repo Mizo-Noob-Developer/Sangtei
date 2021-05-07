@@ -16,8 +16,8 @@ from telegram import (
 from telegram.ext import CallbackContext, run_async
 from telegram.utils.helpers import mention_html
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
