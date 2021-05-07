@@ -14,18 +14,18 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from Lyci import TIGERS, WOLVES, dispatcher
-from Lyci.modules.connection import connected
-from Lyci.modules.helper_funcs.alternate import send_message
-from Lyci.modules.helper_funcs.chat_status import (
+from Sangtei import TIGERS, WOLVES, dispatcher
+from Sangtei.modules.connection import connected
+from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.chat_status import (
     bot_admin,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from Lyci.modules.helper_funcs.string_handling import extract_time
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.sql import antiflood_sql as sql
+from Sangtei.modules.helper_funcs.string_handling import extract_time
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.sql import antiflood_sql as sql
 
 FLOOD_GROUP = 3
 
