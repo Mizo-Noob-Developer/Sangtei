@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, Integer, UnicodeText
 
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class RSS(BASE):
