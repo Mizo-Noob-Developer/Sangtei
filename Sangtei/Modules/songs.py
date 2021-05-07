@@ -17,8 +17,8 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from Lyci.events import register
-from Lyci.progress import progress
+from Sangtei.events import register
+from Sangtei.progress import progress
 
 try:
 
