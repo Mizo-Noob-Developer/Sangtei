@@ -2,15 +2,15 @@ from telegram import ChatPermissions, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from Lyci import dispatcher
-from Lyci.modules.helper_funcs.chat_status import (
+from Sangtei import dispatcher
+from Sangtei.modules.helper_funcs.chat_status import (
     bot_admin,
     is_bot_admin,
     is_user_ban_protected,
     is_user_in_chat,
 )
-from Lyci.modules.helper_funcs.extraction import extract_user_and_text
-from Lyci.modules.helper_funcs.filters import CustomFilters
+from Sangtei.modules.helper_funcs.extraction import extract_user_and_text
+from Sangtei.modules.helper_funcs.filters import CustomFilters
 
 RBAN_ERRORS = {
     "User is an administrator of the chat",
