@@ -15,23 +15,23 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from Lyci import DRAGONS, LOGGER, dispatcher
-from Lyci.modules.connection import connected
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message, typing_action
-from Lyci.modules.helper_funcs.chat_status import user_admin
-from Lyci.modules.helper_funcs.extraction import extract_text
-from Lyci.modules.helper_funcs.filters import CustomFilters
-from Lyci.modules.helper_funcs.handlers import MessageHandlerChecker
-from Lyci.modules.helper_funcs.misc import build_keyboard_parser
-from Lyci.modules.helper_funcs.msg_types import get_filter_type
-from Lyci.modules.helper_funcs.string_handling import (
+from Sangtei import DRAGONS, LOGGER, dispatcher
+from Sangtei.modules.connection import connected
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message, typing_action
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.helper_funcs.extraction import extract_text
+from Sangtei.modules.helper_funcs.filters import CustomFilters
+from Sangtei.modules.helper_funcs.handlers import MessageHandlerChecker
+from Sangtei.modules.helper_funcs.misc import build_keyboard_parser
+from Sangtei.modules.helper_funcs.msg_types import get_filter_type
+from Sangtei.modules.helper_funcs.string_handling import (
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
     split_quotes,
 )
-from Lyci.modules.sql import cust_filters_sql as sql
+from Sangtei.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 10
 
