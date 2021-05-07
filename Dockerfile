@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Lyci
-RUN git clone -b shiken https://github.com/prabhasha-p/Lyci /root/Lyci
-WORKDIR /root/Lyci
+# Copy Python Requirements to /root/Sangtei
+RUN git clone -b shiken https://github.com/lalrochhara/Sangtei /root/Sangtei
+WORKDIR /root/Sangtei
 
-#Copy config file to /root/Lyci/Lyci
-COPY ./Lyci/sample_config.py ./Lyci/config.py* /root/Lyci/Lyci/
+#Copy config file to /root/Sangtei/Sangtei
+COPY ./Sangtei/sample_config.py ./Sangtei/config.py* /root/Sangtei/Sangtei/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","Lyci"]
+CMD ["python3","-m","Sangtei"]
