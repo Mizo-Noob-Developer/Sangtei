@@ -3,8 +3,8 @@ import threading
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 
-from Lyci import dispatcher
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei import dispatcher
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class Federations(BASE):
