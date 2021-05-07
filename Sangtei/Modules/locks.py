@@ -14,20 +14,20 @@ from telegram.ext import CommandHandler, Filters, MessageHandler
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.locks_sql as sql
-from Lyci import DRAGONS, LOGGER, dispatcher
-from Lyci.modules.connection import connected
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message, typing_action
-from Lyci.modules.helper_funcs.chat_status import (
+import Sangtei.modules.sql.locks_sql as sql
+from Sangtei import DRAGONS, LOGGER, dispatcher
+from Sangtei.modules.connection import connected
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message, typing_action
+from Sangtei.modules.helper_funcs.chat_status import (
     can_delete,
     is_bot_admin,
     is_user_admin,
     user_admin,
     user_not_admin,
 )
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.sql.approve_sql import is_approved
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.sql.approve_sql import is_approved
 
 ad = AlphabetDetector()
 
