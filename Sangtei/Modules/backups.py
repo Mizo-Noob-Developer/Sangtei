@@ -7,22 +7,22 @@ from telegram import Message, ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-# from Lyci.modules.sql import warns_sql as warnssql
-import Lyci.modules.sql.blacklist_sql as blacklistsql
+# from Sangtei.modules.sql import warns_sql as warnssql
+import Sangtei.modules.sql.blacklist_sql as blacklistsql
 
-# from Lyci.modules.sql import cust_filters_sql as filtersql
-# import Lyci.modules.sql.welcome_sql as welcsql
-import Lyci.modules.sql.locks_sql as locksql
-import Lyci.modules.sql.notes_sql as sql
+# from Sangtei.modules.sql import cust_filters_sql as filtersql
+# import Sangtei.modules.sql.welcome_sql as welcsql
+import Sangtei.modules.sql.locks_sql as locksql
+import Sangtei.modules.sql.notes_sql as sql
 
-# from Lyci.modules.rules import get_rules
-import Lyci.modules.sql.rules_sql as rulessql
-from Lyci import JOIN_LOGGER, LOGGER, OWNER_ID, dispatcher
-from Lyci.__main__ import DATA_IMPORT
-from Lyci.modules.connection import connected
-from Lyci.modules.helper_funcs.alternate import typing_action
-from Lyci.modules.helper_funcs.chat_status import user_admin
-from Lyci.modules.sql import disable_sql as disabledsql
+# from Sangtei.modules.rules import get_rules
+import Sangtei.modules.sql.rules_sql as rulessql
+from Sangtei import JOIN_LOGGER, LOGGER, OWNER_ID, dispatcher
+from Sangtei.__main__ import DATA_IMPORT
+from Sangtei.modules.connection import connected
+from Sangtei.modules.helper_funcs.alternate import typing_action
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.sql import disable_sql as disabledsql
 
 
 @run_async
@@ -99,7 +99,7 @@ def import_data(update, context):
                 mod.__import_data__(str(chat.id), data)
         except Exception:
             msg.reply_text(
-                "An error occurred while recovering your data. The process failed. If you experience a problem with this, please take it to @OnePunchSupport"
+                "An error occurred while recovering your data. The process failed. If you experience a problem with this, please take it to @SangteiSupport"
             )
 
             LOGGER.exception(
@@ -325,7 +325,7 @@ def export_data(update, context):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    f = open("Lyci{}.backup".format(chat_id), "w")
+    f = open("Sangtei{}.backup".format(chat_id), "w")
     f.write(str(baccinfo))
     f.close()
     context.bot.sendChatAction(current_chat_id, "upload_document")
@@ -342,15 +342,15 @@ def export_data(update, context):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("Lyci{}.backup".format(chat_id), "rb"),
-        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Lyci-Backup` was specially made for notes.".format(
+        document=open("Sangtei{}.backup".format(chat_id), "rb"),
+        caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `Sangtei-Backup` was specially made for notes.".format(
             chat.title, chat_id, tgl
         ),
         timeout=360,
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("Lyci{}.backup".format(chat_id))  # Cleaning file
+    os.remove("Sangtei{}.backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data
