@@ -14,10 +14,10 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from Lyci.events import register as Lyci
+from Sangtei.events import register as Lyci
 
 
-@Lyci(pattern="^/yt(audio|video) (.*)")
+@Sangtei_Bot(pattern="^/yt(audio|video) (.*)")
 async def download_video(v_url):
     """ For ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
