@@ -23,12 +23,12 @@ if is_module_loaded(FILENAME):
 
     from telegram.ext.dispatcher import run_async
 
-    from Lyci.modules.helper_funcs.chat_status import (
+    from Sangtei.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from Lyci.modules.sql import disable_sql as sql
+    from Sangtei.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []
