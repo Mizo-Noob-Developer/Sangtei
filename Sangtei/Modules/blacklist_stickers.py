@@ -7,16 +7,16 @@ from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandle
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html, mention_markdown
 
-import Lyci.modules.sql.blsticker_sql as sql
-from Lyci import LOGGER, dispatcher
-from Lyci.modules.connection import connected
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message
-from Lyci.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Lyci.modules.helper_funcs.misc import split_message
-from Lyci.modules.helper_funcs.string_handling import extract_time
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.warns import warn
+import Sangtei.modules.sql.blsticker_sql as sql
+from Sangtei import LOGGER, dispatcher
+from Sangtei.modules.connection import connected
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Sangtei.modules.helper_funcs.misc import split_message
+from Sangtei.modules.helper_funcs.string_handling import extract_time
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.warns import warn
 
 
 @run_async
