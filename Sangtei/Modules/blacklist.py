@@ -6,17 +6,17 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, MessageHandler, run_async
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.blacklist_sql as sql
-from Lyci import LOGGER, dispatcher
-from Lyci.modules.connection import connected
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message, typing_action
-from Lyci.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Lyci.modules.helper_funcs.extraction import extract_text
-from Lyci.modules.helper_funcs.misc import split_message
-from Lyci.modules.helper_funcs.string_handling import extract_time
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.warns import warn
+import Sangtei.modules.sql.blacklist_sql as sql
+from Sangtei import LOGGER, dispatcher
+from Sangtei.modules.connection import connected
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message, typing_action
+from Sangtei.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Sangtei.modules.helper_funcs.extraction import extract_text
+from Sangtei.modules.helper_funcs.misc import split_message
+from Sangtei.modules.helper_funcs.string_handling import extract_time
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.warns import warn
 
 BLACKLIST_GROUP = 11
 
