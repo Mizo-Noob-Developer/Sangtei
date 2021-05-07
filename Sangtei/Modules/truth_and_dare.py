@@ -3,9 +3,9 @@ import random
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-import Lyci.modules.truth_and_dare_string as truth_and_dare_string
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+import Sangtei.modules.truth_and_dare_string as truth_and_dare_string
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
