@@ -3,8 +3,8 @@ import importlib
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from Lyci import dispatcher
-from Lyci.__main__ import (
+from Sangtei import dispatcher
+from Sangtei.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -15,7 +15,7 @@ from Lyci.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from Lyci.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Sangtei.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 
 
 @run_async
@@ -28,7 +28,7 @@ def load(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module("Lyci.modules." + text)
+        imported_module = importlib.import_module("Sangtei.modules." + text)
     except:
         load_messasge.edit_text("Does that module even exist?")
         return
@@ -94,7 +94,7 @@ def unload(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module("Lyci.modules." + text)
+        imported_module = importlib.import_module("Sangtei.modules." + text)
     except:
         unload_messasge.edit_text("Does that module even exist?")
         return
@@ -160,7 +160,7 @@ def listmodules(update: Update, context: CallbackContext):
     for helpable_module in HELPABLE:
         helpable_module_info = IMPORTED[helpable_module]
         file_info = IMPORTED[helpable_module_info.__mod_name__.lower()]
-        file_name = file_info.__name__.rsplit("Lyci.modules.", 1)[1]
+        file_name = file_info.__name__.rsplit("Sangtei.modules.", 1)[1]
         mod_name = file_info.__mod_name__
         module_list.append(f"- <code>{mod_name} ({file_name})</code>\n")
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)
