@@ -1,14 +1,14 @@
 {
-      "name": "Lyci Bot",
+      "name": "Sangtei Bot",
       "description": "An Anime themed Telegram group management bot With Cool Modules.",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Lyci"
+         "Sangtei"
       ],   
-   "repository": "https://github.com/prabhasha-p/Lyci",
+   "repository": "https://github.com/lalrochhara/Sangtei",
    "logo": "https://telegra.ph/file/e49146459099415d48157.jpg",
    "addons": [
       {
