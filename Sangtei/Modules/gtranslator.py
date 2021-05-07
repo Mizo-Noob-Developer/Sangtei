@@ -3,8 +3,8 @@ from googletrans import LANGUAGES, Translator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
