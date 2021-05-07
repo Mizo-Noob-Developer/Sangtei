@@ -1,10 +1,10 @@
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
-EHI_STRINGS = "Here, new ehi files by @LyciBot 👸\n\n👉 https://www.mediafire.com/folder/eg7gpj68di622/LyciBot"
+EHI_STRINGS = "Here, new ehi files by @Sangtei_bot 👸\n\n👉 https://www.mediafire.com/folder/eg7gpj68di622/LyciBot"
 
 
 @run_async
