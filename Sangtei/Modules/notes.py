@@ -23,14 +23,14 @@ from telegram.ext import (
 from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
-import Lyci.modules.sql.notes_sql as sql
-from Lyci import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import connection_status, user_admin
-from Lyci.modules.helper_funcs.handlers import MessageHandlerChecker
-from Lyci.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Lyci.modules.helper_funcs.msg_types import get_note_type
-from Lyci.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+import Sangtei.modules.sql.notes_sql as sql
+from Sangtei import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import connection_status, user_admin
+from Sangtei.modules.helper_funcs.handlers import MessageHandlerChecker
+from Sangtei.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Sangtei.modules.helper_funcs.msg_types import get_note_type
+from Sangtei.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 STICKER_MATCHER = re.compile(r"^###sticker(!photo)?###:")
