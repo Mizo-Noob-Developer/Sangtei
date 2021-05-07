@@ -25,25 +25,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from Lyci import TIGERS, WOLVES, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.chat_status import (
+from Sangtei import TIGERS, WOLVES, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from Lyci.modules.helper_funcs.extraction import (
+from Sangtei.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
 )
-from Lyci.modules.helper_funcs.filters import CustomFilters
-from Lyci.modules.helper_funcs.misc import split_message
-from Lyci.modules.helper_funcs.string_handling import split_quotes
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.sql import warns_sql as sql
+from Sangtei.modules.helper_funcs.filters import CustomFilters
+from Sangtei.modules.helper_funcs.misc import split_message
+from Sangtei.modules.helper_funcs.string_handling import split_quotes
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.sql import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
