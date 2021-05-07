@@ -4,8 +4,8 @@ from typing import Union
 
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
-from Lyci.modules.helper_funcs.msg_types import Types
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei.modules.helper_funcs.msg_types import Types
+from Sangtei.modules.sql import BASE, SESSION
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
