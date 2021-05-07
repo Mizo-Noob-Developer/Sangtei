@@ -8,8 +8,8 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 
-from Lyci import DEV_USERS, DRAGONS, OWNER_ID, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+from Sangtei import DEV_USERS, DRAGONS, OWNER_ID, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
 info_btn = "More Information"
 kaizoku_btn = "Kaizoku ☠️"
