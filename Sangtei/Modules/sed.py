@@ -5,9 +5,9 @@ import telegram
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 
-from Lyci import LOGGER, dispatcher
-from Lyci.modules.disable import DisableAbleMessageHandler
-from Lyci.modules.helper_funcs.regex_helper import infinite_loop_check
+from Sangtei import LOGGER, dispatcher
+from Sangtei.modules.disable import DisableAbleMessageHandler
+from Sangtei.modules.helper_funcs.regex_helper import infinite_loop_check
 
 DELIMITERS = ("/", ":", "|", "_")
 
