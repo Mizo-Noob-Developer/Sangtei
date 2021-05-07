@@ -1,9 +1,9 @@
 from telegram.ext import run_async
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message
-from Lyci.modules.helper_funcs.chat_status import user_admin
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.chat_status import user_admin
 
 
 @run_async
