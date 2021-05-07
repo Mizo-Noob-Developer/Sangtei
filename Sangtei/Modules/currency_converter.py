@@ -2,7 +2,7 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from Lyci import CASH_API_KEY, dispatcher
+from Sangtei import CASH_API_KEY, dispatcher
 
 
 @run_async
