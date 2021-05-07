@@ -10,8 +10,8 @@ from sqlalchemy import (
     func,
 )
 
-from Lyci import dispatcher
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei import dispatcher
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class Users(BASE):
