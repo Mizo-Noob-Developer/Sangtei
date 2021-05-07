@@ -22,17 +22,17 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, mention_markdown
 
-import Lyci.modules.sql.feds_sql as sql
-from Lyci import DRAGONS, EVENT_LOGS, LOGGER, OWNER_ID, TIGERS, WOLVES, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message
-from Lyci.modules.helper_funcs.chat_status import is_user_admin
-from Lyci.modules.helper_funcs.extraction import (
+import Sangtei.modules.sql.feds_sql as sql
+from Sangtei import DRAGONS, EVENT_LOGS, LOGGER, OWNER_ID, TIGERS, WOLVES, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.chat_status import is_user_admin
+from Sangtei.modules.helper_funcs.extraction import (
     extract_unt_fedban,
     extract_user,
     extract_user_fban,
 )
-from Lyci.modules.helper_funcs.string_handling import markdown_parser
+from Sangtei.modules.helper_funcs.string_handling import markdown_parser
 
 FBAN_ERRORS = {
     "User is an administrator of the chat",
@@ -90,7 +90,7 @@ def new_fed(update: Update, context: CallbackContext):
         x = sql.new_fed(user.id, fed_name, fed_id)
         if not x:
             update.effective_message.reply_text(
-                "Can't federate! Please contact @OnePunchSupport if the problem persist."
+                "Can't federate! Please contact @SangteiSupport if the problem persist."
             )
             return
 
@@ -256,7 +256,7 @@ def join_fed(update: Update, context: CallbackContext):
         x = sql.chat_join_fed(args[0], chat.title, chat.id)
         if not x:
             message.reply_text(
-                "Failed to join federation! Please contact @OnePunchSupport should this problem persist!"
+                "Failed to join federation! Please contact @SangteiSupport should this problem persist!"
             )
             return
 
@@ -641,7 +641,7 @@ def fed_ban(update: Update, context: CallbackContext):
 
     if fban:
         fed_name = info["fname"]
-        # https://t.me/HiTechRocket https://t.me/HiTechRockets
+        # https://t.me/Sangteisupport https://t.me/SangteiUpdate
         # starting = "The reason fban is replaced for {} in the Federation <b>{}</b>.".format(user_target, fed_name)
         # send_message(update.effective_message, starting, parse_mode=ParseMode.HTML)
 
@@ -663,7 +663,7 @@ def fed_ban(update: Update, context: CallbackContext):
         )
         if not x:
             message.reply_text(
-                "Failed to ban from the federation! If this problem continues, contact @OnePunchSupport."
+                "Failed to ban from the federation! If this problem continues, contact @SangteiSupport."
             )
             return
 
@@ -821,7 +821,7 @@ def fed_ban(update: Update, context: CallbackContext):
     )
     if not x:
         message.reply_text(
-            "Failed to ban from the federation! If this problem continues, contact @OnePunchSupport."
+            "Failed to ban from the federation! If this problem continues, contact @SangteiSupport."
         )
         return
 
@@ -1211,7 +1211,7 @@ def set_frules(update: Update, context: CallbackContext):
         x = sql.set_frules(fed_id, markdown_rules)
         if not x:
             update.effective_message.reply_text(
-                "Whoa! There was an error while setting federation rules! If you wondered why please ask it in @HiTechRocket !"
+                "Whoa! There was an error while setting federation rules! If you wondered why please ask it in @SangteiSupport !"
             )
             return
 
