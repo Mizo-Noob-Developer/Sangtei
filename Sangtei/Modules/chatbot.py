@@ -17,11 +17,11 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.chatbot_sql as sql
-from Lyci import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
-from Lyci.modules.helper_funcs.chat_status import user_admin
-from Lyci.modules.helper_funcs.filters import CustomFilters
-from Lyci.modules.log_channel import gloggable
+import Sangtei.modules.sql.chatbot_sql as sql
+from Sangtei import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.helper_funcs.filters import CustomFilters
+from Sangtei.modules.log_channel import gloggable
 
 CoffeeHouseAPI = API(AI_API_KEY)
 api_client = LydiaAI(CoffeeHouseAPI)
