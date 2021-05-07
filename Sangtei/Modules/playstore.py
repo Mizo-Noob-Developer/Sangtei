@@ -2,8 +2,8 @@ import bs4
 import requests
 from telethon import *
 
-from Lyci import telethn as client
-from Lyci.events import register
+from Sangtei import telethn as client
+from Sangtei.events import register
 
 
 async def is_register_admin(chat, user):
