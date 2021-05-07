@@ -5,9 +5,9 @@ from feedparser import parse
 from telegram import ParseMode, Update, constants
 from telegram.ext import CallbackContext, CommandHandler
 
-from Lyci import dispatcher, updater
-from Lyci.modules.helper_funcs.chat_status import user_admin
-from Lyci.modules.sql import rss_sql as sql
+from Sangtei import dispatcher, updater
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.sql import rss_sql as sql
 
 
 def show_url(update: Update, context: CallbackContext):
