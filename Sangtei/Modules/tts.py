@@ -17,16 +17,16 @@ def tts(update: Update, context: CallbackContext):
     update.message.chat.send_action(ChatAction.RECORD_AUDIO)
     lang = "ml"
     tts = gTTS(reply, lang)
-    tts.save("TalkingLyci.mp3")
-    with open("TalkingLyci.mp3", "rb") as f:
+    tts.save("TalkingSangtei.mp3")
+    with open("TalkingSangtei.mp3", "rb") as f:
         linelist = list(f)
         linecount = len(linelist)
     if linecount == 1:
         update.message.chat.send_action(ChatAction.RECORD_AUDIO)
         lang = "en"
         tts = gTTS(reply, lang)
-        tts.save("TalkingLyci.mp3")
-    with open("TalkingLyci.mp3", "rb") as speech:
+        tts.save("TalkingSangtei.mp3")
+    with open("TalkingSangtei.mp3", "rb") as speech:
         update.message.reply_voice(speech, quote=False)
 
 
