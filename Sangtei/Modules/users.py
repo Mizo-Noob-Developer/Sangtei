@@ -11,10 +11,10 @@ from telegram.ext import (
     run_async,
 )
 
-import Lyci.modules.sql.users_sql as sql
-from Lyci import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from Lyci.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from Lyci.modules.sql.users_sql import get_all_users
+import Sangtei.modules.sql.users_sql as sql
+from Sangtei import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Sangtei.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
