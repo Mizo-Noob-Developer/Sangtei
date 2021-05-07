@@ -5,9 +5,9 @@ from telegram import ParseMode
 from telegram.ext import run_async
 from telegram.ext.dispatcher import run_async
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import typing_action
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import typing_action
 
 
 @run_async
