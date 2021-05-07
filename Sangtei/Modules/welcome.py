@@ -22,8 +22,8 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-import Lyci.modules.sql.welcome_sql as sql
-from Lyci import (
+import Sangtei.modules.sql.welcome_sql as sql
+from Sangtei import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -35,15 +35,15 @@ from Lyci import (
     dispatcher,
     sw,
 )
-from Lyci.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
-from Lyci.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Lyci.modules.helper_funcs.msg_types import get_welcome_type
-from Lyci.modules.helper_funcs.string_handling import (
+from Sangtei.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
+from Sangtei.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Sangtei.modules.helper_funcs.msg_types import get_welcome_type
+from Sangtei.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.sql.global_bans_sql import is_user_gbanned
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.sql.global_bans_sql import is_user_gbanned
 
 VALID_WELCOME_FORMATTERS = [
     "first",
