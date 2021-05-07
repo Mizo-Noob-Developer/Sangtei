@@ -4,9 +4,9 @@ from telegram import Update
 from telegram.ext import CallbackContext, run_async
 from tswift import Song
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import typing_action
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import typing_action
 
 
 @run_async
