@@ -3,8 +3,8 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 from wikipedia.exceptions import DisambiguationError, PageError
 
-from Lyci import dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
+from Sangtei import dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
