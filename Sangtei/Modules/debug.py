@@ -5,8 +5,8 @@ from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telethon import events
 
-from Lyci import dispatcher, telethn
-from Lyci.modules.helper_funcs.chat_status import dev_plus
+from Sangtei import dispatcher, telethn
+from Sangtei.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 
