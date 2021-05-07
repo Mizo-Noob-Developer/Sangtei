@@ -9,8 +9,8 @@ from contextlib import redirect_stdout
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from Lyci import LOGGER, dispatcher
-from Lyci.modules.helper_funcs.chat_status import dev_plus
+from Sangtei import LOGGER, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
 
