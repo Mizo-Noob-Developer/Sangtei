@@ -1,4 +1,4 @@
-from Lyci import LOAD, LOGGER, NO_LOAD
+from Sangtei import LOAD, LOGGER, NO_LOAD
 
 
 def __list_all_modules():
