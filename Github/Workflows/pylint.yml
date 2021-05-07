@@ -28,9 +28,9 @@ jobs:
           black .
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Lyci Updated'
+          commit_message: 'Sangtei Updated'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: 𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 •••
-          commit_user_email: prabhasha999@gmail.com
-          commit_author: 𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 ••• <prabhasha999@gmail.com>
+          commit_user_name: lalrochhara
+          commit_user_email: nickylalrochhara917@gmail.com
+          commit_author: lalrochhara <nickylalrochhara917@gmail.com>
