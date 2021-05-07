@@ -42,16 +42,16 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1469528232"
+         "value": "1382148141"
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Prabha_sha"
+         "value": "Nicky_Lrca"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsername. If this ever points to Lyci support than consider you made an enemy.",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsername. If this ever points to Sangtei support than consider you made an enemy.",
          "required": true,
-         "value": "HiTechRocket"
+         "value": "Sangteisupport"
       },
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
@@ -74,7 +74,7 @@
          "value": ""
       },
       "DEV_USERS": {
-         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Lyci support then keep the current ID's here at they are and add yours.",
+         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Sangtei support then keep the current ID's here at they are and add yours.",
          "required": false,
          "value": "1469528232 1514606547"
       },
