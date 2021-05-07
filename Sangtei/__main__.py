@@ -23,7 +23,7 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from Lyci import (
+from Sangtei import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -43,9 +43,9 @@ from Lyci import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Lyci.modules import ALL_MODULES
-from Lyci.modules.helper_funcs.chat_status import is_user_admin
-from Lyci.modules.helper_funcs.misc import paginate_modules
+from Sangtei.modules import ALL_MODULES
+from Sangtei.modules.helper_funcs.chat_status import is_user_admin
+from Sangtei.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -76,7 +76,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = "Hi {}, my name is {} 👸\n\nI'm a Powerful group manager bot With Cool Modules. Made by [𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 ••• 🇱🇰](t.me/Prabha_sha)\n\nHit /help to find my list of available commands"
+PM_START_TEXT = "Hi {}, my name is {} 👸\n\nI'm a Powerful group manager bot With Cool Modules. Made by [Nicky Lalrochhara](t.me/Nickylrca)\n\nHit /help to find my list of available commands"
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
@@ -95,9 +95,9 @@ I'm a Powerful group management bot, here to help you get around and keep the or
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !\n",
 )
 
-Lyci_IMG = "https://telegra.ph/file/e49146459099415d48157.jpg"
+Sangtei_IMG = "https://1.bp.blogspot.com/-rsWtl7fFhTs/YJRDqJ3NTRI/AAAAAAAAJBY/1REF6FQLBS8pa4WPaa0RJFr7c7SSHTCDwCLcBGAsYHQ/s0/main-qimg-396b1449a73cd7198c4edc337b5cae80.webp"
 
-DONATE_STRING = """Hey, glad to hear you want to donate for developer. This bot runs on heroku so bot slow down some times and developer cannot add more modules due to heroku can't run them.\n\nBetter if my developer recieved a VPS to run the bot. Contact him and help him to continue this.\n\nDeveloper: [𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 •••](t.me/Prabha_sha) 🥺💔"""
+DONATE_STRING = """Hey, glad to hear you want to donate for developer. This bot runs on heroku so bot slow down some times and developer cannot add more modules due to heroku can't run them.\n\nBetter if my developer recieved a VPS to run the bot. Contact him and help him to continue this.\n\nDeveloper: [Nicky Lalrochhara](t.me/Nickylrca) 🤗😁"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -110,7 +110,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Lyci.modules." + module_name)
+    imported_module = importlib.import_module("Sangtei.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -204,7 +204,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                Lyci_IMG,
+                Sangtei_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
@@ -214,7 +214,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="➕ Add Lyci to your Group",
+                                text="➕ Add Sangtei to your Group",
                                 url="t.me/{}?startgroup=true".format(
                                     context.bot.username
                                 ),
@@ -223,21 +223,21 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="👥 Support Group",
-                                url=f"https://t.me/GalaxyLanka",
+                                url=f"https://t.me/Sangteisupport",
                             ),
                             InlineKeyboardButton(
                                 text="📌 Updates Channel",
-                                url="https://t.me/GalaxyLanka",
+                                url="https://t.me/Sangteiupdate",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="Soure Code 📕",
-                                url=f"https://github.com/prabhasha-p/Lyci",
+                                url=f"https://github.com/lalrochhara/Sangtei",
                             ),
                             InlineKeyboardButton(
                                 text="Developer 🇱🇰",
-                                url="https://t.me/Prabha_sha",
+                                url="https://t.me/Nickylrca",
                             ),
                         ],
                     ]
