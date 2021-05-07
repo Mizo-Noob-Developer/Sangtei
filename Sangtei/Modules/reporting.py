@@ -12,10 +12,10 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from Lyci import DRAGONS, LOGGER, TIGERS, WOLVES, dispatcher
-from Lyci.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Lyci.modules.log_channel import loggable
-from Lyci.modules.sql import reporting_sql as sql
+from Sangtei import DRAGONS, LOGGER, TIGERS, WOLVES, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Sangtei.modules.log_channel import loggable
+from Sangtei.modules.sql import reporting_sql as sql
 
 REPORT_GROUP = 12
 REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
