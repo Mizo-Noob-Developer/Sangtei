@@ -6,11 +6,11 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.blacklistusers_sql as sql
-from Lyci import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
-from Lyci.modules.helper_funcs.chat_status import dev_plus
-from Lyci.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Lyci.modules.log_channel import gloggable
+import Sangtei.modules.sql.blacklistusers_sql as sql
+from Sangtei import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
+from Sangtei.modules.helper_funcs.chat_status import dev_plus
+from Sangtei.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Sangtei.modules.log_channel import gloggable
 
 BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + DRAGONS + WOLVES + DEMONS
 BLABLEUSERS = [OWNER_ID] + DEV_USERS
