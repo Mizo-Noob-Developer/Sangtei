@@ -5,10 +5,10 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from Lyci import DRAGONS, dispatcher
-from Lyci.modules.disable import DisableAbleCommandHandler
-from Lyci.modules.helper_funcs.alternate import send_message
-from Lyci.modules.helper_funcs.chat_status import (
+from Sangtei import DRAGONS, dispatcher
+from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     bot_admin,
     can_pin,
@@ -16,8 +16,8 @@ from Lyci.modules.helper_funcs.chat_status import (
     connection_status,
     user_admin,
 )
-from Lyci.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Lyci.modules.log_channel import loggable
+from Sangtei.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Sangtei.modules.log_channel import loggable
 
 
 @run_async
