@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 from sqlalchemy.dialects import postgresql
 
-from Lyci.modules.sql import BASE, SESSION
+from Sangtei.modules.sql import BASE, SESSION
 
 
 class Warns(BASE):
