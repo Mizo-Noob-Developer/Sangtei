@@ -1,6 +1,6 @@
 from telethon import events
 
-from Lyci import telethn
+from Sangtei import telethn
 
 
 def register(**args):
