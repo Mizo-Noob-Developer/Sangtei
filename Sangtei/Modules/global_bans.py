@@ -14,8 +14,8 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import Lyci.modules.sql.global_bans_sql as sql
-from Lyci import (
+import Sangtei.modules.sql.global_bans_sql as sql
+from Sangtei import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -29,14 +29,14 @@ from Lyci import (
     dispatcher,
     sw,
 )
-from Lyci.modules.helper_funcs.chat_status import (
+from Sangtei.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from Lyci.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Lyci.modules.helper_funcs.misc import send_to_list
-from Lyci.modules.sql.users_sql import get_user_com_chats
+from Sangtei.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Sangtei.modules.helper_funcs.misc import send_to_list
+from Sangtei.modules.sql.users_sql import get_user_com_chats
 
 GBAN_ENFORCE_GROUP = 6
 
