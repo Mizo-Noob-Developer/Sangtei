@@ -39,4 +39,3 @@ tswift
 pyrogram
 tgcrypto
 ffprobe
-discord.py[voice]==1.2.5
