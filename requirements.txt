@@ -39,3 +39,4 @@ tswift
 pyrogram
 tgcrypto
 ffprobe
+music_player
