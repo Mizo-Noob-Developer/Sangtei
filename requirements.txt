@@ -12,8 +12,7 @@ spongemock
 zalgo-text
 geopy
 nltk
-ffmpeg
-avconv
+ffmpeg/avconv
 psutil
 aiohttp>=2.2.5
 Pillow>=4.2.0
@@ -39,4 +38,4 @@ bs4
 tswift
 pyrogram
 tgcrypto
-ffprobe
+ffprobe/avprobe
