@@ -1,4 +1,7 @@
-# Created by @Pra8hasha
+# ZauteMusic (Telegram bot project )
+# Copyright (C) 2021  ZauteKm 
+
+
 import asyncio
 import json
 import os
