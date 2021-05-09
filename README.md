@@ -29,9 +29,7 @@ This repo was just revamped to suit an Anime-centric community. All original cre
 # Sangtei Original Source
 • [Lyci](https://github.com/prabhasha-p/Lyci)
 
-# Special Thanks to
-• [Prabha Sha](https://github.com/prabhasha-p)
-
+• 
 # Sangtei's License
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
