@@ -31,6 +31,7 @@ pyrate-limiter
 cachetools
 telethon==1.16.4
 youtube_dl
+youtube_search_python
 hachoir
 asyncio
 gtts
@@ -38,3 +39,4 @@ bs4
 tswift
 pyrogram
 tgcrypto
+wget
