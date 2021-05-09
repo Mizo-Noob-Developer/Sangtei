@@ -9,8 +9,8 @@ from pyrogram import filters
 from pytube import YouTube
 from youtubesearchpython import VideosSearch
 
-from Hexzy import LOGGER, pbot
-from Hexzy.utils.ut import get_arg
+from Sangtei import LOGGER, pbot
+from Sangtei.utils.ut import get_arg
 
 
 def yt_search(song):
