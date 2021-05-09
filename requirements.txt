@@ -39,4 +39,3 @@ tswift
 pyrogram
 tgcrypto
 ffprobe
-pytube
