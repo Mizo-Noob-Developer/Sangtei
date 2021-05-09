@@ -38,4 +38,3 @@ bs4
 tswift
 pyrogram
 tgcrypto
-ffprobe
