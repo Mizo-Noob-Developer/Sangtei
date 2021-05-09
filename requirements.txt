@@ -40,3 +40,4 @@ pyrogram
 tgcrypto
 ffprobe
 avconv
+avprobe
