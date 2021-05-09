@@ -39,3 +39,4 @@ tswift
 pyrogram
 tgcrypto
 ffprobe
+avconv
