@@ -44,4 +44,3 @@ wget
 pytube
 ffprobe
 avprobe
-brew install ffmpeg
