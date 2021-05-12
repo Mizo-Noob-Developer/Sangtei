@@ -43,4 +43,4 @@ tgcrypto
 wget
 pytube
 ffprobe
-avconv
+avprobe
