@@ -44,3 +44,4 @@ wget
 pytube
 ffprobe
 avprobe
+telepotpro
