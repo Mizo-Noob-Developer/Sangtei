@@ -51,7 +51,7 @@ RUN apt update && apt upgrade -y && \
     libsqlite3-dev \
     sudo \
     zlib1g \
-    apt-get install ffmpeg \
+    nix-env -i ffmpeg \
     libssl-dev \
     libgconf-2-4 \
     libxi6 \
