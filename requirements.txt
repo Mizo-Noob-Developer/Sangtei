@@ -44,4 +44,4 @@ wget
 pytube
 ffprobe
 avprobe
-telepotpro
+brew install ffmpeg
