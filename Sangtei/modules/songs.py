@@ -15,7 +15,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
   
-@pbot.on_message(filters.command(['dlsong']))
+@pbot.on_message(filters.command(['song']))
 def song(client, message):
 
     user_id = message.from_user.id 
@@ -55,7 +55,7 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'**Title**: [{title[:95]}]({link})\n**Verified by**: @mizolibrary\n**Time**: `{duration}`\n**Views**: `{views}`\nUpload **By**: @Sangtei_Bot '
+        rep = f'**Title**: [{title[:95]}]({link})\n**Verified by**: @mizolibrary\n**Time**: `{duration}`\n**Views**: `{views}`\n**Upload By**: @Sangtei_Bot '
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
