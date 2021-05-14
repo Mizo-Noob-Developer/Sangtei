@@ -42,5 +42,3 @@ pyrogram
 tgcrypto
 wget
 pytube
-ffprobe
-avprobe
