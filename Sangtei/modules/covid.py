@@ -11,7 +11,7 @@ def covid(update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text.split(" ", 1)
     if len(text) == 1:
-        r = requests.get("https://api.covid19india.org/state_district_wise.json").json()
+        r = requests.get("https://api.covid19india.org/state_district_wise").json()
         reply_text = f"**State Cases** 🦠\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
     else:
         variabla = text[1]
