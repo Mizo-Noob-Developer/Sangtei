@@ -236,7 +236,7 @@ def start(update: Update, context: CallbackContext):
                                 url=f"https://github.com/lalrochhara/Sangtei",
                             ),
                             InlineKeyboardButton(
-                                text="Developer 🇱🇰",
+                                text="Developer 🇮🇳",
                                 url="https://t.me/Nickylrca",
                             ),
                         ],
