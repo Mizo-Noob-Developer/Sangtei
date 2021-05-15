@@ -26,6 +26,13 @@ For starters click on this button
 The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars)
 This repo was just revamped to suit an Anime-centric community. All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
 
+# Super Contributors❤️
+<a href="https://github.com/lalrochhara/sangtei/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lalrochhara/sangtei" />
+</a>
+
+Made with [contributors-img](https://contrib.rocks).
+
 # Sangtei Original Source
 • [Lyci](https://github.com/prabhasha-p/Lyci)
 
