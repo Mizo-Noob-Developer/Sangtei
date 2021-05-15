@@ -32,7 +32,7 @@ This repo was just revamped to suit an Anime-centric community. All original cre
 </a>
 
 • Any contribution is being accepted in Sangtei's source code.
-Every contributors are warmly welcome.
+  Every contributors are warmly welcome.
 [Contact Us](https://t.me/Sangteisupport).
 
 # Sangtei Original Source
