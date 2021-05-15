@@ -31,7 +31,8 @@ This repo was just revamped to suit an Anime-centric community. All original cre
   <img src="https://contrib.rocks/image?repo=lalrochhara/sangtei" />
 </a>
 
-Made with [contributors-img](https://contrib.rocks).
+We always welcome who want to contribute our project.
+ [Sangtei Project](https://github.com/lalrochhara/sangtei).
 
 # Sangtei Original Source
 • [Lyci](https://github.com/prabhasha-p/Lyci)
