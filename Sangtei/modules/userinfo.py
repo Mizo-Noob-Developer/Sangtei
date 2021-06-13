@@ -1,38 +1,38 @@
 import html
-import os
 import re
-import subprocess
-
+import os
 import requests
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
-from telegram.utils.helpers import escape_markdown, mention_html
-from telethon import events
+
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
+from telethon import events
 
-import Sangtei.modules.sql.userinfo_sql as sql
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
+from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext.dispatcher import run_async
+from telegram.error import BadRequest
+from telegram.utils.helpers import escape_markdown, mention_html
+
 from Sangtei import (
-    DEMONS,
     DEV_USERS,
-    DRAGONS,
-    INFOPIC,
     OWNER_ID,
+    DRAGONS,
+    DEMONS,
     TIGERS,
     WOLVES,
+    INFOPIC,
     dispatcher,
     sw,
 )
-from Sangtei import telethn as SaitamaTelethonClient
 from Sangtei.__main__ import STATS, TOKEN, USER_INFO
+import Sangtei.modules.sql.userinfo_sql as sql
 from Sangtei.modules.disable import DisableAbleCommandHandler
+from Sangtei.modules.sql.global_bans_sql import is_user_gbanned
+from Sangtei.modules.sql.afk_sql import is_afk, check_afk_status
+from Sangtei.modules.sql.users_sql import get_user_num_chats
 from Sangtei.modules.helper_funcs.chat_status import sudo_plus
 from Sangtei.modules.helper_funcs.extraction import extract_user
-from Sangtei.modules.sql.afk_sql import check_afk_status, is_afk
-from Sangtei.modules.sql.global_bans_sql import is_user_gbanned
-from Sangtei.modules.sql.users_sql import get_user_num_chats
+from Sangtei import telethn as YoneTelethonClient, TIGERS, DRAGONS, DEMONS
 
 
 def no_by_per(totalhp, percentage):
@@ -160,7 +160,7 @@ def get_id(update: Update, context: CallbackContext):
             )
 
 
-@SaitamaTelethonClient.on(
+@YoneTelethonClient.on(
     events.NewMessage(
         pattern="/ginfo ", from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or [])
     )
@@ -238,9 +238,7 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text(
-        "<code>Accessing Rent list...</code>", parse_mode=ParseMode.HTML
-    )
+    rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"╒═══「<b> Appraisal results:</b> 」\n"
@@ -308,7 +306,9 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/SangteiUpdate">?</a>]'.format(bot.username)
+        text += ' [<a href="https://t.me/SangteiUpdate">?</a>]'.format(
+            bot.username
+        )
 
     try:
         user_member = chat.get_member(user.id)
@@ -422,16 +422,7 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    process = subprocess.Popen(
-        "neofetch --stdout", shell=True, text=True, stdout=subprocess.PIPE
-    )
-    output = process.communicate()[0]
-    stats = (
-        "<b>Current stats:</b>\n"
-        + "\n"
-        + output
-        + "\n".join([mod.__stats__() for mod in STATS])
-    )
+    stats = "<b>📊 Current stats:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
@@ -526,29 +517,34 @@ def __user_info__(user_id):
 
 
 __help__ = """
+*Away from group*
+ ❍ /afk <reason>*:* mark yourself as AFK(away from keyboard).
+ ❍ brb <reason>*:* same as the afk command - but not a command.
+When marked as AFK, any mentions will be replied to with a message to say you're not available!
+
 *ID:*
- • `/id`*:* get the current group id. If used by replying to a message, gets that user's id.
- • `/gifid`*:* reply to a gif to me to tell you its file ID.
+ ❍ /id*:* get the current group id. If used by replying to a message, gets that user's id.
+ ❍ /gifid*:* reply to a gif to me to tell you its file ID.
 
 *Self addded information:* 
- • `/setme <text>`*:* will set your info
- • `/me`*:* will get your or another user's info.
-Examples:
- `/setme I am a wolf.`
- `/me @username(defaults to yours if no user specified)`
+ ❍ /setme <text>*:* will set your info
+ ❍ /me*:* will get your or another user's info.
+*Examples:* 💡
+ ➩ /setme I am a wolf.
+ ➩ /me @username(defaults to yours if no user specified)
 
 *Information others add on you:* 
- • `/bio`*:* will get your or another user's bio. This cannot be set by yourself.
-• `/setbio <text>`*:* while replying, will save another user's bio 
-Examples:
- `/bio @username(defaults to yours if not specified).`
- `/setbio This user is a wolf` (reply to the user)
+ ❍ /bio*:* will get your or another user's bio. This cannot be set by yourself.
+ ❍ /setbio <text>*:* while replying, will save another user's bio 
+*Examples:* 💡
+ ➩ /bio @username(defaults to yours if not specified).`
+ ➩ /setbio This user is a wolf` (reply to the user)
 
 *Overall Information about you:*
- • `/info`*:* get information about a user. 
+ ❍ /info*:* get information about a user. 
  
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/HiTechRockets)
+ Come and see [HP System explained](https://t.me/OnePunchUpdates/192)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
@@ -571,7 +567,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "Info❓"
+__mod_name__ = "Infos"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER,
