@@ -39,13 +39,13 @@ def _onUnMuteRequest(client, cb):
                 except UserNotParticipant:
                     client.answer_callback_query(
                         cb.id,
-                        text=f"❗ අපේ @{channel} channel එකට Join වෙලා 'UnMute Me' button එක ආපහු ඔබන්න.",
+                        text=f"❗ Join our @{channel} channel and press the 'UnMute Me' button again.",
                         show_alert=True,
                     )
             else:
                 client.answer_callback_query(
                     cb.id,
-                    text="❗ ඔයාව වෙන හේතුවක් නිසා Admin ල mute කරලයි ඉන්නෙ.",
+                    text="❗ You have been muted by the admin for another reason.",
                     show_alert=True,
                 )
         else:
@@ -61,7 +61,7 @@ def _onUnMuteRequest(client, cb):
             else:
                 client.answer_callback_query(
                     cb.id,
-                    text="❗ අවවාදයයි: ඔයාට කතාකරන්න පුලුවන්කම තියෙද්දි button එක click කරන්න එපා.",
+                    text="❗ Warning: Do not click the button when you can talk.",
                     show_alert=True,
                 )
 
@@ -83,7 +83,7 @@ def _check_member(client, message):
             except UserNotParticipant:
                 try:
                     sent_message = message.reply_text(
-                        "**ආයුබෝවන් {} 🙏 \n\nඔයා අපේ @{} Channel එකට තාම Join වෙලා නෑ 🥺 \nකරුණාකරල ඒකට Join වෙලා පහල තියන UnMute Me Button එක touch කරන්න.\n\n[👉 OUR CHANNEL 👈](https://t.me/{})**".format(
+                        "**Hello {} 🙏 \n\nYou have not joined our @{channel} yet 🥺 \nPlease join it and touch the UnMute Me Button below.\n\n[👉 OUR CHANNEL 👈](https://t.me/{})**".format(
                             message.from_user.mention, channel, channel
                         ),
                         disable_web_page_preview=True,
@@ -109,13 +109,13 @@ def _check_member(client, message):
                     )
                 except ChatAdminRequired:
                     sent_message.edit(
-                        "❗ **මම මේකෙ Admin නෙමෙයි..**\n__මට Ban Permissions එක්ක Admin දීල ආපහු උත්සාහ කරන්න.. \n#Ending FSub...__"
+                        "❗ **I am not the admin of this..**\n__Give me Admin with Ban Permissions and try again.. \n#Ending FSub...__"
                     )
 
             except ChatAdminRequired:
                 client.send_message(
                     chat_id,
-                    text=f"❗ **මම @{channel} එකේ Admin නෙමෙයි.**\n__මට ඒකෙ Admin දීල ආපහු Add කරන්න.\n#Leaving this chat...__",
+                    text=f"❗ **I am not the admin of @{channel}.**\n__Give me the admin and add it again.\n#Leaving this chat...__",
                 )
 
 
@@ -180,8 +180,8 @@ def config(client, message):
 __help__ = """
 *Force Subscribe*
 
-• ඔයාගෙ ගෲප් එකේ මෙම්බර්ස්ල Channel එකක් හෝ කිහිපයක් Subscribe කරනකන් Message දාන එක නවත්තන්න මට පුලුවන්.
-• සාමාජිකයන් ඔබේ Channel එකට සම්බන්ධ නොවූයේ නම් මම ඔවුන්ව නිශ්ශබ්ද කර channel එකට සම්බන්ධ වන ලෙස පවසන්න සහ බොත්තමක් එබීමෙන් ඔවුන්ව නැවත කතාකරවීමට මට පුලුවන්.
+• I can stop texting members of your group until they subscribe to one or more channels.
+• If members are not connected to your channel I can silence them and ask them to join the channel and I can call them back at the push of a button.
 
 *Setup*
 ❗First of all add me in the group as admin with ban users permission and in the channel as admin.
@@ -194,7 +194,7 @@ Note: Only creator of the group can setup me and i will not allow force subscrib
  - /ForceSubscribe clear - To unmute all members who muted by me.
 Note: /FSub is an alias of /ForceSubscribe
 
-💬 Only on Sinhala 🇱🇰 yet
+💬 Only on Mizoram yet
  
 """
 __mod_name__ = "FSubscribe 💬"
