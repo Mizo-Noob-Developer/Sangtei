@@ -10,12 +10,13 @@
 from pyrogram import filters
 
 from Sangtei.function.pluginhelpers import admins_only, get_text
+from Sangtei.services.pyrogram import pbot
 
 
 @pbot.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
 @admins_only
 async def tagall(client, message):
-    await message.reply("Processing.....")
+    await message.reply("`Processing.....`")
     sh = get_text(message)
     if not sh:
         sh = "Hi!"
@@ -29,7 +30,7 @@ async def tagall(client, message):
         await client.send_message(message.chat.id, j, parse_mode="html")
 
 
-mod_name = "Tagall"
-help = """
+__mod_name__ = "Tagall"
+__help__ = """
 - /tagall : Tag everyone in a chat
 """
