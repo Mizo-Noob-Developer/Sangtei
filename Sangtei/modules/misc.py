@@ -83,7 +83,7 @@ def markdown_help(update: Update, context: CallbackContext):
 __help__ = """
 *Available commands:*
 *Bluetext clean:*
-•   /bluetext `<yes/on/enable/off/disable>` *:* to clean bluetext command from user.
+•   /cleanblue `<yes/on/enable/off/disable>` *:* to clean bluetext command from user.
 *Markdown:*
  •  /markdownhelp *:* quick summary of how markdown works in telegram - can only be called in private chats
 *Paste:*
