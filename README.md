@@ -35,9 +35,6 @@ This repo was just revamped to suit an Anime-centric community. All original cre
   Every contributors are warmly welcome.
 [Contact Us](https://t.me/Sangteisupport).
 
-# Sangtei Original Source
-• [Lyci](https://github.com/prabhasha-p/Lyci)
-
 # Sangtei's License
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
