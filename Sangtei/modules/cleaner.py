@@ -252,3 +252,4 @@ __handlers__ = [
     LIST_CLEAN_BLUE_TEXT_HANDLER,
     (CLEAN_BLUE_TEXT_HANDLER, BLUE_TEXT_CLEAN_GROUP),
 ]
+__mod_name__ = "Bluetext Clean"
