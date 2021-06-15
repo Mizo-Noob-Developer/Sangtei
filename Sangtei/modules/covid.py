@@ -1,23 +1,55 @@
-import requests
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
+from telegram import ParseMode, Update, Bot, Chat
+from telegram.ext import CommandHandler, MessageHandler, BaseFilter, run_async
 
 from Sangtei import dispatcher
-from Sangtei.modules.disable import DisableAbleCommandHandler
+
+import requests
+
+import json
+from urllib.request import urlopen
 
 
-@run_async
-def covid(update: Update, context: CallbackContext):
+def covindia(bot: Bot, update: Update):
     message = update.effective_message
-    text = message.text.split(" ", 1)
-    if len(text) == 1:
-        r = requests.get("https://api.covid19india.org/state_district_wise").json()
-        reply_text = f"**State Cases** 🦠\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
+    state = ''
+    confirmed = 0
+    deceased = 0
+    recovered = 0
+    state_input = ''.join([message.text.split(' ')[i] + ' ' for i in range(1, len(message.text.split(' ')))]).strip()
+    if state_input:
+        url_india = 'https://api.covid19india.org/data.json'
+        json_url = urlopen(url_india)
+        state_dict = json.loads(json_url.read())
+        for sdict in state_dict['statewise']:
+            if sdict['state'].lower() == state_input.lower():
+                confirmed = sdict['confirmed']
+                deceased = sdict['deaths']
+                recovered = sdict['recovered']
+                state = sdict['state']
+                break
+    
+    if state:
+        bot.send_message(
+            message.chat.id,
+            '`COVID-19 Tracker`\n*Number of confirmed cases in %s:* %s\n*Deceased:* %s\n*Recovered:* %s\n\n_Source:_ covid19india.org' % (state, confirmed, deceased, recovered),
+            parse_mode = ParseMode.MARKDOWN,
+            disable_web_page_preview = True
+        )
     else:
-        variabla = text[1]
-        r = requests.get(f"https://corona.lmao.ninja/v2/countries/{variabla}").json()
-        reply_text = f"**Cases for {r['country']} 🦠**\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
-    message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
+        bot.send_message(
+            message.chat.id,
+            'You need to specify a valid Indian state!',
+            parse_mode = ParseMode.MARKDOWN,
+            disable_web_page_preview = True
+        )
 
-COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
-dispatcher.add_handler(COVID_HANDLER)
+__help__ = """
+ 
+ - /covindia <state>: Get real time COVID-19 stats for the input Indian state
+"""
+
+__mod_name__ = 'COVID-19 VIRUS'
+
+COV_INDIA_HANDLER = CommandHandler('covindia', covindia)
+
+dispatcher.add_handler(COV_INDIA_HANDLER)
