@@ -1,1 +1,0 @@
-A ho emai lu buk..
