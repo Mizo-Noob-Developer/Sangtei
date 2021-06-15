@@ -242,6 +242,13 @@ dispatcher.add_handler(REMOVE_CLEAN_BLUE_TEXT_GLOBAL_HANDLER)
 dispatcher.add_handler(LIST_CLEAN_BLUE_TEXT_HANDLER)
 dispatcher.add_handler(CLEAN_BLUE_TEXT_HANDLER, BLUE_TEXT_CLEAN_GROUP)
 
+__help__ = """
+Cleanblue allows you to take action on users that send bluetext messages in group. \
+will automatic delete that bluetext.
+ This will clean bluetext if they send blue messages in your group, bots are ignored.
+ •  /cleanblue <on/yes/off/enable/off> to enabled bluetext cleaner.
+ """
+__mod_name__ = "Clean Blue"
 
 __handlers__ = [
     SET_CLEAN_BLUE_TEXT_HANDLER,
@@ -252,4 +259,3 @@ __handlers__ = [
     LIST_CLEAN_BLUE_TEXT_HANDLER,
     (CLEAN_BLUE_TEXT_HANDLER, BLUE_TEXT_CLEAN_GROUP),
 ]
-__mod_name__ = "Bluetext"
