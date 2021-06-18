@@ -38,7 +38,7 @@ def covindia(bot: Bot, update: Update):
     else:
         bot.send_message(
             message.chat.id,
-            'You need to specify a valid Indian state!',
+            'You need to specify a valid Indian state!!',
             parse_mode = ParseMode.MARKDOWN,
             disable_web_page_preview = True
         )
