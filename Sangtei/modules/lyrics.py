@@ -46,3 +46,12 @@ dispatcher.add_handler(LYRICS_HANDLER)
 
 __command_list__ = ["lyrics"]
 __handlers__ = [LYRICS_HANDLER]
+
+__help__ = """
+*• Lyrics search *
+To use this Lyrics  search command,
+Folloe this step.
+• /Lyrics <song name/title>
+Miss Sangtei will reply you with your lyrics."""
+
+__mod_name__ = "Lyrics"
