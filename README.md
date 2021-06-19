@@ -40,5 +40,5 @@ This repo was just revamped to suit an Anime-centric community. All original cre
 
 # [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-# https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white By,
+# [!(https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white) By,
  • <a href="https://music.zostream.in/">ZoStream.</a>
