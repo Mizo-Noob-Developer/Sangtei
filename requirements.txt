@@ -43,3 +43,5 @@ tgcrypto
 wget
 pytube
 pyowm
+pymongo
+motor
