@@ -46,3 +46,4 @@ pyowm
 pymongo
 motor
 PyYAML>5.0
+dnspython
