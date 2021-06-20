@@ -42,3 +42,4 @@ pyrogram
 tgcrypto
 wget
 pytube
+pyowm
