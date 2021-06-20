@@ -73,26 +73,6 @@
          "required": true,
          "value": ""
       },
-       "OPENWEATHERMAP_ID": {
-      "description": "weather api(https://api.openweathermap.org)",
-      "required": True
-      "value": "",
-      },
-      "MONGO_URI": {
-      "description": "Create A Database In Mongodb And Get URL",
-      "required": true
-      "value": "",
-      },
-       "MONGO_PORT": {
-      "description": "Dont change",
-      "required": false
-      "value": "27017",
-      },
-      "MONGO_DB": {
-      "description": "Don't change.",
-      "required": false
-      "value": "Sangtei",
-      },
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Sangtei support then keep the current ID's here at they are and add yours.",
          "required": false,
