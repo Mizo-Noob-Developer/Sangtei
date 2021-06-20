@@ -86,6 +86,7 @@ if ENV:
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
+    API_WEATHER  = os.environ.get('API_OPENWEATHER',True)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -152,6 +153,7 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     LASTFM_API_KEY = Config.LASTFM_API_KEY
+    API_OPENWEATHER = Config.API_OPENWEATHER
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
