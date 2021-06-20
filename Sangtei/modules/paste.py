@@ -1,9 +1,8 @@
 import requests
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
-
 from Sangtei import dispatcher
 from Sangtei.modules.disable import DisableAbleCommandHandler
+from telegram import ParseMode, Update
+from telegram.ext import CallbackContext, run_async
 
 
 @run_async
@@ -30,7 +29,7 @@ def paste(update: Update, context: CallbackContext):
 
     url = f"https://nekobin.com/{key}"
 
-    reply_text = f"Text Pasted to *Nekobin*\n\n👉 {url}"
+    reply_text = f"Nekofied to *Nekobin* : {url}"
 
     message.reply_text(
         reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
@@ -40,5 +39,5 @@ def paste(update: Update, context: CallbackContext):
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
 dispatcher.add_handler(PASTE_HANDLER)
 
-__command_list__ = ["paste"]
-__handlers__ = [PASTE_HANDLER]
+command_list = ["paste"]
+handlers = [PASTE_HANDLER]
