@@ -19,12 +19,13 @@ def covid(update: Update, context: CallbackContext):
         reply_text = f"**Cases for {r['country']} 🦠**\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
-
-COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
-dispatcher.add_handler(COVID_HANDLER)
-
 __help__ = """
  • /covid for global statistics.
  • /covid <state/country> to know your country/state.
 """
 __mod_name__ = "Covid-19"
+
+COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
+dispatcher.add_handler(COVID_HANDLER)
+
+
