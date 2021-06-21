@@ -2,7 +2,7 @@ from telegram import ParseMode, Update, Bot, Chat
 from telegram.ext import CommandHandler, MessageHandler, BaseFilter, run_async
 
 from Sangtei import dispatcher
-from Sangtei.modules.helper_funcs.alternate import send_message
+from Sangtei.modules.helper_funcs.filepawimawh import send_message
 from Sangtei.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 import os
 import json
