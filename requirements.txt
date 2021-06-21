@@ -47,3 +47,4 @@ pymongo
 motor
 PyYAML>5.0
 dnspython
+tabulate
