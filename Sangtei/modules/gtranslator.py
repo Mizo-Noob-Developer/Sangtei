@@ -123,7 +123,7 @@ def totranslate(update: Update, context: CallbackContext):
             "Reply to messages or write messages from other languages ​​for translating into the intended language\n\n"
             "Example: `/tr en-hi` to translate from English to Hindi\n"
             "Or use: `/tr mz, hi, en` for automatic detection and translating it into Mizo, English, Hindi.\n"
-            "See [List of Language Codes](t.me/Sangteiupdate) for a list of language codes.",
+            "See [List of Language Codes](https://t.me/SangteiUpdate/18) for a list of language codes.",
             parse_mode="markdown",
             disable_web_page_preview=True,
         )
