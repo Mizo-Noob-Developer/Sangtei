@@ -11,6 +11,6 @@ Powerful Abilities*
 
 Developer [Nicky Lalrochhara](http://t.me/Nickylrca) 🇮🇳
 
-[GitHub](https://github.com/lalrochhara)"""
+[Sangtei Music Player🎵](https://t.me/sangteibot)"""
 
 __mod_name__ = "About 🇮🇳"
