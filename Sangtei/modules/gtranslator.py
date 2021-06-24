@@ -121,9 +121,9 @@ def totranslate(update: Update, context: CallbackContext):
     except IndexError:
         update.effective_message.reply_text(
             "Reply to messages or write messages from other languages ​​for translating into the intended language\n\n"
-            "Example: `/tr en-si` to translate from English to Sinhala\n"
-            "Or use: `/tr si` for automatic detection and translating it into Sinhala.\n"
-            "See [List of Language Codes](t.me/HiTechRockets/5) for a list of language codes.",
+            "Example: `/tr en-hi` to translate from English to Hindi\n"
+            "Or use: `/tr mz, hi, en` for automatic detection and translating it into Mizo, English, Hindi.\n"
+            "See [List of Language Codes](t.me/Sangteiupdate) for a list of language codes.",
             parse_mode="markdown",
             disable_web_page_preview=True,
         )
@@ -137,7 +137,7 @@ __help__ = """
 •  /tr  or  /tl  `(language code)` as reply to a long message
 *Example:* 
    /tr `en` *:* translates something to english
-   /tr `si-en`*:* translates Sinhala to english
+   /tr `hi-en`*:* translates Hindi to english
 """
 
 TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
