@@ -223,7 +223,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="👥 Support Group",
-                                url=f"https://t.me/Sangteisupport",
+                                url=f"https://t.me/joinchat/FlMWfMyVSNZjZjhl",
                             ),
                             InlineKeyboardButton(
                                 text="📌 Updates Channel",
