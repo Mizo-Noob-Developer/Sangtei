@@ -57,14 +57,14 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} is here!",
-                "{} is back with a bang!",
-                "{} is now in the chat after all things over!",
-                "{} is awake!",
-                "{} is back online!",
-                "{} is finally here!",
-                "Welcome back! {}",
-                "Where is {}?\nIn the chat!",
+                "{} Chu a lo kir leh ta e!",
+                "{} Chu thawm dim lo takin a lo kir e!",
+                "{} Chu a tihtur a zawh fel tawh hnu ah a lo kir e!",
+                "{} Chu a tho leh ta!",
+                "{} Chu a rawn online leh tawh e!",
+                "{} Chu a tawp ah chuan a rawn kir ve leh ta!",
+                "Kan lo lawm leh a che! {}",
+                "Khawi ah nge {}?\nHi he chat ah hian!",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -140,16 +140,16 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk.\nReason: <code>{}</code>".format(
+            res = "{} chu a afk rih.\nA chhan: <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
 
 
 __help__ = """
- •  /afk `<reason>`*:* mark yourself as AFK(away from keyboard).
- •  brb `<reason>`*:* same as the afk command - but not a command.
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
+ •  /afk `<sawifiah na>`*:* nangmah leh nangmah AFK(away from keyboard) a in dahna.
+ •  brb `<sawifiah na>`*:* afk command nen a in ang reng - mahse command ani ve lo.
+Chuan AFK a i in dah anih chuan, nangmah an mention na zawng zawng ah che, i hman loh thu a reply zel ani ang!
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
