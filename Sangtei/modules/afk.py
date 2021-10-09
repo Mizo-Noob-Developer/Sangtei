@@ -37,7 +37,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} is now away!{}".format(fname, notice))
+        update.effective_message.reply_text("{} chu tun atan chuan a hman rih lo!{}".format(fname, notice))
     except BadRequest:
         pass
 
@@ -57,12 +57,12 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} Chu a lo kir leh ta e!",
-                "{} Chu thawm dim lo takin a lo kir e!",
-                "{} Chu a tihtur a zawh fel tawh hnu ah a lo kir e!",
-                "{} Chu a tho leh ta!",
-                "{} Chu a rawn online leh tawh e!",
-                "{} Chu a tawp ah chuan a rawn kir ve leh ta!",
+                "{} A lo kir leh ta e!",
+                "{} Thawm dim lo takin a lo kir e!",
+                "{} A tihtur a zawh fel tawh hnu ah a lo kir e!",
+                "{} A tho leh ta!",
+                "{} A rawn online leh tawh e!",
+                "{} A tawp ah chuan a rawn kir ve leh ta!",
                 "Kan lo lawm leh a che! {}",
                 "Khawi ah nge {}?\nHi he chat ah hian!",
             ]
