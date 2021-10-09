@@ -76,16 +76,16 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = "Hi {}, my name is {} 👸\n\nI'm a Powerful group manager bot With Cool Modules. Made by [Nicky Lalrochhara](t.me/Nickylrca)\n\nHit /help to find my list of available commands"
+PM_START_TEXT = "Chibai {}, ka hming chu {} ani. 👸\n\nKei hi telegram group enkawl tur a siam ka ni. Developer  [Nicky Lalrochhara](t.me/Nickylrca)\n\nHit /help to find my list of available commands"
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Powerful group management bot, here to help you get around and keep the order in your groups!
+Howdy! Ka hming chu *{}* ani.
+Kei hi Group management bot ka ni, heng te hmang hian i group tha tak in ka enkawl sak thei che!
 
-*Main* commands available:
- ✪ /help: PM's you this message.
- ✪ /help <module name>: PM's you info about that module.
- ✪ /donate: information on how to donate!
+*Main* commands hman theih te:
+ ✪ /help: PM lam ah ka hrilh ang che.
+ ✪ /help <module hming>: PM lam ah modules hrilhfiah na ka hrilh ang che.
+ ✪ /donate: engtin nge donation tih dan tur tuh ka hrilh ang che!
  ✪ /settings:
    ◔ in PM: will send you your settings for all supported modules.
    ◔ in a group: will redirect you to pm, with all that chat's settings.
@@ -97,7 +97,7 @@ I'm a Powerful group management bot, here to help you get around and keep the or
 
 Sangtei_IMG = "https://1.bp.blogspot.com/-rsWtl7fFhTs/YJRDqJ3NTRI/AAAAAAAAJBY/1REF6FQLBS8pa4WPaa0RJFr7c7SSHTCDwCLcBGAsYHQ/s0/main-qimg-396b1449a73cd7198c4edc337b5cae80.webp"
 
-DONATE_STRING = """Hey, glad to hear you want to donate for developer. This bot runs on heroku so bot slow down some times and developer cannot add more modules due to heroku can't run them.\n\nBetter if my developer recieved a VPS to run the bot. Contact him and help him to continue this.\n\nDeveloper: [Nicky Lalrochhara](t.me/Nickylrca) 🤗😁"""
+DONATE_STRING = """Hey, min siamtu ka developer tan pawisa donate i duh tih hriat chu a nuam hle mai. Kei hi heroku lam ah a thlawn a run ka ni a, modules tha tak tak dah dawn in heroku lam atanga phal chin a awm avangin tih theih ani thin lo a.\n\nA tha ber ah chuan ka developer hian VPS host a neih theih chuan ka tangkai zual sawt dawn ani. Contact la han tanpui rawh le.\n\nDeveloper: [Nicky Lalrochhara](t.me/Nickylrca) 🤗😁"""
 
 IMPORTED = {}
 MIGRATEABLE = []
