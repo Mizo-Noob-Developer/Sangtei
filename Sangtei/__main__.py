@@ -560,7 +560,7 @@ def get_settings(update: Update, context: CallbackContext):
                 ),
             )
         else:
-            text = "Click here to check your settings."
+            text = "I setting te en tur in hmet rawh."
 
     else:
         send_settings(chat.id, user.id, True)
@@ -578,8 +578,8 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 1469528232 and DONATION_LINK:
             update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
+                "Tun a min ti nung mek tu hi donation i pe thei tho bawk ania "
+                "[hetah hian]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -593,11 +593,11 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "Min siamtu i tanpui theih dan tur PM lam ah ka rawn thawn che!"
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
+                "PM lam ah min be hmasa la, donation chungchang hre tur in."
             )
 
 
