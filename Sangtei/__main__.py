@@ -578,7 +578,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 1469528232 and DONATION_LINK:
             update.effective_message.reply_text(
-                "Tun a min ti nung mek tu hi donation i pe thei tho bawk ania "
+                "Paypal kaltlang pawh hian donation i pe thei tho bawk ania "
                 "[hetah hian]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
