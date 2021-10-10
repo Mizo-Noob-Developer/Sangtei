@@ -37,14 +37,14 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     if not (promoter.can_promote_members or
             promoter.status == "creator") and not user.id in DRAGONS:
-        message.reply_text("You don't have the necessary rights to do that!")
+        message.reply_text("He thil ti tur hian phalna i nei lo!")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "User emaw an id dik tak emaw min pe tel reng reng hleinem.."
         )
         return
 
@@ -55,12 +55,12 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     if user_member.status == 'administrator' or user_member.status == 'creator':
         message.reply_text(
-            "How am I meant to promote someone that's already an admin?")
+            "Admin ni tawh sa chu engtiang chiah a promote tur in nge min duh?")
         return
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't promote myself! Get an admin to do it for me.")
+            "Keimah leh keimah ka in promote thei leuh! Admin hneh ah ka tana ti tur in sawi rawh.")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -81,14 +81,14 @@ def promote(update: Update, context: CallbackContext) -> str:
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
             message.reply_text(
-                "I can't promote someone who isn't in the group.")
+                "Group a awm ve lo tumah ka promote thei leuh.")
         else:
-            message.reply_text("An error occured while promoting.")
+            message.reply_text("Promote dawn lai in chianglo a awm tlat mai.")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b>!",
+        f"Hlawhtling taka Promoted ani <b>{user_member.user.first_name or user_id}</b>!",
         parse_mode=ParseMode.HTML)
 
     log_message = (
@@ -118,7 +118,7 @@ def demote(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "User hming emaw id emaw dik tak min pe tel lo a.."
         )
         return
 
@@ -129,16 +129,16 @@ def demote(update: Update, context: CallbackContext) -> str:
 
     if user_member.status == 'creator':
         message.reply_text(
-            "This person CREATED the chat, how would I demote them?")
+            "Hei hi group siamtu ani a, engtin nge ka Demoted theih ngawt ang?")
         return
 
     if not user_member.status == 'administrator':
-        message.reply_text("Can't demote what wasn't promoted!")
+        message.reply_text("Ka Demoted thei lo, mi tuemaw promoted la ni lo chu!")
         return
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't demote myself! Get an admin to do it for me.")
+            "Keimah leh keimah ka in demote thei leuh! Admin hnen ah sawi la ka tan a ti tur in.")
         return
 
     try:
@@ -156,7 +156,7 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         bot.sendMessage(
             chat.id,
-            f"Sucessfully demoted <b>{user_member.user.first_name or user_id}</b>!",
+            f"Hlawhtling taka demote ani <b>{user_member.user.first_name or user_id}</b>!",
             parse_mode=ParseMode.HTML)
 
         log_message = (
@@ -169,8 +169,8 @@ def demote(update: Update, context: CallbackContext) -> str:
         return log_message
     except BadRequest:
         message.reply_text(
-            "Could not demote. I might not be admin, or the admin status was appointed by another"
-            " user, so I can't act upon them!")
+            "Ka demote thei lo. Admin ka ni lo ani maithei, emaw admin nihna hi midang pek ani maithei"
+            " user, an chunga lêng angin ka awm thei lo!")
         return
 
 
@@ -182,7 +182,7 @@ def refresh_admin(update, _):
     except KeyError:
         pass
 
-    update.effective_message.reply_text("Admins cache refreshed!")
+    update.effective_message.reply_text("Admin te cache chu tih fai ani e")
 
 
 @run_async
@@ -205,25 +205,25 @@ def set_title(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "User hming emaw id dik tak min pe tal lo ni in a lang.."
         )
         return
 
     if user_member.status == 'creator':
         message.reply_text(
-            "This person CREATED the chat, how can i set custom title for him?")
+            "Hei hian group a siam a, engtin nge hming lem ka pek theih ang?")
         return
 
     if not user_member.status == 'administrator':
         message.reply_text(
-            "Can't set title for non-admins!\nPromote them first to set custom title!"
+            "Admin ni lo ho Hming lem ka pe thei lo!\nHming lem pe tur chuan promote vek hmasa rawh!"
         )
         return
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't set my own title myself! Get the one who made me admin to do it for me."
-        )
+            "Keimah leh keimah hming lem ka in pe thei lo! Admin a min siamtu admin hnen ah khan va sawi rawh."
+       
         return
 
     if not title:
@@ -232,20 +232,20 @@ def set_title(update: Update, context: CallbackContext):
 
     if len(title) > 16:
         message.reply_text(
-            "The title length is longer than 16 characters.\nTruncating it to 16 characters."
+            "Hming lem hi a seizawng 16 characters ai in a sei tawh.\n16 characters chiah chiah tur in ti tha rawh."
         )
 
     try:
         bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
     except BadRequest:
         message.reply_text(
-            "I can't set custom title for admins that I didn't promote!")
+            "Admin ka promote ni lo ho hming lem ka pe thei lo!")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully set title for <code>{user_member.user.first_name or user_id}</code> "
-        f"to <code>{html.escape(title[:16])}</code>!",
+        f"Hming lem chu hlawhtling taka siam ani hemi <code>{user_member.user.first_name or user_id}</code> tan hian "
+        f"ti hian <code>{html.escape(title[:16])}</code>!",
         parse_mode=ParseMode.HTML)
 
 
@@ -359,10 +359,10 @@ def adminlist(update, context):
 
     try:
         msg = update.effective_message.reply_text(
-            'Fetching group admins...', parse_mode=ParseMode.HTML)
+            'Group admin te lak khawm mek ani...', parse_mode=ParseMode.HTML)
     except BadRequest:
         msg = update.effective_message.reply_text(
-            'Fetching group admins...', quote=False, parse_mode=ParseMode.HTML)
+            'Group admin te lak khawm mek ani...', quote=False, parse_mode=ParseMode.HTML)
 
     administrators = bot.getChatAdministrators(chat_id)
     text = "Admins in <b>{}</b>:".format(
@@ -376,7 +376,7 @@ def adminlist(update, context):
         custom_title = admin.custom_title
 
         if user.first_name == '':
-            name = "☠ Deleted Account"
+            name = "☠ Account nung tawh lo"
         else:
             name = "{}".format(
                 mention_html(
@@ -391,14 +391,14 @@ def adminlist(update, context):
 
         #if user.username:
         #    name = escape_markdown("@" + user.username)
-        if status == "creator":
-            text += "\n 👑 Creator:"
+        if status == "siamtu":
+            text += "\n 👑 Siamtu:"
             text += "\n<code> • </code>{}\n".format(name)
 
             if custom_title:
                 text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
 
-    text += "\n🔱 Admins:"
+    text += "\n🔱 Admin te:"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -409,7 +409,7 @@ def adminlist(update, context):
         custom_title = admin.custom_title
 
         if user.first_name == '':
-            name = "☠ Deleted Account"
+            name = "☠ Account delete tawh"
         else:
             name = "{}".format(
                 mention_html(
@@ -443,7 +443,7 @@ def adminlist(update, context):
             text += "\n<code> • </code>{}".format(admin)
         text += "\n"
 
-    text += "\n🤖 Bots:"
+    text += "\n🤖 Bot awm mek:"
     for each_bot in bot_admin_list:
         text += "\n<code> • </code>{}".format(each_bot)
 
