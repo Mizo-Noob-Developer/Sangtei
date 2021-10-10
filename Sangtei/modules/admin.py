@@ -223,7 +223,6 @@ def set_title(update: Update, context: CallbackContext):
     if user_id == bot.id:
         message.reply_text(
             "Keimah leh keimah hming lem ka in pe thei lo! Admin a min siamtu admin hnen ah khan va sawi rawh."
-       )
        return
 
     if not title:
