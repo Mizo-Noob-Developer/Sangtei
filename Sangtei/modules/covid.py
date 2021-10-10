@@ -12,11 +12,11 @@ def covid(update: Update, context: CallbackContext):
     text = message.text.split(" ", 1)
     if len(text) == 1:
         r = requests.get("https://corona.lmao.ninja/v2/all").json()
-        reply_text = f"**Global Totals** 🦠\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
+        reply_text = f"**Khawvel pum belhkhawm** 🦠\nCase awm zat: {r['cases']:,}\nVawiin lam case: {r['todayCases']:,}\nThih pui: {r['deaths']:,}\nVawiin a thi zat: {r['todayDeaths']:,}\nDam chhuak: {r['recovered']:,}\nVei mek: {r['active']:,}\nTlak hniamna: {r['critical']:,}\nCase/Za zel ah: {r['casesPerOneMillion']}\nThi zat/Za zel ah: {r['deathsPerOneMillion']}"
     else:
         variabla = text[1]
         r = requests.get(f"https://corona.lmao.ninja/v2/countries/{variabla}").json()
-        reply_text = f"**Cases for {r['country']} 🦠**\nCases: {r['cases']:,}\nCases Today: {r['todayCases']:,}\nDeaths: {r['deaths']:,}\nDeaths Today: {r['todayDeaths']:,}\nRecovered: {r['recovered']:,}\nActive: {r['active']:,}\nCritical: {r['critical']:,}\nCases/Mil: {r['casesPerOneMillion']}\nDeaths/Mil: {r['deathsPerOneMillion']}"
+        reply_text = f"**{r['country']} a case awm zat 🦠**\nCase awm mek: {r['cases']:,}\nVawiin lama hmuh thar: {r['todayCases']:,}\nThih pui: {r['deaths']:,}\nVawiin a thi zat: {r['todayDeaths']:,}\nDam chhuak: {r['recovered']:,}\nVei mek: {r['active']:,}\nTlak hniam na: {r['critical']:,}\nCase/Za zel ah: {r['casesPerOneMillion']}\nThi zat/Za zel ah: {r['deathsPerOneMillion']}"
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
 __help__ = """
