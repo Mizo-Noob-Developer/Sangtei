@@ -1,5 +1,9 @@
 from typing import Optional
 
+import Sangtei.modules.sql.rules_sql as sql
+from Sangtei import dispatcher
+from Sangtei.modules.helper_funcs.chat_status import user_admin
+from Sangtei.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -11,11 +15,6 @@ from telegram import (
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import escape_markdown
-
-import Sangtei.modules.sql.rules_sql as sql
-from Sangtei import dispatcher
-from Sangtei.modules.helper_funcs.chat_status import user_admin
-from Sangtei.modules.helper_funcs.string_handling import markdown_parser
 
 
 @run_async
@@ -35,7 +34,7 @@ def send_rules(update, chat_id, from_pm=False):
             bot.send_message(
                 user.id,
                 "The rules shortcut for this chat hasn't been set properly! Ask admins to "
-                "fix this.",
+                "fix this.\nMaybe they forgot the hyphen in ID",
             )
             return
         else:
@@ -56,12 +55,12 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules:
         update.effective_message.reply_text(
-            "Contact me in PM to get this group's rules.",
+            "Please click the button below to see the rules.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules 👣", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="Rules", url=f"t.me/{bot.username}?start={chat_id}"
                         )
                     ]
                 ]
@@ -101,7 +100,7 @@ def clear_rules(update: Update, context: CallbackContext):
 
 
 def __stats__():
-    return f"{sql.num_chats()} chats have rules set."
+    return f"• {sql.num_chats()} chats have rules set."
 
 
 def __import_data__(chat_id, data):
@@ -119,14 +118,14 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- •  /rules *:* get the rules for this chat.
+ ❍ /rules*:* get the rules for this chat.
 
 *Admins only:*
- •  /setrules `<your rules here>`*:* set the rules for this chat.
- •  /clearrules *:* clear the rules for this chat.
+ ❍ /setrules <your rules here>*:* set the rules for this chat.
+ ❍ /clearrules*:* clear the rules for this chat.
 """
 
-__mod_name__ = "Rules 👣"
+__mod_name__ = "Rules"
 
 GET_RULES_HANDLER = CommandHandler("rules", get_rules, filters=Filters.group)
 SET_RULES_HANDLER = CommandHandler("setrules", set_rules, filters=Filters.group)
