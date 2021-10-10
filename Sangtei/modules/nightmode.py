@@ -314,4 +314,4 @@ __help__ = """
 • /Nightmode <on/off/enable> nighmode on leh off na tur
 """
 
-__mode_name__ = "Nighmode"
+__mod_name__ = "Nighmode"
