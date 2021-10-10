@@ -21,24 +21,24 @@ from Sangtei.modules.log_channel import loggable
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
     if not user_id:
-        reply = "You don't seem to be referring to a user or the ID specified is incorrect.."
+        reply = "User hming emaw a id emaw dik tak min pe lo tlat.."
         return reply
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
-        if excp.message == "User not found":
-            reply = "I can't seem to find this user"
+        if excp.message == "User hi hmuh ani lo":
+            reply = "He user hi ka hmu thei lo tlat"
             return reply
         else:
             raise
 
     if user_id == bot.id:
-        reply = "I'm not gonna MUTE myself, How high are you?"
+        reply = "Keimah leh keimah ka in Muted nguar ang, I kai viau em ni?"
         return reply
 
     if is_user_admin(chat, user_id, member) or user_id in TIGERS:
-        reply = "Can't. Find someone else to mute but not this one."
+        reply = "A theih loh. Ani tih loh hi chu mute tur ka hmu lo."
         return reply
 
     return None
@@ -74,20 +74,20 @@ def mute(update: Update, context: CallbackContext) -> str:
     )
 
     if reason:
-        log += f"\n<b>Reason:</b> {reason}"
+        log += f"\n<b>A chhan:</b> {reason}"
 
     if member.can_send_messages is None or member.can_send_messages:
         chat_permissions = ChatPermissions(can_send_messages=False)
         bot.restrict_chat_member(chat.id, user_id, chat_permissions)
         bot.sendMessage(
             chat.id,
-            f"Muted <b>{html.escape(member.user.first_name)}</b> with no expiration date!",
+            f"Muted <b>{html.escape(member.user.first_name)}</b> tâwp chin awm lo in!",
             parse_mode=ParseMode.HTML,
         )
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("He user hi muted ani tawh!")
 
     return ""
 
@@ -106,7 +106,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You'll need to either give me a username to unmute, or reply to someone to be unmuted."
+            "Unmute tur un username dik tak min pe rawh, emaw an mahni kha unmuted tur in reply mai rawh."
         )
         return ""
 
@@ -119,7 +119,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
             and member.can_send_other_messages
             and member.can_add_web_page_previews
         ):
-            message.reply_text("This user already has the right to speak.")
+            message.reply_text("He user hian ṭawng tur in dikna anei.")
         else:
             chat_permissions = ChatPermissions(
                 can_send_messages=True,
@@ -137,7 +137,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
                 pass
             bot.sendMessage(
                 chat.id,
-                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+                f"He user <b>{html.escape(member.user.first_name)}</b> hi a thuziah remtih sak ani ang!",
                 parse_mode=ParseMode.HTML,
             )
             return (
@@ -148,8 +148,8 @@ def unmute(update: Update, context: CallbackContext) -> str:
             )
     else:
         message.reply_text(
-            "This user isn't even in the chat, unmuting them won't make them talk more than they "
-            "already do!"
+            "He user hi he chat ah hian a la awm lo, unmute ringawt in eng thil tih theihna mah a pe lo ang ang "
+            "ti tawh reng a lawm!"
         )
 
     return ""
@@ -177,7 +177,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
     member = chat.get_member(user_id)
 
     if not reason:
-        message.reply_text("You haven't specified a time to mute this user for!")
+        message.reply_text("Engtia rei nge mute tur tih a hun i ti chiang lo tlat!")
         return ""
 
     split_reason = reason.split(None, 1)
@@ -201,7 +201,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
         f"<b>Time:</b> {time_val}"
     )
     if reason:
-        log += f"\n<b>Reason:</b> {reason}"
+        log += f"\n<b>A chhan:</b> {reason}"
 
     try:
         if member.can_send_messages is None or member.can_send_messages:
@@ -211,37 +211,37 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
             )
             bot.sendMessage(
                 chat.id,
-                f"Muted <b>{html.escape(member.user.first_name)}</b> for {time_val}!",
+                f"User <b>{html.escape(member.user.first_name)}</b> hi {time_val} chhung atan muted ani!",
                 parse_mode=ParseMode.HTML,
             )
             return log
         else:
-            message.reply_text("This user is already muted.")
+            message.reply_text("He user hi mute ani tawh.")
 
     except BadRequest as excp:
-        if excp.message == "Reply message not found":
+        if excp.message == "Message reply hi hmuh ani lo":
             # Do not reply
-            message.reply_text(f"Muted for {time_val}!", quote=False)
+            message.reply_text(f"{time_val} chhung atan!", quote=False)
             return log
         else:
             LOGGER.warning(update)
             LOGGER.exception(
-                "ERROR muting user %s in chat %s (%s) due to %s",
+                "He user %s hi chat ah hian %s mute theih ani rih lo (%s) a chhan chu %s",
                 user_id,
                 chat.title,
                 chat.id,
                 excp.message,
             )
-            message.reply_text("Well damn, I can't mute that user.")
+            message.reply_text("Mai mai chuan, He user hi ka mute thei lo.")
 
     return ""
 
 
 __help__ = """
-*Admins only:*
- •  /mute `<userhandle>` *:* silences a user. Can also be used as a reply, muting the replied to user.
- •  /tmute `<userhandle> x(m/h/d)` *:* mutes a user for x time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
- •  /unmute `<userhandle>` *:* unmutes a user. Can also be used as a reply, muting the replied to user.
+*Admins tan chauh:*
+ •  /mute `<userhandle>` *:* user te ngawih tir hmak na. Reply na ah pawh a hman theih, user i reply kha a mute hmak ang.
+ •  /tmute `<userhandle> x(m/h/d)` *:* user te mute chhung rei zawng x hun chhung atan. (An mahni kal tlang emaw, an thuziak reply in). `m` = `minutes`, `h` = `hours`, `d` = `days`.
+ •  /unmute `<userhandle>` *:* user unmute na. Reply na atang pawn a hman theih, an mahni i reply khan user kha a unmute ang.
 """
 
 MUTE_HANDLER = CommandHandler("mute", mute)
