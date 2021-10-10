@@ -53,18 +53,18 @@ async def zombies(event):
 
     con = event.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "No Deleted Accounts Found, Group Is Clean 🌷"
+    del_status = "Account delete ho hmuh ani lo, Group hi a fai e 🌷"
 
     if con != "clean":
-        find_zombies = await event.respond("Searching For Zombies...")
+        find_zombies = await event.respond("Zombie te zawn mek ani...")
         async for user in event.client.iter_participants(event.chat_id):
 
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"Found **{del_u}** Zombies In This Group.\
-            \nClean Them By Using :-\n 👉 `/zombies clean`"
+            del_status = f" Zombie **{del_u}** Group ah hian hmuh ani.\
+            \nThian fai rawh ti hian :-\n 👉 `/zombies clean`"
         await find_zombies.edit(del_status)
         return
 
@@ -76,14 +76,14 @@ async def zombies(event):
     # Well
 
     if not await is_administrator(user_id=event.from_id, message=event):
-        await event.respond("You're Not An Admin!")
+        await event.respond("Admin pawh i ni bawk lo!")
         return
 
     if not admin and not creator:
-        await event.respond("I Am Not An Admin Here!")
+        await event.respond("He tah hian admin ka ni lo!")
         return
 
-    cleaning_zombies = await event.respond("Cleaning Zombies...")
+    cleaning_zombies = await event.respond("Zombie te then fai mek ani...")
     del_u = 0
     del_a = 0
 
@@ -94,7 +94,7 @@ async def zombies(event):
                     EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                await cleaning_zombies.edit("I Don't Have Ban Rights In This Group.")
+                await cleaning_zombies.edit("He Group ah hian Banned theih na ka nei lo.")
                 return
             except UserAdminInvalidError:
                 del_u -= 1
@@ -103,11 +103,11 @@ async def zombies(event):
             del_u += 1
 
     if del_u > 0:
-        del_status = f"Cleaned `{del_u}` Zombies"
+        del_status = f"Zombie `{del_u}` Then fai ani"
 
     if del_a > 0:
-        del_status = f"Cleaned `{del_u}` Zombies \
-        \n`{del_a}` Zombie Admin Accounts Are Not Removed!"
+        del_status = f"Zombie `{del_u}` Then fai a ni \
+        \n`{del_a}` Zombie Admin Accounts hi then fai ani ve lo!"
 
     await cleaning_zombies.edit(del_status)
 
