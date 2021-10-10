@@ -49,6 +49,6 @@ PyYAML>5.0
 dnspython
 tabulate
 lyricsgenius==3.0.1
-PyLyrics
 envparse
-updater
+dateparser==1.0.0
+pymongo==3.11.0
