@@ -12,7 +12,7 @@ from tswift import Song
 from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
 
-from Sangtei.special_config import get_str_key
+from Sangtei.conf import get_str_key
 from Sangtei.pyrogramee.pluginshelper import get_text, progress
 from Sangtei import pbot
 
