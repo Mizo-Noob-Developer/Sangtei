@@ -310,7 +310,7 @@ async def _(event):
         print(e)
 
 __help__ = ""
-**Nightmode**
+*• Nightmode*
 • /setnightmode <time zone> i awmna bial hun bithliah siamna.
 • /Nightmode <on/off/enable> nighmode on leh off na tur
 __mode_name__ = "Nighmode"
