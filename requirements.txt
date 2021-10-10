@@ -50,3 +50,4 @@ dnspython
 tabulate
 lyricsgenius==3.0.1
 PyLyrics
+envparse
