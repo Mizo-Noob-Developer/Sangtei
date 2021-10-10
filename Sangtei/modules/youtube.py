@@ -117,7 +117,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
         await lmao.edit(
-            f"`Preparing to upload video:`\
+            f"`Video upload tur a siam mek ani:`\
         \n**{ytdl_data['title']}**\
         \nby **{ytdl_data['uploader']}**"
         )
