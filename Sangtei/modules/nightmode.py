@@ -309,8 +309,8 @@ async def _(event):
     except Exception as e:
         print(e)
 
-__help__= ""
+__help__ = ""
 **Nightmode**
 • /setnightmode <time zone> i awmna bial hun bithliah siamna.
 • /Nightmode <on/off/enable> nighmode on leh off na tur
-__mode_name__= "Nighmode"
+__mode_name__ = "Nighmode"
