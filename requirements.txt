@@ -49,3 +49,4 @@ PyYAML>5.0
 dnspython
 tabulate
 lyricsgenius==3.0.1
+PyLyrics
