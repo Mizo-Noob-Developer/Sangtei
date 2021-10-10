@@ -87,6 +87,7 @@ if ENV:
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
     API_WEATHER  = os.environ.get('API_OPENWEATHER',True)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -155,6 +156,7 @@ else:
     INFOPIC = Config.INFOPIC
     LASTFM_API_KEY = Config.LASTFM_API_KEY
     API_OPENWEATHER = Config.API_OPENWEATHER
+    MONGO_DB_URI = Config.MONGO_DB_URI
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
