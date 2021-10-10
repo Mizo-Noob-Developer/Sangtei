@@ -22,7 +22,7 @@ async def download_video(v_url):
     """ For ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
-    lmao = await v_url.reply("Preparing to download 😉")
+    lmao = await v_url.reply("Download tur a siamrem mek ani e 😉")
     if type == "audio":
         opts = {
             "format": "bestaudio",
@@ -63,34 +63,34 @@ async def download_video(v_url):
         song = False
         video = True
     try:
-        await lmao.edit("Fetching data, please wait 😉")
+        await lmao.edit("Data lak-khawm ani, lo nghak lawk 😉")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
         await lmao.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await lmao.edit("`The download content was too short.`")
+        await lmao.edit("`I thil download hi a tawi lulai hle ani.`")
         return
     except GeoRestrictedError:
         await lmao.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "`He video hi i awmna bial vel atangin download theih ani lo, a chhan chu bial then khat tan website lam atanga block ani.`"
         )
         return
     except MaxDownloadsReached:
-        await lmao.edit("`Max-downloads limit has been reached.`")
+        await lmao.edit("`Download theih chin zat a pel tawh tlat.`")
         return
     except PostProcessingError:
-        await lmao.edit("`There was an error during post processing.`")
+        await lmao.edit("`Post tur a siam anih lai mek in harsatna a awm tlat mai.`")
         return
     except UnavailableVideoError:
-        await lmao.edit("`Media is not available in the requested format.`")
+        await lmao.edit("`He media hi i duh ang format hian a awm lo tlat.`")
         return
     except XAttrMetadataError as XAME:
         await lmao.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await lmao.edit("`There was an error during info extraction.`")
+        await lmao.edit("`Info vel lak khawm anih dawn lai in harsatna a awm tlat mai.`")
         return
     except Exception as e:
         await lmao.edit(f"{str(type(e)): {str(e)}}")
@@ -98,7 +98,7 @@ async def download_video(v_url):
     time.time()
     if song:
         await lmao.edit(
-            f"`Preparing to upload song:`\
+            f"`Hla chu upload tur a siam ani:`\
         \n**{ytdl_data['title']}**\
         \nby **{ytdl_data['uploader']}**"
         )
