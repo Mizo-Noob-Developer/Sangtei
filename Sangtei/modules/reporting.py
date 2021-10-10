@@ -33,15 +33,15 @@ def report_setting(update: Update, context: CallbackContext):
             if args[0] in ("yes", "on"):
                 sql.set_user_setting(chat.id, True)
                 msg.reply_text(
-                    "Turned on reporting! You'll be notified whenever anyone reports something."
+                    "Reports na tih nun ani!, mi tu in emaw engthil pawh report se hriattir zel i ni ang."
                 )
 
             elif args[0] in ("no", "off"):
                 sql.set_user_setting(chat.id, False)
-                msg.reply_text("Turned off reporting! You wont get any reports.")
+                msg.reply_text("Reports na tih thih ani! Eng reports mah i dawng tawh lo ang.")
         else:
             msg.reply_text(
-                f"Your current report preference is: `{sql.user_should_report(chat.id)}`",
+                f"Reports dan tur i siam sa, i duhdan chu: `{sql.user_should_report(chat.id)}`",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -50,18 +50,18 @@ def report_setting(update: Update, context: CallbackContext):
             if args[0] in ("yes", "on"):
                 sql.set_chat_setting(chat.id, True)
                 msg.reply_text(
-                    "Turned on reporting! Admins who have turned on reports will be notified when /report "
+                    "Reports na tih nun ani! Admin tu te pawh report ti nung a piang chu hriattir an ni zel ang /report hman anih a piang in "
                     "or @admin is called."
                 )
 
             elif args[0] in ("no", "off"):
                 sql.set_chat_setting(chat.id, False)
                 msg.reply_text(
-                    "Turned off reporting! No admins will be notified on /report or @admin."
+                    "Reports na tih thih ani! Admin tu te pawh in /report emaw @admin emaw hmang an awm pawh in hriattir an ni tawh lo ang."
                 )
         else:
             msg.reply_text(
-                f"This group's current setting is: `{sql.chat_should_report(chat.id)}`",
+                f"He Group settings awmlai mek chu: `{sql.chat_should_report(chat.id)}`",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -83,31 +83,31 @@ def report(update: Update, context: CallbackContext) -> str:
         message = update.effective_message
 
         if not args:
-            message.reply_text("Add a reason for reporting first.")
+            message.reply_text("I Reports na tur chhan tha tak ziak tel rawh.")
             return ""
 
         if user.id == reported_user.id:
-            message.reply_text("Uh yeah, Sure sure...maso much?")
+            message.reply_text("Aaa aw le, lutuk lutuk tlat...tak tak maw?")
             return ""
 
         if user.id == bot.id:
-            message.reply_text("Nice try.")
+            message.reply_text("Tum chhin tha hle mai.")
             return ""
 
         if reported_user.id in REPORT_IMMUNE_USERS:
-            message.reply_text("Uh? You reporting a disaster?")
+            message.reply_text("Uh? Disaster hi reports i duh meuh maw?")
             return ""
 
         if chat.username and chat.type == Chat.SUPERGROUP:
 
-            reported = f"{mention_html(user.id, user.first_name)} reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
+            reported = f"{mention_html(user.id, user.first_name)} reported {mention_html(reported_user.id, reported_user.first_name)} Admins hnen ah!"
 
             msg = (
                 f"<b>⚠️ Report: </b>{html.escape(chat.title)}\n"
                 f"<b> • Report by:</b> {mention_html(user.id, user.first_name)}(<code>{user.id}</code>)\n"
                 f"<b> • Reported user:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
             )
-            link = f'<b> • Reported message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
+            link = f'<b> • Reported message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">hetah hmet rawh</a>'
             should_forward = False
             keyboard = [
                 [
@@ -137,10 +137,10 @@ def report(update: Update, context: CallbackContext) -> str:
         else:
             reported = (
                 f"{mention_html(user.id, user.first_name)} reported "
-                f"{mention_html(reported_user.id, reported_user.first_name)} to the admins!"
+                f"{mention_html(reported_user.id, reported_user.first_name)} Admins hnen ah!"
             )
 
-            msg = f'{mention_html(user.id, user.first_name)} is calling for admins in "{html.escape(chat_name)}"!'
+            msg = f'{mention_html(user.id, user.first_name)} hian admin te a koh e hetah "{html.escape(chat_name)}"!'
             link = ""
             should_forward = True
 
@@ -197,7 +197,7 @@ def report(update: Update, context: CallbackContext) -> str:
                     LOGGER.exception("Exception while reporting user")
 
         message.reply_to_message.reply_text(
-            f"{mention_html(user.id, user.first_name)} reported the message to the admins.",
+            f"{mention_html(user.id, user.first_name)} chu a message te admin te hnen ah reports ani.",
             parse_mode=ParseMode.HTML,
         )
         return msg
@@ -210,14 +210,14 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 def __chat_settings__(chat_id, _):
-    return f"This chat is setup to send user reports to admins, via /report and @admin: `{sql.chat_should_report(chat_id)}`"
+    return f"He chat ah hian user ten admin te hnen ah reports an thawn theih na tur siam ani a, hetiang hian /report leh @admin: `{sql.chat_should_report(chat_id)}`"
 
 
 def __user_settings__(user_id):
     if sql.user_should_report(user_id) is True:
-        text = "You will receive reports from chats you're admin."
+        text = "Admin i nihna group atangin reports te i dawng thin ang."
     else:
-        text = "You will *not* receive reports from chats you're admin."
+        text = "Admin i nihna group atangin, eng reports mah *i dawng lo ang*."
     return text
 
 
@@ -229,10 +229,10 @@ def buttons(update: Update, context: CallbackContext):
         try:
             bot.kickChatMember(splitter[0], splitter[2])
             bot.unbanChatMember(splitter[0], splitter[2])
-            query.answer("✅ Succesfully kicked")
+            query.answer("✅ Hlawhtling taka pet chhuah ani")
             return ""
         except Exception as err:
-            query.answer("🛑 Failed to Punch")
+            query.answer("🛑 Hnek hlawhchham tlat")
             bot.sendMessage(
                 text=f"Error: {err}",
                 chat_id=query.message.chat_id,
@@ -241,7 +241,7 @@ def buttons(update: Update, context: CallbackContext):
     elif splitter[1] == "banned":
         try:
             bot.kickChatMember(splitter[0], splitter[2])
-            query.answer("✅  Succesfully Banned")
+            query.answer("✅  Hlawhtling tak a Ban ani")
             return ""
         except Exception as err:
             bot.sendMessage(
@@ -249,11 +249,11 @@ def buttons(update: Update, context: CallbackContext):
                 chat_id=query.message.chat_id,
                 parse_mode=ParseMode.HTML,
             )
-            query.answer("🛑 Failed to Ban")
+            query.answer("🛑 Ban hlawhchham ani")
     elif splitter[1] == "delete":
         try:
             bot.deleteMessage(splitter[0], splitter[3])
-            query.answer("✅ Message Deleted")
+            query.answer("✅ Message Paih ani")
             return ""
         except Exception as err:
             bot.sendMessage(
@@ -261,7 +261,7 @@ def buttons(update: Update, context: CallbackContext):
                 chat_id=query.message.chat_id,
                 parse_mode=ParseMode.HTML,
             )
-            query.answer("🛑 Failed to delete message!")
+            query.answer("🛑 Message paih hlawhchham tlat!")
 
 
 __help__ = """
