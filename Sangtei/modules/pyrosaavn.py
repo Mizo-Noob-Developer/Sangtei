@@ -15,10 +15,10 @@ async def song(client, message):
     message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("<b>Enter song name❗</b>")
+        await message.reply("<b>Hla hming ziak rawh❗</b>")
         return ""
     m = await message.reply_text(
-        "Downloading your song,\nPlz wait ⏳️"
+        "Hla download mek ani,\nLo nghak lawk ⏳️"
     )
     try:
         r = requests.get(f"https://jostapi.herokuapp.com/saavn?query={args}")
