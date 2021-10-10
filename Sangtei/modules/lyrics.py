@@ -296,7 +296,6 @@ async def lyrics(client, message):
         )
     return
 
-_command_list = ["lyrics, video, audio"]
 __help__ = """
 *• Lyrics search *
 To use this Lyrics  search command,
@@ -308,3 +307,4 @@ Folloe this step.
 Miss Sangtei will reply you with your lyrics."""
 
 _mod_name = "Lyrics"
+]
