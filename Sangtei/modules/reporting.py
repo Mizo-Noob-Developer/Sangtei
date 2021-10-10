@@ -51,7 +51,7 @@ def report_setting(update: Update, context: CallbackContext):
                 sql.set_chat_setting(chat.id, True)
                 msg.reply_text(
                     "Reports na tih nun ani! Admin tu te pawh report ti nung a piang chu hriattir an ni zel ang /report hman anih a piang in "
-                    "or @admin is called."
+                    "emaw @admin hman anih in."
                 )
 
             elif args[0] in ("no", "off"):
@@ -128,7 +128,7 @@ def report(update: Update, context: CallbackContext) -> str:
                 ],
                 [
                     InlineKeyboardButton(
-                        "❎ Delete Message",
+                        "❎ Message Paih ani",
                         callback_data=f"report_{chat.id}=delete={reported_user.id}={message.reply_to_message.message_id}",
                     )
                 ],
