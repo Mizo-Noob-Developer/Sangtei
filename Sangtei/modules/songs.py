@@ -1,4 +1,4 @@
-#Code owner RSR (@rsrmusic)
+#Code owner RSR (@rsrmusic) Re-modify by Nicky Lalrochhara (@NickyLrca)
 import os
 import requests
 import aiohttp
@@ -26,7 +26,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('🔎 Find')
+    m = message.reply('🔎 Zawng mek')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -45,17 +45,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "Song not found!"
+            "Hla hi hmuh ani lo!"
         )
         print(str(e))
         return
-    m.edit("Uploading")
+    m.edit("Upload mek")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'**Title**: [{title[:95]}]({link})\n**Verified by**: @mizolibrary\n**Time**: `{duration}`\n**Views**: `{views}`\n**Upload By**: [Miss Sangtei](https://t.me/Sangtei_Bot) '
+        rep = f'**Title**: [{title[:95]}]({link})\n**Verified by**: Zoawi Studio\n**Time**: `{duration}`\n**Views**: `{views}`\n**Upload By**: [Miss Sangtei](https://t.me/Sangtei_Bot) '
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -63,7 +63,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit('Upload Failed😕')
+        m.edit('Upload Hlawhchham ani😕')
         print(e)
 
     try:
