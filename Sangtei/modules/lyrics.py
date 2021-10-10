@@ -308,4 +308,4 @@ Folloe this step.
 • /video <video title>
 Miss Sangtei will reply you with your lyrics."""
 
-mod_name = "Lyrics"
+_mod_name = "Lyrics"
