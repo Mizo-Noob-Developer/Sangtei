@@ -307,4 +307,3 @@ Folloe this step.
 Miss Sangtei will reply you with your lyrics."""
 
 _mod_name = "Lyrics"
-]
