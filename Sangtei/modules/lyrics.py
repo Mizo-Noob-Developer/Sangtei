@@ -296,9 +296,8 @@ async def lyrics(client, message):
         )
     return
 
-command_list = ["lyrics, video, audio"]
-
-help = """
+_command_list = ["lyrics, video, audio"]
+__help__ = """
 *• Lyrics search *
 To use this Lyrics  search command,
 Folloe this step.
