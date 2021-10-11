@@ -1,15 +1,12 @@
-import os
-
 from Sangtei.modules.sql.night_mode_sql import add_nightmode, rmnightmode, get_all_chat_id, is_nightmode_indb
 from telethon.tl.types import ChatBannedRights
 from apscheduler.schedulers.asyncio import AsyncIOScheduler 
 from telethon import functions
 from Sangtei.events import register
-from Sangtei import OWNER_ID
-from Sangtei import telethn as tbot
+from Sangtei import telethn, OWNER_ID
+import os
 from telethon import *
 from telethon import Button, custom, events
-
 hehes = ChatBannedRights(
     until_date=None,
     send_messages=True,
@@ -23,7 +20,6 @@ hehes = ChatBannedRights(
     pin_messages=True,
     change_info=True,
 )
-
 openhehe = ChatBannedRights(
     until_date=None,
     send_messages=False,
@@ -37,14 +33,12 @@ openhehe = ChatBannedRights(
     pin_messages=True,
     change_info=True,
 )
-
 from telethon.tl.types import (
     ChannelParticipantsAdmins,
     ChatAdminRights,
     MessageEntityMentionName,
     MessageMediaPhoto,
 )
-
 from telethon.tl.functions.channels import (
     EditAdminRequest,
     EditBannedRequest,
@@ -55,7 +49,7 @@ async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
         return isinstance(
             (
-                await tbot(functions.channels.GetParticipantRequest(chat, user))
+                await telethn(functions.channels.GetParticipantRequest(chat, user))
             ).participant,
             (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
         )
@@ -86,7 +80,7 @@ async def profanity(event):
            await event.reply("Only admins can execute this command!")
            return
         else:
-          if not await can_change_info(message=event):
+          if not await can_change_info(message=dmod):
             await event.reply("You are missing the following rights to use this command:CanChangeinfo")
             return
     if not input:
@@ -128,10 +122,10 @@ async def job_close():
         return
     for pro in chats:
         try:
-            await tbot.send_message(
+            await telethn.send_message(
               int(pro.chat_id), "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By Evlie**"
             )
-            await tbot(
+            await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
                 peer=int(pro.chat_id), banned_rights=hehes
             )
@@ -150,10 +144,10 @@ async def job_open():
         return
     for pro in chats:
         try:
-            await tbot.send_message(
-              int(pro.chat_id), "06:00 Am, Group Is Opening.\n**Powered By Masha**"
+            await telethn.send_message(
+              int(pro.chat_id), "06:00 Am, Group Is Opening.\n**Powered By Evlie**"
             )
-            await tbot(
+            await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
                 peer=int(pro.chat_id), banned_rights=openhehe
             )
@@ -166,11 +160,14 @@ scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
 scheduler.add_job(job_open, trigger="cron", hour=5, minute=58)
 scheduler.start()
 
+file_help = os.path.basename(__file__)
+file_help = file_help.replace(".py", "")
+file_helpo = file_help.replace("_", " ")
 
 __help__ = """
- ❍ /nightmode on/off
+ - /nightmode on/off
+
 **Note:** Night Mode chats get Automatically closed at 12pm(IST)
 and Automatically openned at 6am(IST) To Prevent Night Spams.
 """
-
-__mod_name__ = "NIGHT MODE"
+__mod_name__ = "NIGHTMODE"
