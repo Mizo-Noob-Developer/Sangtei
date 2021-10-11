@@ -23,13 +23,13 @@ from telethon.tl.types import ChatBannedRights
 
 from Sangtei import BOT_ID
 from Sangtei.function.telethonbasics import is_admin
-from Sangtei.services.sql.night_mode_sql import (
+from Sangtei.modules.sql.night_mode_sql import (
     add_nightmode,
     get_all_chat_id,
     is_nightmode_indb,
     rmnightmode,
 )
-from DaisyX.services.telethon import tbot
+from Sangtei.modules.helper_funcs.telethon import tbot
 
 CLEAN_GROUPS = False
 hehes = ChatBannedRights(
