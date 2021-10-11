@@ -87,11 +87,11 @@ async def profanity(event):
         for c in chats:
             if event.chat_id == c["id"]:
                 await event.reply(
-                    "Please provide some input yes or no.\n\nCurrent setting is : **on**"
+                    "Yes emaw No tih emaw ziak tel rawh.\n\nTuna siam tawh sa chu : **on**"
                 )
                 return
         await event.reply(
-            "Please provide some input yes or no.\n\nCurrent setting is : **off**"
+            "Yes emaw No emaw ziak tel rawh.\n\nTuna siam tawh sa chu : **off**"
         )
         return
     if input == "on":
@@ -99,7 +99,7 @@ async def profanity(event):
             chats = nightmod.find({})
             for c in chats:
                 if event.chat_id == c["id"]:
-                    await event.reply("Nightmode is already activated for this chat.")
+                    await event.reply("He chat ah hian Nightmode tih nun a ni tawh.")
                     return
             nightmod.insert_one(
                 {
@@ -111,7 +111,7 @@ async def profanity(event):
                 }
             )
             await event.reply(
-                "Nightmode turned on for this chat\n**Note:** It will not work unless you specify time and zone with `/setnightmode`"
+                "He chat ah hian Nightmode tih nun ani.\n**Note:** Hun leh Zone i tih dik loh a hemi `/setnightmode` nen a i siam dik loh chuan hna a thawk thei lo ang"
             )
     if input == "off":
         if event.is_group:
@@ -119,11 +119,11 @@ async def profanity(event):
             for c in chats:
                 if event.chat_id == c["id"]:
                     nightmod.delete_one({"id": event.chat_id})
-                    await event.reply("Nightmode turned off for this chat.")
+                    await event.reply("Nightmode chu he chat ah hian tih thih ani.")
                     return
-        await event.reply("Nightmode isn't turned on for this chat.")
+        await event.reply("Nightmode chu he chat atan hian tih nun ala ni lo.")
     if not input == "on" and not input == "off":
-        await event.reply("I only understand by on or off")
+        await event.reply("On emaw Off ti a ziah chiah kha ka hrethiam")
         return
 
 
@@ -143,19 +143,19 @@ async def _(event):
         ctime = ctime.strip()
         otime = otime.strip()
         if len(ctime) != 11:
-            await event.reply("Please enter valid date and time.")
+            await event.reply("Hun leh ni dik tak ziak rawh.")
             return
         if len(otime) != 11:
-            await event.reply("Please enter valid date and time.")
+            await event.reply("Hun leh ni dik tak ziak rawh.")
             return
         if not zone and ctime and otime:
-            await event.reply("Missing some parameters.")
+            await event.reply("Anih dan tur dik tak a la ni lo.")
             return
         ttime = dateparser.parse(
             "now", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "YMD"}
         )
         if ttime == None or otime == None or ctime == None:
-            await event.reply("Please enter valid date and time and zone.")
+            await event.reply("Hun leh ni leh Zone dik tak ziak rawh.")
             return
         cctime = dateparser.parse(
             f"{ctime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
@@ -164,13 +164,13 @@ async def _(event):
             f"{otime}", settings={"TIMEZONE": f"{zone}", "DATE_ORDER": "DMY"}
         ) + timedelta(days=1)
         if cctime == ootime:
-            await event.reply("Chat opening and closing time cannot be same.")
+            await event.reply("Chat hawn hun leh khar hun a in ang thei lo.")
             return
         if not ootime > cctime and not cctime < ootime:
-            await event.reply("Chat opening time must be greater than closing time")
+            await event.reply("Chat hawn hun hi a khar hun aia hma zawk tur ani")
             return
         if cctime > ootime:
-            await event.reply("Chat closing time cant be greater than opening time")
+            await event.reply("Chat khar hun hi a hawn hun ai in a hma thei lo")
             return
         # print (ttime)
         # print (cctime)
@@ -193,7 +193,7 @@ async def _(event):
                     {"$set": {"zone": zone, "ctime": cctime, "otime": ootime}},
                 )
                 await event.reply(
-                    "Nightmode already set.\nI am updating the zone, closing time and opening time with the new zone, closing time and opening time."
+                    "Nightmode siam fel tawh sa ani.\nZone ka update ang, Khar hun leh hawn hun zone dik tak ah, hawn hun leh khar hun a thawk ang."
                 )
                 return
         nightmod.insert_one(
@@ -205,7 +205,7 @@ async def _(event):
                 "otime": ootime,
             }
         )
-        await event.reply("Nightmode set successfully !")
+        await event.reply("Nightmode hlawhtling taka siam ani e !")
     except Exception as e:
         print(e)
 
@@ -229,7 +229,7 @@ async def _(event):
             if present > ctime and valid:
                 await tbot.send_message(
                     id,
-                    f"**Nightbot:** It's time closing the chat now ...",
+                    f"**Zan vengtu:** Tun atan chuan chat theih hun chhung khar a hun ta ...",
                 )
                 await tbot(
                     functions.messages.EditChatDefaultBannedRightsRequest(
@@ -279,7 +279,7 @@ async def _(event):
             if present > otime and valid:
                 await tbot.send_message(
                     id,
-                    f"**Nightbot:** It's time opening the chat now ...",
+                    f"**Zan vengtu:** Chat theih tur a hawn a hun leh ta ...",
                 )
                 await tbot(
                     functions.messages.EditChatDefaultBannedRightsRequest(
