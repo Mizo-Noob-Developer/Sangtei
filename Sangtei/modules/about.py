@@ -13,4 +13,4 @@ Developer [Nicky Lalrochhara](http://t.me/Nickylrca) 🇮🇳
 
 [Sangtei Music Player🎵](https://t.me/sangteibot)"""
 
-__mod_name__ = "About 🇮🇳"
+__mod_name__ = "About"
