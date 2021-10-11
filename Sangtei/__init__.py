@@ -88,7 +88,7 @@ if ENV:
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
     API_WEATHER  = os.environ.get('API_OPENWEATHER',True)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
-    BOT_ID = bot_info.id
+    BOT_ID = os.environ.get("BOT_ID", None)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
