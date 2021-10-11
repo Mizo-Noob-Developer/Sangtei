@@ -1,7 +1,7 @@
 __help__ = """
 *• Group Voice Chat Music Play 🎧 * \n
 
-In Order For Your Group Songs to Play Through Sangtei Bot, You Must First Add @LyciAssistant to Your Group and be Promoted to @Sangtei_Bot Group Admin. \n \n 
+In Order For Your Group Songs to Play Through Sangtei Bot, You Must First Add @sangteibot to Your Group and be Promoted to @Sangtei_Bot Group Admin. \n \n 
   
 /play - 🎶 Play the replied audio file or YouTube video \n
 /pause - ▶️ Pause the audio stream \n
