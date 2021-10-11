@@ -52,3 +52,4 @@ lyricsgenius==3.0.1
 envparse
 dateparser==1.0.0
 apscheduler
+zlocal~=2.0
