@@ -110,7 +110,7 @@ async def profanity(event):
                     )
                     return
         rmnightmode(str(event.chat_id))
-        await event.reply("NightMode Disabled!")
+        await event.reply("NightMode Tih thih ani e!")
     if not "off" in input and not "on" in input:
         await event.reply("Khawngaihin On emaw Off emaw i hman zawk ti chiang rawh!")
         return
