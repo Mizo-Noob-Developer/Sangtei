@@ -245,7 +245,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "Ka awm e!\n<b>In tan:</b> <code>{}</code> chhung ka awm reng".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -296,7 +296,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                "Heng te hi *{}* module a i hman theih te leh hman dan tur te an ni:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
