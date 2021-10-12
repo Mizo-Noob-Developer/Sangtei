@@ -208,7 +208,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         return log
 
     except BadRequest as excp:
-        if excp.message == "Reply message not found":
+        if excp.message == "I message reply hi hmuh ani lo":
             # Do not reply
             message.reply_text(
                 f"Ban ani! User hi hemi hun chhung {time_val} atan hian ban ani.", quote=False
@@ -244,7 +244,7 @@ def kick(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("User i ban duh kha mention tel rawh.")
+        message.reply_text("User i kick duh kha mention tel rawh.")
         return log_message
 
     try:
@@ -321,7 +321,7 @@ def unban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("User i ban duh kha mention tel rawh.")
+        message.reply_text("User i Unbanned duh kha mention tel rawh.")
         return log_message
 
     try:
