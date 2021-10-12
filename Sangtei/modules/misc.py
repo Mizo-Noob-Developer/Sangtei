@@ -82,6 +82,8 @@ def markdown_help(update: Update, context: CallbackContext):
 
 __help__ = """
 *Available commands:*
+• Modules thenkhat hi paih ani tawh.
+
 *Bluetext clean:*
 •   /cleanblue `<yes/on/enable/off/disable>` *:* to clean bluetext command from user.
 *Markdown:*
