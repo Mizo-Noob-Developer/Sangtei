@@ -93,8 +93,8 @@ def send(update, message, keyboard, backup_message):
         if excp.message == "Button_url_invalid":
             msg = update.effective_message.reply_text(
                 markdown_parser(
-                    backup_message + "\nNote: the current message has an invalid url "
-                    "in one of its buttons. Please update."
+                    backup_message + "\nNote: Message awm sa hian, url dik tak a keng tel tur ani "
+                    "A khawi button ber ah emaw. Siamtha rawh."
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
@@ -1100,7 +1100,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "Greetings 🙏"
+__mod_name__ = "Greetings"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
