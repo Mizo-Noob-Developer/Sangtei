@@ -131,6 +131,5 @@ async def download_video(v_url):
 
 
 __help__ = """
- • `/ytaudio <link>` or `/ytvideo <link>`*:* Downlods a video or audio from a youtube video to the bots local server and uploads to telegram
-"""
-__mod_name__ = "YouTube 🎬"
+ • `/ytaudio <link>` or `/ytvideo <link>`*:* Youtube video emaw audio aw bot local server hmang a download na leh telegram lama upload tir na"""
+__mod_name__ = "YouTube"
