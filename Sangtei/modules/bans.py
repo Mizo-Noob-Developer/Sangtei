@@ -48,13 +48,13 @@ def ban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("Hei hi user ani ngei tur ani.")
+        message.reply_text("User i ban duh kha mention tel rawh.")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
-        if excp.message == "User not found":
+        if excp.message == "User hi hmuh ani lo":
             message.reply_text("Tuna i zawn mek hi ka hmu thei lo.")
             return log_message
         else:
@@ -110,7 +110,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> \n{html.escape(reason)}"
+            reply += f"\n<code> </code><b>•  A chhan:</b> \n{html.escape(reason)}"
         bot.sendMessage(chat.id, reply, parse_mode=ParseMode.HTML, quote=False)
         return log
 
@@ -149,14 +149,14 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("User an ni ngei tur ni in ka hria.")
+        message.reply_text("User i ban tur kha mention tel rawh.")
         return log_message
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User hmuh ani lo":
-            message.reply_text("He user hi ka hmu thei lo.")
+            message.reply_text("He user hi hmuh ani lo.")
             return log_message
         else:
             raise
@@ -170,7 +170,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     if not reason:
-        message.reply_text("He user hi BAN tur hung chhung i ziak tel lo a!")
+        message.reply_text("He user hi BAN tur hun chhung i ziak tel lo a!")
         return log_message
 
     split_reason = reason.split(None, 1)
@@ -244,7 +244,7 @@ def kick(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("User an ni ngei tur ni in a lang.")
+        message.reply_text("User i ban duh kha mention tel rawh.")
         return log_message
 
     try:
@@ -321,7 +321,7 @@ def unban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("User an ni ngei tur ni in a lang.")
+        message.reply_text("User i ban duh kha mention tel rawh.")
         return log_message
 
     try:
@@ -342,7 +342,7 @@ def unban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     chat.unban_member(user_id)
-    message.reply_text("Aww, he user hian a join thei e!")
+    message.reply_text("Aww, he user hian a join leh thei e!")
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
