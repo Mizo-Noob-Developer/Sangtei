@@ -53,4 +53,4 @@ envparse
 dateparser==1.0.0
 apscheduler
 pytz
-tzlocal==3.0
+tzlocal 3.0
