@@ -77,7 +77,7 @@ async def profanity(event):
     input = event.pattern_match.group(2)
     if not event.sender_id == OWNER_ID:
         if not await is_register_admin(event.input_chat, event.sender_id):
-           await event.reply("Only admins can execute this command!")
+           await event.reply("Admin chiah in he command hi an hmang thei!")
            return
         else:
           if not await can_change_info(message=dmod):
@@ -86,33 +86,33 @@ async def profanity(event):
     if not input:
         if is_nightmode_indb(str(event.chat_id)):
                 await event.reply(
-                    "Currently NightMode is Enabled for this Chat"
+                    "He Chat ah hian Nightmode tih nun mek ani"
                 )
                 return
         await event.reply(
-            "Currently NightMode is Disabled for this Chat"
+            "He Chat ah hian Nightmode tih thih ani"
         )
         return
     if "on" in input:
         if event.is_group:
             if is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "Night Mode is Already Turned ON for this Chat"
+                        "He Chat ah hian Nightmode tih Nun ani"
                     )
                     return
             add_nightmode(str(event.chat_id))
-            await event.reply("NightMode turned on for this chat.")
+            await event.reply("NightMode tih nun ani hemi chat tan hian.")
     if "off" in input:
         if event.is_group:
             if not is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "Night Mode is Already Off for this Chat"
+                        "NightMode chu he Chat ah hian tih thih ani"
                     )
                     return
         rmnightmode(str(event.chat_id))
         await event.reply("NightMode Disabled!")
     if not "off" in input and not "on" in input:
-        await event.reply("Please Specify On or Off!")
+        await event.reply("Khawngaihin On emaw Off emaw i hman zawk ti chiang rawh!")
         return
 
 
@@ -123,7 +123,7 @@ async def job_close():
     for pro in chats:
         try:
             await telethn.send_message(
-              int(pro.chat_id), "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By Evlie**"
+              int(pro.chat_id), "Dar 12:00 Am, a lo ri ta bawk a. Naktuk 6:00 Am, hma chu group hi khar rih ani. Night Mode Tih nun ani e ! \n**Powered By ZoAwi Studio**"
             )
             await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -131,7 +131,7 @@ async def job_close():
             )
             )
         except Exception as e:
-            logger.info(f"Unable To Close Group {chat} - {e}")
+            logger.info(f"He Group {chat} - {e} hi khar theih ani lo")
 
 #Run everyday at 12am
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
@@ -145,7 +145,7 @@ async def job_open():
     for pro in chats:
         try:
             await telethn.send_message(
-              int(pro.chat_id), "06:00 Am, Group Is Opening.\n**Powered By Evlie**"
+              int(pro.chat_id), "06:00 Am, alo ni leh tawh bawk a, Group chu hawn ani leh ta e.\n**Powered By ZoAwi Studio**"
             )
             await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -153,7 +153,7 @@ async def job_open():
             )
         )
         except Exception as e:
-            logger.info(f"Unable To Open Group {pro.chat_id} - {e}")
+            logger.info(f"He Group {pro.chat_id} - {e} hi hawn theih ani lo")
 
 # Run everyday at 06
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
@@ -167,7 +167,6 @@ file_helpo = file_help.replace("_", " ")
 __help__ = """
  - /nightmode on/off
 
-**Note:** Night Mode chats get Automatically closed at 12pm(IST)
-and Automatically openned at 6am(IST) To Prevent Night Spams.
+**Note:** Night Mode hi zan dar 12:00Am(IST) A rik rual in ama tawk in, a in ti nung ang a, Zinglam Dar 6:00Am(IST) A rik rual in ama tawk bawk in a thi leh ang.
 """
 __mod_name__ = "NIGHTMODE"
