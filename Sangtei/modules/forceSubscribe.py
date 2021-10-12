@@ -213,4 +213,4 @@ Note: /FSub hi hemi /ForceSubscribe nen hian a in ang reng
 
  
 """
-__mod_name__ = "📢 Force Subscribe 💭"
+__mod_name__ = "Force Subscribe"
