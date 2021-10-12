@@ -1,5 +1,5 @@
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
-from Sangtei.modules.sql import BASE, SESSION
+from Sangtei.modules.sql.nightmode_sql import BASE, SESSION
 
 
 class Nightmode(BASE):
