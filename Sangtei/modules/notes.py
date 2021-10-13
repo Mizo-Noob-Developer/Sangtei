@@ -302,9 +302,9 @@ def clear(update: Update, context: CallbackContext):
         notename = args[0].lower()
 
         if sql.rm_note(chat_id, notename):
-            update.effective_message.reply_text("Successfully removed note.")
+            update.effective_message.reply_text("Hlawhtling tak in note paih ani.")
         else:
-            update.effective_message.reply_text("That's not a note in my database!")
+            update.effective_message.reply_text("Hei hi ka database a note awm ani ve lo!")
 
 
 @run_async
@@ -384,7 +384,7 @@ def list_notes(update: Update, context: CallbackContext):
         msg += note_name
 
     if not note_list:
-        update.effective_message.reply_text("No notes in this chat!")
+        update.effective_message.reply_text("He Group ah hian note a awm miah lo!")
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -507,7 +507,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 def __chat_settings__(chat_id, user_id):
     notes = sql.get_all_chat_notes(chat_id)
-    return f"There are `{len(notes)}` notes in this chat."
+    return f"He group ah hian note `{len(notes)}` a awm mek."
 
 
 __help__ = """
