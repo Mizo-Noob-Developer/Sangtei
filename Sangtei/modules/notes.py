@@ -77,10 +77,10 @@ def get(update, context, notename, show_none=True, no_format=False):
                         chat_id=chat_id, from_chat_id=JOIN_LOGGER, message_id=note.value
                     )
                 except BadRequest as excp:
-                    if excp.message == "Message to forward not found":
+                    if excp.message == "Message forward na hmuh ani lo":
                         message.reply_text(
-                            "This message seems to have been lost - I'll remove it "
-                            "from your notes list."
+                            "He message hi a bo ni in a lang - Ka paih daih dawn! "
+                            "i note dah khawm na atangin."
                         )
                         sql.rm_note(chat_id, notename)
                     else:
@@ -91,9 +91,9 @@ def get(update, context, notename, show_none=True, no_format=False):
                         chat_id=chat_id, from_chat_id=chat_id, message_id=note.value
                     )
                 except BadRequest as excp:
-                    if excp.message == "Message to forward not found":
+                    if excp.message == "Message forward na hmuh ani lo":
                         message.reply_text(
-                            "Looks like the original sender of this note has deleted "
+                            "A thawn tu dik tak hian a paih tawh ni in a lang "
                             "their message - sorry! Get your bot admin to start using a "
                             "message dump to avoid this. I'll remove this note from "
                             "your saved notes."
@@ -249,7 +249,7 @@ def slash_get(update: Update, context: CallbackContext):
         note_name = str(noteid).strip(">").split()[1]
         get(update, context, note_name, show_none=False)
     except IndexError:
-        update.effective_message.reply_text("Wrong Note ID 😾")
+        update.effective_message.reply_text("Note ID a dik lo 😾")
 
 
 @run_async
@@ -262,7 +262,7 @@ def save(update: Update, context: CallbackContext):
     note_name, text, data_type, content, buttons = get_note_type(msg)
     note_name = note_name.lower()
     if data_type is None:
-        msg.reply_text("Dude, there's no note")
+        msg.reply_text("Dude, eng note mah a awmlo")
         return
 
     sql.add_note_to_db(
@@ -270,7 +270,7 @@ def save(update: Update, context: CallbackContext):
     )
 
     msg.reply_text(
-        f"Yas! Added `{note_name}`.\nGet it with /get `{note_name}`, or `#{note_name}`",
+        f"Aw le! Note `{note_name}` chu dah that ani e.\nHe ti hian i koh chhuak thei ang /get `{note_name}`, emaw `#{note_name}`",
         parse_mode=ParseMode.MARKDOWN,
     )
 
@@ -321,14 +321,14 @@ def clearall(update: Update, context: CallbackContext):
             [
                 [
                     InlineKeyboardButton(
-                        text="Delete all Notes 🗑", callback_data="notes_rmall"
+                        text="Note zawng zawng paih ani", callback_data="notes_rmall"
                     )
                 ],
-                [InlineKeyboardButton(text="Cancel ❎", callback_data="notes_cancel")],
+                [InlineKeyboardButton(text="Duh leh lo", callback_data="notes_cancel")],
             ]
         )
         update.effective_message.reply_text(
-            f"Are you sure you would like to clear ALL notes in {chat.title}? This action cannot be undone.",
+            f"I chiang a maw, he group {chat.title} a note awm zawng zawng hi, i paih duh meuh maw? I paih hnu ah lak kir theih an ni tawh lo ang.",
             reply_markup=buttons,
             parse_mode=ParseMode.MARKDOWN,
         )
