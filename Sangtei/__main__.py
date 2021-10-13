@@ -543,7 +543,7 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Chat settings leh nangmah bik settings te i hriat duh chuan a hnuai ami khu hmet rawh."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup(
