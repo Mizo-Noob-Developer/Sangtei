@@ -2,6 +2,8 @@
 ![issue](https://img.shields.io/github/issues/lalrochhara/sangtei.svg) ![maintain](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![youtube music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)
 [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 ![GitHub contributors](https://img.shields.io/github/contributors/lalrochhara/sangtei?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/lalrochhara/sangtei?style=for-the-badge)
+
 # Sangtei Bot
 
 A Telegram Python bot running on python3 forked with saitama with a sqlalchemy database and an entirely themed persona to make fun and good management for you in your groups.
