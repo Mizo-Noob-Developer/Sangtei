@@ -97,11 +97,11 @@ async def profanity(event):
         if event.is_group:
             if is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "He Chat ah hian Nightmode tih Nun ani. \n\nZan lai Dar **12:00(IST)** leh Naktuk zing Dar **6:00(IST)** inkar chhung zawng atan group chat hi khar ani ang. \n\nHe thil kan hman leh tih nun chhan hi zan rei lam a spammer ho ven nan ani."
+                        "**NightMode tih nun ani**. \n\nZan lai Dar **12:00(IST)** leh Naktuk zing Dar **6:00(IST)** inkar chhung zawng atan group chat hi khar ani ang. \n\nHe thil kan hman leh tih nun chhan hi zan rei lam a spammer ho ven nan ani."
                     )
                     return
             add_nightmode(str(event.chat_id))
-            await event.reply("NightMode tih nun ani hemi chat tan hian \n\nZan lai dar **12:00(IST)** atanga a tuk zing lam dar **6:00(IST)** inkar chhung zawng group ah hian, \n\nMember te tan Chat theih ani lo ang. \n\nHeng hi kan hman chhan chu, Zan lama Spammer ho ven nan a ti kan ni.")
+            await event.reply("**NightMode tih nun ani.** \n\nZan lai dar **12:00(IST)** atanga a tuk zing lam dar **6:00(IST)** inkar chhung zawng group ah hian, \n\nMember te tan Chat theih ani lo ang. \n\nHeng hi kan hman chhan chu, Zan lama Spammer ho ven nan a ti kan ni.")
     if "off" in input:
         if event.is_group:
             if not is_nightmode_indb(str(event.chat_id)):
@@ -112,7 +112,7 @@ async def profanity(event):
         rmnightmode(str(event.chat_id))
         await event.reply("NightMode Tih thih ani e!")
     if not "off" in input and not "on" in input:
-        await event.reply("Khawngaihin On emaw Off emaw i hman zawk ti chiang rawh!")
+        await event.reply("Khawngaihin **On** emaw **Off** zawk hi hmang rawh!")
         return
 
 
