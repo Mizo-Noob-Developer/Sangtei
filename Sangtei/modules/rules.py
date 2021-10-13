@@ -33,15 +33,15 @@ def send_rules(update, chat_id, from_pm=False):
         if excp.message == "Chat not found" and from_pm:
             bot.send_message(
                 user.id,
-                "The rules shortcut for this chat hasn't been set properly! Ask admins to "
-                "fix this.\nMaybe they forgot the hyphen in ID",
+                "He group tan hian rules shortcut na dik tak a siam ani lo! A siam tha tur in "
+                "Admin te bia la.\nID ah khan hypen an dah theihnghilh ani maithei",
             )
             return
         else:
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"He group *{escape_markdown(chat.title)}* tan a rules siam chu:\n\n{rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -50,12 +50,12 @@ def send_rules(update, chat_id, from_pm=False):
     elif from_pm:
         bot.send_message(
             user.id,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "He group tan hian admin ten, eng rules mah an la siam lo. "
+            "Hemi avang hian dan pel a chet theih tihna ani kher lo aw...!",
         )
     elif rules:
         update.effective_message.reply_text(
-            "Please click the button below to see the rules.",
+            "Rules hre tur in a hnuaia button khu hmet rawh.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -68,8 +68,8 @@ def send_rules(update, chat_id, from_pm=False):
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!"
+            "Groups admin ten eng rules mah an la siam lo tlat mai. "
+            "Hei vang hian dan pel a chet theih tihna ani kher lo aw...!"
         )
 
 
@@ -88,7 +88,7 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Successfully set rules for this group.")
+        update.effective_message.reply_text("He group tan hian rules siam ani e.")
 
 
 @run_async
@@ -96,11 +96,11 @@ def set_rules(update: Update, context: CallbackContext):
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
-    update.effective_message.reply_text("Successfully cleared rules!")
+    update.effective_message.reply_text("Hlawhtling tak in rules chu paih ani e!")
 
 
 def __stats__():
-    return f"• {sql.num_chats()} chats have rules set."
+    return f"• {sql.num_chats()} tan hian rules siam ani."
 
 
 def __import_data__(chat_id, data):
@@ -118,11 +118,11 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- ❍ /rules*:* get the rules for this chat.
+ ❍ /rules*:* Group a an rules siam te en na.
 
-*Admins only:*
- ❍ /setrules <your rules here>*:* set the rules for this chat.
- ❍ /clearrules*:* clear the rules for this chat.
+*Admins tan chauh:*
+ ❍ /setrules <i rules siam>*:* group lama rules siamna.
+ ❍ /clearrules*:* group a rules siam te paih na.
 """
 
 __mod_name__ = "Rules"
