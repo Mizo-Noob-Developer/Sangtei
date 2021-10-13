@@ -97,11 +97,11 @@ async def profanity(event):
         if event.is_group:
             if is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "He Chat ah hian Nightmode tih Nun ani. \nZan lai Dar **12:00(IST)** leh Naktuk zing Dar **6:00(IST)** inkar chhung zawng atan group chat hi khar ani ang. \nHe thil kan hman leh tih nun chhan hi zan rei lam a spammer ho ven nan ani."
+                        "He Chat ah hian Nightmode tih Nun ani. \n\nZan lai Dar **12:00(IST)** leh Naktuk zing Dar **6:00(IST)** inkar chhung zawng atan group chat hi khar ani ang. \n\nHe thil kan hman leh tih nun chhan hi zan rei lam a spammer ho ven nan ani."
                     )
                     return
             add_nightmode(str(event.chat_id))
-            await event.reply("NightMode tih nun ani hemi chat tan hian \nZan lai dar **12:00(IST)** atanga a tuk zing lam dar **6:00(IST)** inkar chhung zawng group ah hian, \nMember te tan Chat theih ani lo ang. \nHeng hi kan hman chhan chu, Zan lama Spammer ho ven nan a ti kan ni.")
+            await event.reply("NightMode tih nun ani hemi chat tan hian \n\nZan lai dar **12:00(IST)** atanga a tuk zing lam dar **6:00(IST)** inkar chhung zawng group ah hian, \n\nMember te tan Chat theih ani lo ang. \n\nHeng hi kan hman chhan chu, Zan lama Spammer ho ven nan a ti kan ni.")
     if "off" in input:
         if event.is_group:
             if not is_nightmode_indb(str(event.chat_id)):
@@ -123,7 +123,7 @@ async def job_close():
     for pro in chats:
         try:
             await telethn.send_message(
-              int(pro.chat_id), "Dar **12:00(IST)**, He group a member awm zawng zawng te tan, Chat hi khar ani. \n Naktuk **6:00(IST)**, hma chu group hi khar rih ani! \nPowered By **ZoAwi Studio**"
+              int(pro.chat_id), "Dar **12:00(IST)**, He group a member awm zawng zawng te tan, Chat hi khar ani. \n\n Naktuk **6:00(IST)**, hma chu group hi khar rih ani! \n\nPowered By **ZoAwi Studio**"
             )
             await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
