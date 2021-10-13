@@ -34,12 +34,12 @@ def allow_connections(update, context) -> str:
                 sql.set_allow_connect_to_chat(chat.id, True)
                 send_message(
                     update.effective_message,
-                    "Connection has been enabled for this chat",
+                    "He group nen in zawmna chu siam ani e",
                 )
             else:
                 send_message(
                     update.effective_message,
-                    "Please enter `yes` or `no`!",
+                    "Khawngaih in `yes` emaw `no` hi hmang rawh!",
                     parse_mode=ParseMode.MARKDOWN,
                 )
         else:
@@ -47,7 +47,7 @@ def allow_connections(update, context) -> str:
             if get_settings:
                 send_message(
                     update.effective_message,
-                    "Connections to this group are *Allowed* for members!",
+                    "He group nen a inzawmna siam chu, member te tan *Allowed(Phal)* a ni e!",
                     parse_mode=ParseMode.MARKDOWN,
                 )
             else:
