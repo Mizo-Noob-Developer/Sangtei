@@ -81,7 +81,7 @@ async def profanity(event):
            return
         else:
           if not await can_change_info(message=dmod):
-            await event.reply("You are missing the following rights to use this command:CanChangeinfo")
+            await event.reply("He command hmang thei tur hian eng theihna mah i nei lo:CanChangeinfo")
             return
     if not input:
         if is_nightmode_indb(str(event.chat_id)):
@@ -101,7 +101,7 @@ async def profanity(event):
                     )
                     return
             add_nightmode(str(event.chat_id))
-            await event.reply("NightMode tih nun ani hemi chat tan hian.")
+            await event.reply("NightMode tih nun ani hemi chat tan hian \nZan lai dar **12:00(IST)** atanga a tuk zing lam dar **6:00(IST)** inkar chhung zawng group ah hian, \nMember te tan Chat theih ani lo ang. \nHeng hi kan hman chhan chu, Zan lama Spammer ho ven nan a ti kan ni.")
     if "off" in input:
         if event.is_group:
             if not is_nightmode_indb(str(event.chat_id)):
@@ -123,7 +123,7 @@ async def job_close():
     for pro in chats:
         try:
             await telethn.send_message(
-              int(pro.chat_id), "Dar 12:00 Am, a lo ri ta bawk a. Naktuk 6:00 Am, hma chu group hi khar rih ani. Night Mode Tih nun ani e ! \n**Powered By ZoAwi Studio**"
+              int(pro.chat_id), "Dar **12:00(IST)**, He group a member awm zawng zawng te tan, Chat hi khar ani. \n Naktuk **6:00(IST)**, hma chu group hi khar rih ani! \nPowered By **ZoAwi Studio**"
             )
             await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -145,7 +145,7 @@ async def job_open():
     for pro in chats:
         try:
             await telethn.send_message(
-              int(pro.chat_id), "06:00 Am, alo ni leh tawh bawk a, Group chu hawn ani leh ta e.\n**Powered By ZoAwi Studio**"
+              int(pro.chat_id), "**06:00(IST)**, Tun ah chuan, Group chu hawn ani leh ta e. \nMember te dan pangngai in chat leh theih ani ta e.\nPowered By **ZoAwi Studio**"
             )
             await telethn(
             functions.messages.EditChatDefaultBannedRightsRequest(
