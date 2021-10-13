@@ -97,7 +97,7 @@ async def profanity(event):
         if event.is_group:
             if is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "He Chat ah hian Nightmode tih Nun ani"
+                        "He Chat ah hian Nightmode tih Nun ani. \nZan lai Dar **12:00(IST)** leh Naktuk zing Dar **6:00(IST)** inkar chhung zawng atan group chat hi khar ani ang. \nHe thil kan hman leh tih nun chhan hi zan rei lam a spammer ho ven nan ani."
                     )
                     return
             add_nightmode(str(event.chat_id))
