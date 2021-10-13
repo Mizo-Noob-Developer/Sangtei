@@ -23,7 +23,8 @@ Updates channel as at [Sangtei Update](https://t.me/Sangteiupdate)
  - last, we don't support fork and asking for fork in our support group will result to gban.
 
 ## How to setup on Heroku 
-For starters click on this button 
+For starters click on this button, but don't deploy from here.
+First of all, fork this repo and deploy from your fork page.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/lalrochhara/sangtei) 
 
