@@ -179,7 +179,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oh, min siamtu duhtak, i han che tak tak teh ang aw.", reply_to_message_id=reply
+                    "Aw haw! Min siamtu chuan, in Group hi a rawn join ve e, lo duat hle ang che u.", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -926,7 +926,7 @@ def user_button(update: Update, context: CallbackContext):
         member_dict = VERIFIED_USER_WAITLIST.pop(user.id)
         member_dict["status"] = True
         VERIFIED_USER_WAITLIST.update({user.id: member_dict})
-        query.answer(text="Yeet! You're a human, unmuted!")
+        query.answer(text="A haiii! Mihring i lo ni ve reng a, unmuted i ni e!")
         bot.restrict_chat_member(
             chat.id,
             user.id,
