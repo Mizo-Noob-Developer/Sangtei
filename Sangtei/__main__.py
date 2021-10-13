@@ -87,17 +87,17 @@ Kei hi Group management bot ka ni, heng te hmang hian i group tha tak in ka enka
  ✪ /help <module hming>: PM lam ah modules hrilhfiah na ka hrilh ang che.
  ✪ /donate: engtin nge donation tih dan tur tuh ka hrilh ang che!
  ✪ /settings:
-   ◔ in PM: will send you your settings for all supported modules.
-   ◔ in a group: will redirect you to pm, with all that chat's settings.
+   ◔ PM lam ah: I modules hman theih zawng zawng te nen a rawn thawn/pe vek ang che.
+   ◔ Group lam ah: Pm lam a kal na tur a pe ang che a, Setting hman theih zawng zawng nen.
 {}
 """.format(
     dispatcher.bot.first_name,
-    "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !\n",
+    "" if not ALLOW_EXCL else "\nCommand zawng zawng hi hemi / emaw ! Hmanga pek theih ani\n",
 )
 
 Sangtei_IMG = "https://1.bp.blogspot.com/-rsWtl7fFhTs/YJRDqJ3NTRI/AAAAAAAAJBY/1REF6FQLBS8pa4WPaa0RJFr7c7SSHTCDwCLcBGAsYHQ/s0/main-qimg-396b1449a73cd7198c4edc337b5cae80.webp"
 
-DONATE_STRING = """Hey, min siamtu ka developer tan pawisa donate i duh tih hriat chu a nuam hle mai. Kei hi heroku lam ah a thlawn a run ka ni a, modules tha tak tak dah dawn in heroku lam atanga phal chin a awm avangin tih theih ani thin lo a.\n\nA tha ber ah chuan ka developer hian VPS host a neih theih chuan ka tangkai zual sawt dawn ani. Contact la han tanpui rawh le.\n\nDeveloper: [Nicky Lalrochhara](t.me/Nickylrca) 🤗😁"""
+DONATE_STRING = """Chibai, min siamtu ka developer tan pawisa donate i duh tih hriat chu a nuam hle mai. Kei hi heroku lam ah a thlawn a run ka ni a, modules tha tak tak dah dawn in heroku lam atanga phal chin a awm avangin tih theih ani thin lo a.\n\nA tha ber ah chuan ka developer hian VPS host a neih theih chuan ka tangkai zual sawt dawn ani. Contact la han tanpui rawh le.\n\nDeveloper: [Nicky Lalrochhara](t.me/Nickylrca) 🤗😁"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -117,7 +117,7 @@ for module_name in ALL_MODULES:
     if not imported_module.__mod_name__.lower() in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
     else:
-        raise Exception("Can't have two modules with the same name! Please change one")
+        raise Exception("Hming in ang modules pahnih a neih theih loh! Khawi emaw ber kha thlak rawh")
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -214,7 +214,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="➕ Add Sangtei to your Group",
+                                text="Add Sangtei to your Group",
                                 url="t.me/{}?startgroup=true".format(
                                     context.bot.username
                                 ),
@@ -222,21 +222,21 @@ def start(update: Update, context: CallbackContext):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="👥 Support Group",
+                                text="Support Group",
                                 url=f"https://t.me/joinchat/FlMWfMyVSNZjZjhl",
                             ),
                             InlineKeyboardButton(
-                                text="📌 Updates Channel",
+                                text="Updates Channel",
                                 url="https://t.me/Sangteiupdate",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Sangtei Music🎵",
+                                text="Sangtei Music",
                                 url=f"https://t.me/sangteibot",
                             ),
                             InlineKeyboardButton(
-                                text="Developer 🇮🇳",
+                                text="Developer",
                                 url="https://t.me/Nickylrca",
                             ),
                         ],
@@ -362,7 +362,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help ⛑",
+                                text="Help",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -373,7 +373,7 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Command hman theih te i hriat duh chuan, Pm lam ah min be rawh.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -390,7 +390,7 @@ def get_help(update: Update, context: CallbackContext):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "Heng te hi *{}* module a i hman theih te leh hrilhfiahna te chu an ni:\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -416,14 +416,14 @@ def send_settings(chat_id, user_id, user=False):
             )
             dispatcher.bot.send_message(
                 user_id,
-                "These are your current settings:" + "\n\n" + settings,
+                "Heng te hi i setting awmlai mek te an ni:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN,
             )
 
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any user specific settings available :'(",
+                "A lan dan chuan user te settings tur bik a awm lo ni in a lang :'(",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -432,7 +432,7 @@ def send_settings(chat_id, user_id, user=False):
             chat_name = dispatcher.bot.getChat(chat_id).title
             dispatcher.bot.send_message(
                 user_id,
-                text="Which module would you like to check {}'s settings for?".format(
+                text="Khawi modules ber hi nge {}'s settings atan a, i en duh le?".format(
                     chat_name
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -442,8 +442,8 @@ def send_settings(chat_id, user_id, user=False):
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any chat settings available :'(\nSend this "
-                "in a group chat you're admin in to find its current settings!",
+                "A lan dan in he chat tan hian settings hman theih mai tur a awm lo :'(\nHei hi thawn rawh "
+                "Settings awm lai mek te en tur chuan, group ah admin i nih angai!",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -462,7 +462,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(
+            text = "*{}* hian he he *{}* module atan hian settings chu anei:\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__
             ) + CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(
