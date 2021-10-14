@@ -19,7 +19,7 @@ def feedback(bot: Bot, update: Update):
   feed_text = f"Sangtei feedback *Thar* a dawng e, he user [{name}](tg://user?id={userid}) hen atang hian.\n\nfeed: {text}"
   
 
-  bot.send_message(-1001199155295, feed_text, parse_mode=ParseMode.MARKDOWN)
+  bot.send_message(-1001308467547, feed_text, parse_mode=ParseMode.MARKDOWN)
  
   text = html.escape(text)
   reply_text=f"Feedback min pek avang in kan lawm e."
