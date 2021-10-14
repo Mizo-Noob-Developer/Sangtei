@@ -5,7 +5,6 @@ from Sangtei import (
     DEV_USERS,
     DRAGONS,
     SUPPORT_CHAT,
-    WOLVES_USERS,
     TIGER_USERS,
     WHITELIST_USERS,
     dispatcher,
