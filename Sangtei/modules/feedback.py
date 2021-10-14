@@ -33,11 +33,11 @@ def feedback(bot: Bot, update: Update):
 
 
 help = """
- - /feedback : You can give us your feedbacks 
-               can can see your feeds here.
+ - /feedback : I feedback hemi command kaltlang hian min thawn thei ang, 
+               I feedback pawh i hmu thei bawk ang.
 """
 
-mod_name = "FEEDBACK"
+mod_name = "Feedback"
 
 feed_handle = DisableAbleCommandHandler("feedback", feedback)
 
