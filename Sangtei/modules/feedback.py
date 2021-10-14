@@ -5,11 +5,12 @@ from Sangtei.modules.disable import DisableAbleCommandHandler
 from Sangtei import dispatcher
 from requests import get
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-
+from telegram.ext import CallbackContext
 
 
 @run_async
-def feedback(bot: Bot, update: Update):
+def feedback(update: Update, context: CallbackContext):
+  bot = context.bot
   name = update.effective_message.from_user.first_name
   message = update.effective_message
   userid=message.from_user.id
