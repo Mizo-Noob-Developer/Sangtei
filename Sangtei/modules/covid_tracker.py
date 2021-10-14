@@ -10,7 +10,7 @@ from requests import get
 from telegram.ext import CallbackContext
 
 def covindia(update: Update, context: CallbackContext):
-              bot = context.bot
+    bot = context.bot
     message = update.effective_message
     state = ''
     confirmed = 0
