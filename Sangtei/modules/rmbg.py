@@ -1,4 +1,4 @@
-# © Famhawite Technology & Zoawi Studio without Their permission,
+# © 2021 Famhawite Technology & Zoawi Studio without Their permission,
 # This Modules is prohibited to re use or modify.
 
 from Sangtei import telethn as tbot
