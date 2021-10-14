@@ -3,9 +3,9 @@ from functools import wraps
 from Sangtei import (
     DEL_CMDS,
     DEV_USERS,
-    SUDO_USERS,
+    DRAGONS,
     SUPPORT_CHAT,
-    SUPPORT_USERS,
+    WOLVES_USERS,
     TIGER_USERS,
     WHITELIST_USERS,
     dispatcher,
