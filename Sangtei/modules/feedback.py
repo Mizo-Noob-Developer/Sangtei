@@ -17,15 +17,15 @@ def feedback(update: Update, context: CallbackContext):
   text = message.text[len('/feedback '):]
    
 
-  feed_text = f"Sangtei feedback *Thar* a dawng e, he user [{name}](tg://user?id={userid}) hen atang hian.\n\nfeed: {text}"
+  feed_text = f"Sangtei feedback *Thar* a dawng e, he user [{name}](tg://user?id={userid}) hnen atang hian.\n\nfeed: {text}"
   
 
   bot.send_message(-1001308467547, feed_text, parse_mode=ParseMode.MARKDOWN)
  
   text = html.escape(text)
-  reply_text=f"Feedback min pek avang in kan lawm e."
+  reply_text=f"Feedback min pek avang in kan lawm e. \n\nA hnuai a button atang khuan, i feedback i en thei ang."
   message.reply_text(reply_text, reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="I feedback chu hetah hian i hmu thei ang",url="https://t.me/Sangtei_Update")]]))
+                                                [[InlineKeyboardButton(text="I feedback",url="https://t.me/Sangtei_Update")]]))
                                                
   
 
