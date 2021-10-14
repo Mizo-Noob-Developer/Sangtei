@@ -45,9 +45,9 @@ db = client["Sangtei"]
 approved_users = db.approve
 
 
-@register(pattern="^/rmbg")
+@register(pattern="^/rbg")
 async def _(event):
-    HELP_STR = "he command `/rmbg` hi media reply nan hmang rawh"
+    HELP_STR = "he command `/rbg` hi media reply nan hmang rawh"
     if event.fwd_from:
         return
     approved_userss = approved_users.find({})
@@ -137,5 +137,5 @@ file_helpo = file_help.replace("_", " ")
 __mod_name__ = "Remove backgrd"
 
 __help__ = """
- - /rmbg: Media file kha hemu command hmang hian reply la background chu a rawn remove mai ang
+ - /rbg: Media file kha hemu command hmang hian reply la background chu a rawn remove mai ang
 """
