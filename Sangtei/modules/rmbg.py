@@ -1,6 +1,6 @@
 
-from Sophia import telethn as tbot
-from Sophia import MONGO_DB_URI
+from Sangtei import telethn as tbot
+from Sangtei import MONGO_DB_URI
 from pymongo import MongoClient
 import io
 import asyncio
