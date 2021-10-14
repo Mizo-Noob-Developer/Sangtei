@@ -1,3 +1,5 @@
+# © Famhawite Technology & Zoawi Studio without Their permission,
+# This Modules is prohibited to re use or modify.
 
 from Sangtei import telethn as tbot
 from Sangtei import MONGO_DB_URI
