@@ -8,7 +8,8 @@ from Sangtei import dispatcher
 from Sangtei.modules.disable import DisableAbleCommandHandler
 from requests import get
 
-def covindia(bot: Bot, update: Update):
+def covindia(update: update, context: CallbackContext):
+              bot = context.bot
     message = update.effective_message
     state = ''
     confirmed = 0
