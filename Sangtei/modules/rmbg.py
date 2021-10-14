@@ -45,7 +45,7 @@ approved_users = db.approve
 
 @register(pattern="^/rmbg")
 async def _(event):
-    HELP_STR = "hei command `/rmbg` hi media reply nan hmang rawh"
+    HELP_STR = "he command `/rmbg` hi media reply nan hmang rawh"
     if event.fwd_from:
         return
     approved_userss = approved_users.find({})
@@ -60,14 +60,14 @@ async def _(event):
         else:
             return
     if REM_BG_API_KEY is None:
-        await event.reply("You need API token from remove.bg to use this plugin.")
+        await event.reply("API key token remove.bg atang in i mamawh he mi hmang ve thei tur chuan.")
         return False
     start = datetime.now()
     message_id = event.message.id
     if event.reply_to_msg_id:
         message_id = event.reply_to_msg_id
         reply_message = await event.get_reply_message()
-        await event.reply("Processing...")
+        await event.reply("Siam mek...")
         try:
             downloaded_file_name = await tbot.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
@@ -84,7 +84,7 @@ async def _(event):
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
         with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "rmbg.png"
+            remove_bg_image.name = "Miss-Sangtei.png"
             await tbot.send_file(
                 event.chat_id,
                 remove_bg_image,
@@ -95,10 +95,10 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await event.reply("Background Removed in {} seconds".format(ms))
+        await event.reply("Background paih rei zawng {} seconds".format(ms))
     else:
         await event.reply(
-            "remove.bg API returned Errors. Please report to @dihan_official\n`{}".format(
+            "remove.bg API a dik lo tlat mai. Khawngaih in hetah hian report rawh [Support Group](https://t.me/joinchat/FlMWfMyVSNZjZjhl)\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )
@@ -122,11 +122,11 @@ def ReTrieveFile(input_file_name):
 @register(pattern="^/superfban")
 async def _(event):
     if event.reply_to_msg_id:
-        k = await event.reply("Initiating SuperFedban..")
+        k = await event.reply("SuperFedban tih tan mek ani..")
         await asyncio.sleep(2)
-        await k.edit("Banned User Successfully In 222 Feds")
+        await k.edit("User hi feds 222 ah Hlawhtling taka Banned ani")
     else:
-        await event.reply("Abe Kisko Krna He Bsd")
+        await event.reply("Chin tawk hriat ve a tha e")
         return
 file_help = os.path.basename(__file__)
 file_help = file_help.replace(".py", "")
