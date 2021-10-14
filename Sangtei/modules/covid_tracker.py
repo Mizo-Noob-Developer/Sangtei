@@ -7,8 +7,9 @@ from telegram.ext import CommandHandler, MessageHandler, BaseFilter, run_async
 from Sangtei import dispatcher
 from Sangtei.modules.disable import DisableAbleCommandHandler
 from requests import get
+from telegram.ext import CallbackContext
 
-def covindia(update: update, context: CallbackContext):
+def covindia(update: Update, context: CallbackContext):
               bot = context.bot
     message = update.effective_message
     state = ''
@@ -43,7 +44,8 @@ def covindia(update: update, context: CallbackContext):
             disable_web_page_preview = True
         )
 @run_async
-def corona(bot: Bot, update: Update):
+def corona(update: Update, context: CallbackContext):
+    bot = Context.bot
     message = update.effective_message
     device = message.text[len('/corona '):]
     fetch = get(f'https://coronavirus-tracker-api.herokuapp.com/all')
