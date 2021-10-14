@@ -23,9 +23,9 @@ def covindia(update: Update, context: CallbackContext):
         state_dict = json.loads(json_url.read())
         for sdict in state_dict['statewise']:
             if sdict['state'].lower() == state_input.lower():
-                confirmed = sdict['Confirmed']
-                deceased = sdict['thih pui']
-                recovered = sdict['dam chhuak']
+                confirmed = sdict['confirmed']
+                deceased = sdict['deaths']
+                recovered = sdict['recovered']
                 state = sdict['state']
                 break
     
