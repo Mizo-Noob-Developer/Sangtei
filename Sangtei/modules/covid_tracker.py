@@ -45,7 +45,7 @@ def covindia(update: Update, context: CallbackContext):
         )
 @run_async
 def corona(update: Update, context: CallbackContext):
-    bot = Context.bot
+    bot = context.bot
     message = update.effective_message
     device = message.text[len('/corona '):]
     fetch = get(f'https://coronavirus-tracker-api.herokuapp.com/all')
@@ -76,7 +76,7 @@ __help__ = """
  - /covindia <state>: Indian state khawi lai pawh Covid statistics hre tur in state hming nen i zawng thei.
 """
 
-__mod_name__ = 'Covid track'
+__mod_name__ = 'Covid tracker'
 
 COV_INDIA_HANDLER = CommandHandler('covindia', covindia)
 CORONA_HANDLER = DisableAbleCommandHandler("covid", corona, admin_ok=True)
