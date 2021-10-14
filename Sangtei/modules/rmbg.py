@@ -39,7 +39,7 @@ async def is_register_admin(chat, user):
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["Sophia"]
+db = client["Sangtei"]
 approved_users = db.approve
 
 
