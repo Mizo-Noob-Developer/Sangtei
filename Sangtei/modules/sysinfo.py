@@ -5,14 +5,14 @@ from telegram import ParseMode
 import sys
 from Sangtei import dispatcher
 from telegram.ext import CallbackContext, run_async, CommandHandler
-from Sangtei.modules.helper_funcs.chat_status import dev_user
+from Sangtei.modules.helper_funcs.nicky_status import sudo_plus
 import telethon
 import telegram
 from telegram import Update
 
 
 @run_async
-@dev_user
+@sudo_plus
 def sysinfo(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
