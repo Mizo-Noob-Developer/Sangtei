@@ -25,7 +25,7 @@ def feedback(update: Update, context: CallbackContext):
   text = html.escape(text)
   reply_text=f"Feedback min pek avang in kan lawm e. \n\nA hnuai a button atang khuan, i feedback i en thei ang."
   message.reply_text(reply_text, reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="I feedback",url="https://t.me/Sangtei_Update")]]))
+                                                [[InlineKeyboardButton(text="I feedback",url="https://t.me/SangteiUpdate")]]))
                                                
   
 
