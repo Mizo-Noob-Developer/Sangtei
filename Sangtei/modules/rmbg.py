@@ -68,9 +68,8 @@ async def _(event):
     message_id = event.message.id
     if event.reply_to_msg_id:
         message_id = event.reply_to_msg_id
-        reply_message = await event.get_reply_message()
+        reply_message = await event.get_reply_delete()
         await event.reply("Siam mek...")
-        await event.reply("Upload mek...")
         try:
             downloaded_file_name = await tbot.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
