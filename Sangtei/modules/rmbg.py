@@ -68,14 +68,14 @@ async def _(event):
     message_id = event.message.id
     if event.reply_to_msg_id:
         message_id = event.reply_to_msg_id
-        reply_message = await event.get_reply_delete()
+        reply_message = await event.get_reply_message()
         await event.reply("Siam mek...")
         try:
             downloaded_file_name = await tbot.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:
-            await event.reply(str(e))
+            await event.delete(str(e))
             return
         else:
             output_file_name = ReTrieveFile(downloaded_file_name)
