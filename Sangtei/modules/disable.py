@@ -150,10 +150,10 @@ if is_module_loaded(FILENAME):
                     parse_mode=ParseMode.MARKDOWN,
                 )
             else:
-                update.effective_message.reply_text("That command can't be disabled")
+                update.effective_message.reply_text("He command hi a tih thih theih loh")
 
         else:
-            update.effective_message.reply_text("What should I disable?")
+            update.effective_message.reply_text("Engvang in nge ka tih thih ang?")
 
     @run_async
     @connection_status
@@ -162,19 +162,19 @@ if is_module_loaded(FILENAME):
         args = context.args
         chat = update.effective_chat
         if len(args) >= 1:
-            disable_module = "Lyci.modules." + args[0].rsplit(".", 1)[0]
+            disable_module = "Sangtei.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(disable_module)
             except:
-                update.effective_message.reply_text("Does that module even exist?")
+                update.effective_message.reply_text("He modules hi a awm reng reng em?")
                 return
 
             try:
                 command_list = module.__command_list__
             except:
                 update.effective_message.reply_text(
-                    "Module does not contain command list!"
+                    "He modules hian command eng mah a keng tel lo!"
                 )
                 return
 
@@ -201,12 +201,12 @@ if is_module_loaded(FILENAME):
             if failed_disabled_cmds:
                 failed_disabled_cmds_string = ", ".join(failed_disabled_cmds)
                 update.effective_message.reply_text(
-                    f"Commands `{failed_disabled_cmds_string}` can't be disabled",
+                    f"Commands `{failed_disabled_cmds_string}` hi a tih thih theih loh",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
         else:
-            update.effective_message.reply_text("What should I disable?")
+            update.effective_message.reply_text("Engvang in nge ka tih thih ang?")
 
     @run_async
     @connection_status
@@ -224,10 +224,10 @@ if is_module_loaded(FILENAME):
                     f"Enabled the use of `{enable_cmd}`", parse_mode=ParseMode.MARKDOWN
                 )
             else:
-                update.effective_message.reply_text("Is that even disabled?")
+                update.effective_message.reply_text("Hei hi tih thih a ni reng reng em?")
 
         else:
-            update.effective_message.reply_text("What should I enable?")
+            update.effective_message.reply_text("Engvang in nge ka tih nun ang?")
 
     @run_async
     @connection_status
@@ -242,14 +242,14 @@ if is_module_loaded(FILENAME):
             try:
                 module = importlib.import_module(enable_module)
             except:
-                update.effective_message.reply_text("Does that module even exist?")
+                update.effective_message.reply_text("He modules hi a awm tawh reng reng em?")
                 return
 
             try:
                 command_list = module.__command_list__
             except:
                 update.effective_message.reply_text(
-                    "Module does not contain command list!"
+                    "He modules hian eng command mah a keng tel lo!"
                 )
                 return
 
@@ -275,12 +275,12 @@ if is_module_loaded(FILENAME):
             if failed_enabled_cmds:
                 failed_enabled_cmds_string = ", ".join(failed_enabled_cmds)
                 update.effective_message.reply_text(
-                    f"Are the commands `{failed_enabled_cmds_string}` even disabled?",
+                    f"He command `{failed_enabled_cmds_string}` hi tih thih ani reng reng em?",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
         else:
-            update.effective_message.reply_text("What should I enable?")
+            update.effective_message.reply_text("Engvang in nge ka tih thih ang?")
 
     @run_async
     @connection_status
@@ -295,18 +295,18 @@ if is_module_loaded(FILENAME):
                 parse_mode=ParseMode.MARKDOWN,
             )
         else:
-            update.effective_message.reply_text("No commands can be disabled.")
+            update.effective_message.reply_text("Eng command mah a tih thih theih loh.")
 
     # do not async
     def build_curr_disabled(chat_id: Union[str, int]) -> str:
         disabled = sql.get_all_disabled(chat_id)
         if not disabled:
-            return "No commands are disabled!"
+            return "Eng command mah tih thih ani lo!"
 
         result = ""
         for cmd in disabled:
             result += " - `{}`\n".format(escape_markdown(cmd))
-        return "The following commands are currently restricted:\n{}".format(result)
+        return "I command hman tum hi hman phal ani lo:\n{}".format(result)
 
     @run_async
     @connection_status
