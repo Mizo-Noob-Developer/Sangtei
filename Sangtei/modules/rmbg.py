@@ -70,11 +70,11 @@ async def _(event):
         message_id = event.reply_to_msg_id
         reply_message = await event.get_reply_message()
         await event.reply("Siam mek...")
+        await event.delete()
         try:
             downloaded_file_name = await tbot.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
-        await event.delete()
         except Exception as e:
             await event.reply(str(e))
             return
@@ -96,9 +96,6 @@ async def _(event):
                 allow_cache=False,
                 reply_to=message_id,
             )
-        end = datetime.now()
-        ms = (end - start).seconds
-        await event.reply("Background paih rei zawng {} seconds".format(ms))
     else:
         await event.reply(
             "remove.bg API a dik lo tlat mai. Khawngaih in hetah hian report rawh [Support Group](https://t.me/joinchat/FlMWfMyVSNZjZjhl)\n`{}".format(
