@@ -75,7 +75,7 @@ async def _(event):
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:
-            await event.delete(str(e))
+            await event.reply(str(e))
             return
         else:
             output_file_name = ReTrieveFile(downloaded_file_name)
