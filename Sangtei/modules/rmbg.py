@@ -74,6 +74,7 @@ async def _(event):
             downloaded_file_name = await tbot.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
+        await event.delete()
         except Exception as e:
             await event.reply(str(e))
             return
