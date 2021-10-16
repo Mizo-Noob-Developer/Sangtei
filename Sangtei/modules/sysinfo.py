@@ -10,7 +10,7 @@ from Sangtei import telethn as tbot
 from Sangtei.events import register
 
 import psutil
-from pyrogram import  Client, filters, __version__
+from telethon import  Client, filters, __version__
 
 
 # FETCH SYSINFO
