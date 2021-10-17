@@ -597,7 +597,7 @@ def donate(update: Update, context: CallbackContext):
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "PM lam ah min be hmasa la, donation chungchang hre tur in."
+                "PM lam ah Donation chungchang a i hriat tur tul leh Donation tih dan tur vel ka rawn thawn che a, i lo en ve leh dawn nia."
             )
 
 
