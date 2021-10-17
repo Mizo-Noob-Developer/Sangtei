@@ -22,7 +22,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@app.on_message(filters.command("couples") & ~filters.edited)
+@app.on_message(filters.command("kawppui") & ~filters.edited)
 async def couple(_, message):
     if message.chat.type == "private":
         await message.reply_text("He command hi Group a hman atan chauh ani.")
@@ -47,7 +47,7 @@ async def couple(_, message):
 
             couple_selection_message = f"""**Vawiin atan a kan group Nupa thar te:**
 {c1_mention} + {c2_mention} = ❤️
-__Kan Group Nupa thar tur te hi  12AM {tomorrow}__ ah thlan leh an ni ang"""
+__Kan Group Nupa thar tur te hi Naktuk 12AM {tomorrow} ah thlan leh an ni ang__"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -65,7 +65,7 @@ __Kan Group Nupa thar tur te hi  12AM {tomorrow}__ ah thlan leh an ni ang"""
             c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Vawiin atan a kan group Nupa thar te:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
-__Kan Group Nupa thar tur te hi 12AM {tomorrow}__ ah thlan leh an ni ang"""
+__Kan Group Nupa thar tur te hi Naktuk 12AM {tomorrow} ah thlan leh an ni ang__"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -77,7 +77,7 @@ __Kan Group Nupa thar tur te hi 12AM {tomorrow}__ ah thlan leh an ni ang"""
 
 
 __help__ = """
- ❍ /couples - To Choose Couple Of The Day
+ ❍ /kawppui - To Choose Couple Of The Day
  """
-__mod_name__ = "⚡️Couples⚡️"
+__mod_name__ = "Kawp pui"
 
