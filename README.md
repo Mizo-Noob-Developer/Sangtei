@@ -1,5 +1,5 @@
 ![Sangtei](https://1.bp.blogspot.com/-rsWtl7fFhTs/YJRDqJ3NTRI/AAAAAAAAJBY/1REF6FQLBS8pa4WPaa0RJFr7c7SSHTCDwCLcBGAsYHQ/s0/main-qimg-396b1449a73cd7198c4edc337b5cae80.webp)
-![Maintenance](https://img.shields.io/maintenance/yes/2021?style=for-the-badge) ![youtube music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)
+![Maintenance](https://img.shields.io/maintenance/yes/2021?style=for-the-badge)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/lalrochhara/Sangtei?include_prereleases&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/lalrochhara/sangtei?style=for-the-badge)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/lalrochhara/sangtei?style=for-the-badge)
