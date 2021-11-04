@@ -233,7 +233,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="Donate",
-                                url=f"https://Buymeacoffe.com/Nickylrca",
+                                url=f"https://www.buymeacoffee.com/NickyLrca",
                             ),
                             InlineKeyboardButton(
                                 text="Developer",
