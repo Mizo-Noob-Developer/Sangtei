@@ -76,14 +76,14 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = "Chibai {}, ka hming chu {} ani. 👸\n\nKei hi telegram group enkawl tur a siam ka ni. Developer  [Nicky Lalrochhara](t.me/Nickylrca)\n\nHit /help to find my list of available commands"
+PM_START_TEXT = "Chibai {}, ka hming chu {} ani. 👸\n\nKei hi telegram group enkawl tur a siam ka ni. \n\nDeveloper  [Nicky Lalrochhara](t.me/Nickylrca)\n\nHe command /help tih hi hmet la, command hman theih te i en dawn nia."
 
 HELP_STRINGS = """
 Howdy! Ka hming chu *{}* ani.
 Kei hi Group management bot ka ni, heng te hmang hian i group tha tak in ka enkawl sak thei che!
 
 *Main* commands hman theih te:
- ✪ /help: PM lam ah ka hrilh ang che.
+ ✪ /help: PM lam ah min hman theih na te ka hrilh ang che.
  ✪ /help <module hming>: PM lam ah modules hrilhfiah na ka hrilh ang che.
  ✪ /donate: engtin nge donation tih dan tur tuh ka hrilh ang che!
  ✪ /settings:
