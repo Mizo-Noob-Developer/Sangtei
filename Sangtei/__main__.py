@@ -578,7 +578,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 1469528232 and DONATION_LINK:
             update.effective_message.reply_text(
-                "Paypal kaltlang pawh hian donation i pe thei tho bawk ania "
+                "Buymeacoffee kaltlang pawh hian donation i pe thei tho bawk ania "
                 "[hetah hian]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -597,7 +597,7 @@ def donate(update: Update, context: CallbackContext):
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "PM lam ah Donation chungchang a i hriat tur tul leh Donation tih dan tur vel ka rawn thawn che a, i lo en ve leh dawn nia."
+                "PM lam ah Donation chungchang a i hriat tur tul leh Donation tih dan tur vel ka rawn thawn che a, i lo en ve leh dawn nia. Tin PM lam ah khan donate comman kha han thawn leh la donation tihna awlsam tur pawh i hmu thei ang."
             )
 
 
