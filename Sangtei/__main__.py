@@ -232,8 +232,8 @@ def start(update: Update, context: CallbackContext):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Sangtei Music",
-                                url=f"https://t.me/sangteibot",
+                                text="Donate",
+                                url=f"https://Buymeacoffe.com/Nickylrca",
                             ),
                             InlineKeyboardButton(
                                 text="Developer",
@@ -357,7 +357,7 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
-                f"Contact me in PM to get help of {module.capitalize()}",
+                f"Pm lam ah min be rawh he {module.capitalize()} modules hi i hriat chian duh chuan.",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
