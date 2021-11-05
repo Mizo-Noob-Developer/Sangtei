@@ -239,9 +239,9 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
 
 __help__ = """
 *Admins tan chauh:*
- •  /mute `<userhandle>` *:* user te ngawih tir hmak na. Reply na ah pawh a hman theih, user i reply kha a mute hmak ang.
- •  /tmute `<userhandle> x(m/h/d)` *:* user te mute chhung rei zawng x hun chhung atan. (An mahni kal tlang emaw, an thuziak reply in). `m` = `minutes`, `h` = `hours`, `d` = `days`.
- •  /unmute `<userhandle>` *:* user unmute na. Reply na atang pawn a hman theih, an mahni i reply khan user kha a unmute ang.
+ ➥  /mute `<userhandle>` *:* user te ngawih tir hmak na. Reply na ah pawh a hman theih, user i reply kha a mute hmak ang.
+ ➥  /tmute `<userhandle> x(m/h/d)` *:* user te mute chhung rei zawng x hun chhung atan. (An mahni kal tlang emaw, an thuziak reply in). `m` = `minutes`, `h` = `hours`, `d` = `days`.
+ ➥  /unmute `<userhandle>` *:* user unmute na. Reply na atang pawn a hman theih, an mahni i reply khan user kha a unmute ang.
 """
 
 MUTE_HANDLER = CommandHandler("mute", mute)
