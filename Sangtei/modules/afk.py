@@ -147,8 +147,8 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 
 
 __help__ = """
- •  /afk `<sawifiah na>`*:* nangmah leh nangmah AFK(away from keyboard) a in dahna.
- •  brb `<sawifiah na>`*:* afk command nen a in ang reng - mahse command ani ve lo.
+ ➥  /afk `<sawifiah na>`*:* nangmah leh nangmah AFK(away from keyboard) a in dahna.
+ ➥  brb `<sawifiah na>`*:* afk command nen a in ang reng - mahse command ani ve lo.
 Chuan AFK a i in dah anih chuan, nangmah an mention na zawng zawng ah che, i hman loh thu a reply zel ani ang!
 """
 
