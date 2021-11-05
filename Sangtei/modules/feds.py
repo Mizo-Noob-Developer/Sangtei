@@ -48,17 +48,17 @@ from telegram.utils.helpers import mention_html, mention_markdown
 # Federation update v2 by Ayra Hikari 2019
 # Time spended on feds = 10h by #MrYacha
 # Time spended on reworking on the whole feds = 22+ hours by @Nickylrca
-# Time spended on updating version to v2 = 26+ hours by @zostreamsupoort
+# Time spended on updating version to v2 = 26+ hours by @MizoBotDev
 # Total spended for making this features is 68+ hours
 # LOGGER.info("Original federation module by Mr.Yacha, reworked by Nicky Lalrochhara (@nickylrca) on Telegram.")
 
 FBAN_ERRORS = {
-    "User is an administrator of the chat",
-    "Chat not found",
-    "Not enough rights to restrict/unrestrict chat member",
+    "User hi chat ah hian administrator ani",
+    "Chat hi hmuh ani lo",
+    "Group ah hian user restrict/unrestricted tur in phalna ka nei tam tawk lo.",
     "User_not_participant",
     "Peer_id_invalid",
-    "Group chat was deactivated",
+    "Group chat chu deactivated ani",
     "Need to be inviter of a user to kick it from a basic group",
     "Chat_admin_required",
     "Only the creator of a basic group can kick group administrators",
