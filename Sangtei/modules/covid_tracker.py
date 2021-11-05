@@ -72,8 +72,8 @@ def corona(update: Update, context: CallbackContext):
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 __help__ = """
- - /covid: Khawvel pumpui Covid Chungchang en na
- - /covindia <state>: Indian state khawi lai pawh Covid statistics hre tur in state hming nen i zawng thei.
+ ➥ /covid: Khawvel pumpui Covid Chungchang en na
+ ➥ /covindia <state>: Indian state khawi lai pawh Covid statistics hre tur in state hming nen i zawng thei.
 """
 
 __mod_name__ = 'Covid tracker'
