@@ -113,6 +113,6 @@ async def zombies(event):
 
 
 __help__ = """
- ⦁ `/zombies`*:* Check if any deleted accounts available in the group member list and give results"""
+ ➥ `/zombies`*:* Group ah account delete tawh te an awm em en na leh a chhan na hriat na"""
 
 __mod_name__ = "Zombies"
