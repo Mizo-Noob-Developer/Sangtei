@@ -72,9 +72,9 @@ async def delete_messages(event):
 
 __help__ = """
 *Admin tan chauh:*
- •  /del : i message reply te paih na
- •  /purge : message zawng zawng paihna leh a inkar ami zawng then fai na.
- •  /purge `<integer X>`: message paih ani e, chuan i message thlan chhuah a reply na awm zawng zawng pawh paih ani.
+ ➥  /del : i message reply te paih na
+ ➥  /purge : message zawng zawng paihna leh a inkar ami zawng then fai na.
+ ➥  /purge `<integer X>`: message paih ani e, chuan i message thlan chhuah a reply na awm zawng zawng pawh paih ani.
 """
 
 __mod_name__ = "Purges"
