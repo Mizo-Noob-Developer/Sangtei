@@ -1,4 +1,4 @@
-# Module to blacklist users and prevent them from using commands by @TheRealPhoenix
+# Module to blacklist users and prevent them from using commands by @NickyLrca
 import html
 
 from telegram import ParseMode, Update
@@ -26,22 +26,22 @@ def bl_user(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("User an ni tur ani.")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("How am I supposed to do my work if I am ignoring myself?")
+        message.reply_text("Keimah leh keimah ka in ngaihthah chuan, engtin nge hna ka thawh theih ang.?")
         return ""
 
     if user_id in BLACKLISTWHITELIST:
-        message.reply_text("No!\nNoticing Disasters is my job.")
+        message.reply_text("Âih!\nDisaster te hriat tir hi ka hna ani.")
         return ""
 
     try:
         target_user = bot.get_chat(user_id)
     except BadRequest as excp:
-        if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user.")
+        if excp.message == "User hmuh ani lo":
+            message.reply_text("He user hi ka hmu thei lo.")
             return ""
         else:
             raise
@@ -54,7 +54,7 @@ def bl_user(update: Update, context: CallbackContext) -> str:
         f"<b>User:</b> {mention_html(target_user.id, html.escape(target_user.first_name))}"
     )
     if reason:
-        log_message += f"\n<b>Reason:</b> {reason}"
+        log_message += f"\n<b>A chhan:</b> {reason}"
 
     return log_message
 
@@ -141,7 +141,7 @@ def __user_info__(user_id):
         text = text.format("Yes")
         reason = sql.get_reason(user_id)
         if reason:
-            text += f"\nReason: <code>{reason}</code>"
+            text += f"\nA chhan: <code>{reason}</code>"
     else:
         text = text.format("No")
 
