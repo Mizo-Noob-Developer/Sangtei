@@ -30,14 +30,14 @@ def afk(update: Update, context: CallbackContext):
         reason = args[1]
         if len(reason) > 100:
             reason = reason[:100]
-            notice = "\nYour afk reason was shortened to 100 characters."
+            notice = "\nI AFK chhan hi thumal 100 aia tawi tur ani."
     else:
         reason = ""
 
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} chu tun atan chuan a hman rih lo!{}".format(fname, notice))
+        update.effective_message.reply_text("{} hi tun atan chuan a hman tawh rih lo!{}".format(fname, notice))
     except BadRequest:
         pass
 
@@ -58,13 +58,13 @@ def no_longer_afk(update: Update, context: CallbackContext):
         try:
             options = [
                 "{} A lo kir leh ta e!",
-                "{} Thawm dim lo takin a lo kir e!",
+                "{} A rawn lang hlawk mai!",
                 "{} A tihtur a zawh fel tawh hnu ah a lo kir e!",
                 "{} A tho leh ta!",
                 "{} A rawn online leh tawh e!",
                 "{} A tawp ah chuan a rawn kir ve leh ta!",
                 "Kan lo lawm leh a che! {}",
-                "Khawi ah nge {}?\nHi he chat ah hian!",
+                "Khawi ah nge {}?\nhi chat ah hian a awm ve em!",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -135,12 +135,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk".format(fst_name)
+            res = "{} hi a afk rih".format(fst_name)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} chu a afk rih.\nA chhan: <code>{}</code>".format(
+            res = "{} hi a afk rih.\nA chhan: <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
