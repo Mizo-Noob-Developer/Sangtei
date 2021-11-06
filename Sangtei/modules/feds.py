@@ -59,12 +59,12 @@ FBAN_ERRORS = {
     "User_not_participant",
     "Peer_id_invalid",
     "Group chat chu deactivated ani",
-    "Need to be inviter of a user to kick it from a basic group",
+    "Basic group atanga Remove tur chuan user invite tu kha nih angai.",
     "Chat_admin_required",
-    "Only the creator of a basic group can kick group administrators",
+    "Basic group atang hian creator chiah in administrator an remove thei.",
     "Channel_private",
-    "Not in the chat",
-    "Have no rights to send a message",
+    "Chat ah ni lo",
+    "Message thawn tur in phalna nei lo",
 }
 
 UNFBAN_ERRORS = {
@@ -87,7 +87,7 @@ def new_fed(update: Update, context: CallbackContext):
     message = update.effective_message
     if chat.type != "private":
         update.effective_message.reply_text(
-            "Federations can only be created by privately messaging me."
+            "Federations hi group lam ah ni lo in private lam ah message min thawn in siam tur ani."
         )
         return
     if len(message.text) == 1:
@@ -495,13 +495,13 @@ def fed_info(update: Update, context: CallbackContext):
 
     text = "<b>ℹ️ Federation Information:</b>"
     text += "\nFedID: <code>{}</code>".format(fed_id)
-    text += "\nName: {}".format(info["fname"])
-    text += "\nCreator: {}".format(mention_html(owner.id, owner_name))
-    text += "\nAll Admins: <code>{}</code>".format(TotalAdminFed)
+    text += "\nHminh: {}".format(info["fname"])
+    text += "\nSiamtu: {}".format(mention_html(owner.id, owner_name))
+    text += "\nAdmin te: <code>{}</code>".format(TotalAdminFed)
     getfban = sql.get_all_fban_users(fed_id)
-    text += "\nTotal banned users: <code>{}</code>".format(len(getfban))
+    text += "\nUser Banned tawh zat: <code>{}</code>".format(len(getfban))
     getfchat = sql.all_fed_chats(fed_id)
-    text += "\nNumber of groups in this federation: <code>{}</code>".format(
+    text += "\nHe federation zawm tu group te: <code>{}</code>".format(
         len(getfchat)
     )
 
@@ -536,7 +536,7 @@ def fed_admin(update: Update, context: CallbackContext):
     info = sql.get_fed_info(fed_id)
 
     text = "<b>Federation Admin {}:</b>\n\n".format(info["fname"])
-    text += "👑 Owner:\n"
+    text += "👑 Neitu:\n"
     owner = bot.get_chat(info["owner"])
     try:
         owner_name = owner.first_name + " " + owner.last_name
@@ -689,12 +689,12 @@ def fed_ban(update: Update, context: CallbackContext):
         # Will send to current chat
         bot.send_message(
             chat.id,
-            "<b>FedBan reason updated</b>"
+            "<b>FedBan chhan siamthat ani</b>"
             "\n<b>Federation:</b> {}"
             "\n<b>Federation Admin:</b> {}"
             "\n<b>User:</b> {}"
             "\n<b>User ID:</b> <code>{}</code>"
-            "\n<b>Reason:</b> {}".format(
+            "\n<b>A chhan:</b> {}".format(
                 fed_name,
                 mention_html(user.id, user.first_name),
                 user_target,
@@ -707,12 +707,12 @@ def fed_ban(update: Update, context: CallbackContext):
         if getfednotif:
             bot.send_message(
                 info["owner"],
-                "<b>FedBan reason updated</b>"
+                "<b>FedBan chhan siamthat ani</b>"
                 "\n<b>Federation:</b> {}"
                 "\n<b>Federation Admin:</b> {}"
                 "\n<b>User:</b> {}"
                 "\n<b>User ID:</b> <code>{}</code>"
-                "\n<b>Reason:</b> {}".format(
+                "\n<b>A chhan:</b> {}".format(
                     fed_name,
                     mention_html(user.id, user.first_name),
                     user_target,
@@ -727,12 +727,12 @@ def fed_ban(update: Update, context: CallbackContext):
             if int(get_fedlog) != int(chat.id):
                 bot.send_message(
                     get_fedlog,
-                    "<b>FedBan reason updated</b>"
+                    "<b>FedBan chhan siamthat ani</b>"
                     "\n<b>Federation:</b> {}"
                     "\n<b>Federation Admin:</b> {}"
                     "\n<b>User:</b> {}"
                     "\n<b>User ID:</b> <code>{}</code>"
-                    "\n<b>Reason:</b> {}".format(
+                    "\n<b>A chhan:</b> {}".format(
                         fed_name,
                         mention_html(user.id, user.first_name),
                         user_target,
@@ -776,12 +776,12 @@ def fed_ban(update: Update, context: CallbackContext):
         # Also do not spam all fed admins
         """
 		send_to_list(bot, FEDADMIN,
-				 "<b>FedBan reason updated</b>" \
+				 "<b>FedBan chhan siamthat ani</b>" \
 							 "\n<b>Federation:</b> {}" \
 							 "\n<b>Federation Admin:</b> {}" \
 							 "\n<b>User:</b> {}" \
 							 "\n<b>User ID:</b> <code>{}</code>" \
-							 "\n<b>Reason:</b> {}".format(fed_name, mention_html(user.id, user.first_name), user_target, fban_user_id, reason), 
+							 "\n<b>A chhan:</b> {}".format(fed_name, mention_html(user.id, user.first_name), user_target, fban_user_id, reason), 
 							html=True)
 		"""
 
@@ -816,7 +816,7 @@ def fed_ban(update: Update, context: CallbackContext):
                             )
                     except TelegramError:
                         pass
-        # send_message(update.effective_message, "Fedban Reason has been updated.")
+        # send_message(update.effective_message, "Fedban Chhan siamthat leh ani.")
         return
 
     fed_name = info["fname"]
@@ -847,12 +847,12 @@ def fed_ban(update: Update, context: CallbackContext):
     # Will send to current chat
     bot.send_message(
         chat.id,
-        "<b>FedBan reason updated</b>"
+        "<b>FedBan chhan Siamthat ani</b>"
         "\n<b>Federation:</b> {}"
         "\n<b>Federation Admin:</b> {}"
         "\n<b>User:</b> {}"
         "\n<b>User ID:</b> <code>{}</code>"
-        "\n<b>Reason:</b> {}".format(
+        "\n<b>A chhan:</b> {}".format(
             fed_name,
             mention_html(user.id, user.first_name),
             user_target,
@@ -865,12 +865,12 @@ def fed_ban(update: Update, context: CallbackContext):
     if getfednotif:
         bot.send_message(
             info["owner"],
-            "<b>FedBan reason updated</b>"
+            "<b>FedBan chhan siamthat ani</b>"
             "\n<b>Federation:</b> {}"
             "\n<b>Federation Admin:</b> {}"
             "\n<b>User:</b> {}"
             "\n<b>User ID:</b> <code>{}</code>"
-            "\n<b>Reason:</b> {}".format(
+            "\n<b>A chhan:</b> {}".format(
                 fed_name,
                 mention_html(user.id, user.first_name),
                 user_target,
@@ -885,12 +885,12 @@ def fed_ban(update: Update, context: CallbackContext):
         if int(get_fedlog) != int(chat.id):
             bot.send_message(
                 get_fedlog,
-                "<b>FedBan reason updated</b>"
+                "<b>FedBan chhan siamthat ani</b>"
                 "\n<b>Federation:</b> {}"
                 "\n<b>Federation Admin:</b> {}"
                 "\n<b>User:</b> {}"
                 "\n<b>User ID:</b> <code>{}</code>"
-                "\n<b>Reason:</b> {}".format(
+                "\n<b>A chhan:</b> {}".format(
                     fed_name,
                     mention_html(user.id, user.first_name),
                     user_target,
@@ -928,12 +928,12 @@ def fed_ban(update: Update, context: CallbackContext):
         # Also do not spamming all fed admins
         """
 		send_to_list(bot, FEDADMIN,
-				 "<b>FedBan reason updated</b>" \
+				 "<b>FedBan chhan siamthat ani</b>" \
 							 "\n<b>Federation:</b> {}" \
 							 "\n<b>Federation Admin:</b> {}" \
 							 "\n<b>User:</b> {}" \
 							 "\n<b>User ID:</b> <code>{}</code>" \
-							 "\n<b>Reason:</b> {}".format(fed_name, mention_html(user.id, user.first_name), user_target, fban_user_id, reason), 
+							 "\n<b>A chhan:</b> {}".format(fed_name, mention_html(user.id, user.first_name), user_target, fban_user_id, reason), 
 							html=True)
 		"""
 
