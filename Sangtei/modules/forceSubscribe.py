@@ -56,7 +56,7 @@ def _onUnMuteRequest(client, cb):
                 except UserNotParticipant:
                     client.answer_callback_query(
                         cb.id,
-                        text=f"❗ Kan channel @{channel} hi join la chuan 'UnMute Me' button hi hmet leh rawh.",
+                        text=f"❗ Kan channel @{channel} hi join la chuan 'Min UnMute Rawh' tih button khu hmet leh rawh.",
                         show_alert=True,
                     )
             else:
@@ -100,7 +100,7 @@ def _check_member(client, message):
             except UserNotParticipant:
                 try:
                     sent_message = message.reply_text(
-                        "Chibai {} 🙏 \n **kan channel @{} hi ila join lo a** 🤔 \n \nKhawngaih in [Kan Channel](https://t.me/{}) hi join la ti chuan **UNMUTE ME** Button hi hmet rawh. \n \n ".format(
+                        "Chibai {} 🙏 \n **kan channel @{} hi ila subscribe lo a** 🤔 \n \nKhawngaih in [Kan Channel](https://t.me/{}) hi subscribe phawt la ti chuan ** MIN UNMUTE RAWH** Button khu i hmet leh dawn nia. \n \n ".format(
                             message.from_user.mention, channel, channel
                         ),
                         disable_web_page_preview=True,
@@ -108,7 +108,7 @@ def _check_member(client, message):
                             [
                                 [
                                     InlineKeyboardButton(
-                                        "Join Channel",
+                                        "Subscribe Channel",
                                         url="https://t.me/{}".format(channel),
                                     )
                                 ],
