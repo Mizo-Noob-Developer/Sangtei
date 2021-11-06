@@ -35,7 +35,7 @@ def blackliststicker(update: Update, context: CallbackContext):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    sticker_list = "<b>List blacklisted stickers currently in {}:</b>\n".format(
+    sticker_list = "<b>Sticker blacklist thenkhat {} lama awm mek te:</b>\n".format(
         chat_name
     )
 
@@ -50,12 +50,12 @@ def blackliststicker(update: Update, context: CallbackContext):
 
     split_text = split_message(sticker_list)
     for text in split_text:
-        if sticker_list == "<b>List blacklisted stickers currently in {}:</b>\n".format(
+        if sticker_list == "<b>Sticker blacklist thenkhat {} group a awm mek te:</b>\n".format(
             chat_name
         ).format(html.escape(chat_name)):
             send_message(
                 update.effective_message,
-                "There are no blacklist stickers in <b>{}</b>!".format(
+                "He Group <b>{}</b> ah hian blacklist ah eng sticker mah dah ani lo!".format(
                     html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -98,7 +98,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
             except BadRequest:
                 send_message(
                     update.effective_message,
-                    "Sticker `{}` can not be found!".format(trigger),
+                    "Sticker `{}` hi hmuh ani lo!".format(trigger),
                     parse_mode="markdown",
                 )
 
@@ -108,7 +108,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> added to blacklist stickers in <b>{}</b>!".format(
+                "Sticker <code>{}</code> hi, he group <b>{}</b> ah hian blacklist ah dah ani!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -116,7 +116,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         else:
             send_message(
                 update.effective_message,
-                "<code>{}</code> stickers added to blacklist sticker in <b>{}</b>!".format(
+                "<code>{}</code> sticker hi he group <b>{}</b> ah hian blacklist a dah ani!".format(
                     added, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -125,7 +125,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         added = 0
         trigger = msg.reply_to_message.sticker.set_name
         if trigger is None:
-            send_message(update.effective_message, "Sticker is invalid!")
+            send_message(update.effective_message, "Sticker hi a dik lo!")
             return
         try:
             bot.getStickerSet(trigger)
@@ -134,7 +134,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         except BadRequest:
             send_message(
                 update.effective_message,
-                "Sticker `{}` can not be found!".format(trigger),
+                "Sticker `{}` hi hmuh ani lo!".format(trigger),
                 parse_mode="markdown",
             )
 
@@ -143,7 +143,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
 
         send_message(
             update.effective_message,
-            "Sticker <code>{}</code> added to blacklist stickers in <b>{}</b>!".format(
+            "Sticker <code>{}</code> hi, he group <b>{}</b> ah hian blacklist ah dah ani!".format(
                 trigger, html.escape(chat_name)
             ),
             parse_mode=ParseMode.HTML,
@@ -151,7 +151,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
     else:
         send_message(
             update.effective_message,
-            "Tell me what stickers you want to add to the blacklist.",
+            "Min han hrilh la, eng sticker nge blacklist a dah i duh chu.",
         )
 
 
@@ -190,20 +190,20 @@ def unblackliststicker(update: Update, context: CallbackContext):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Sticker <code>{}</code> deleted from blacklist in <b>{}</b>!".format(
+                    "Sticker <code>{}</code> hi, he group <b>{}</b> tan a blacklist na atangin paih ani!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
                 )
             else:
                 send_message(
-                    update.effective_message, "This sticker is not on the blacklist...!"
+                    update.effective_message, "He sticker hi blacklist ah a awm leuh...!"
                 )
 
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> deleted from blacklist in <b>{}</b>!".format(
+                "Sticker <code>{}</code> hi, he group <b>{}</b> a blacklist na atangin paih ani!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -221,7 +221,7 @@ def unblackliststicker(update: Update, context: CallbackContext):
         else:
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> deleted from blacklist. {} did not exist, so it's not deleted.".format(
+                "Sticker <code>{}</code> hi blacklist atangin paih ani. {} hi a awm reng reng lo, anih chuan paih ani lo tihna.".format(
                     successful, len(to_unblacklist) - successful
                 ),
                 parse_mode=ParseMode.HTML,
@@ -496,14 +496,14 @@ def __stats__():
 __help__ = """
 Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
 *NOTE:* Blacklist stickers do not affect the group admin
- •  /blsticker *:* See current blacklisted sticker
-*Only admin:*
- •  /addblsticker `<sticker link>` *:* Add the sticker trigger to the black list. Can be added via reply sticker
- •  /unblsticker `<sticker link>` *:* Remove triggers from blacklist. The same newline logic applies here, so you can delete multiple triggers at once
- •  /rmblsticker `<sticker link>` *:* Same as above
- •  /blstickermode `<ban/tban/mute/tmute>`*:* sets up a default action on what to do if users use blacklisted stickers
+ ➥  /blsticker *:* See current blacklisted sticker
+*Admin tan chauh:*
+ ➥  /addblsticker `<sticker link>` *:* Add the sticker trigger to the black list. Can be added via reply sticker
+ ➥  /unblsticker `<sticker link>` *:* Remove triggers from blacklist. The same newline logic applies here, so you can delete multiple triggers at once
+ ➥  /rmblsticker `<sticker link>` *:* Same as above
+ ➥  /blstickermode `<ban/tban/mute/tmute>`*:* sets up a default action on what to do if users use blacklisted stickers
 Note:
- •  `<sticker link>` can be `https://t.me/addstickers/<sticker>` or just `<sticker>` or reply to the sticker message
+ ➥  `<sticker link>` can be `https://t.me/addstickers/<sticker>` or just `<sticker>` or reply to the sticker message
 """
 
 __mod_name__ = "Stickers Blacklist"
