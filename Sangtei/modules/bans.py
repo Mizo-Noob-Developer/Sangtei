@@ -402,13 +402,13 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 
 
 __help__ = """
- •  /punchme *:* He command hmang tu tawh phawt user chu, group atangin ka chum chhuak zel ang
+ ➥  /punchme *:* He command hmang tu tawh phawt user chu, group atangin ka chum chhuak zel ang
 
-*Admins only:*
- •  /ban `<userhandle>` *:* bans a user. (via handle, or reply)
- •  /tban `<userhandle> x(m/h/d)` *:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
- •  /unban `<userhandle>` *:* unbans a user. (via handle, or reply)
- •  /kick `<userhandle>` *:* Punches a user out of the group, (via handle, or reply)
+*Admins tan chauh:*
+ ➥  /ban `<userhandle>` *:* bans a user. (via handle, or reply)
+ ➥  /tban `<userhandle> x(m/h/d)` *:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
+ ➥  /unban `<userhandle>` *:* unbans a user. (via handle, or reply)
+ ➥  /kick `<userhandle>` *:* Punches a user out of the group, (via handle, or reply)
 """
 
 BAN_HANDLER = CommandHandler("ban", ban)
