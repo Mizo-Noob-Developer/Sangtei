@@ -265,14 +265,14 @@ def buttons(update: Update, context: CallbackContext):
 
 
 __help__ = """
- •  /report `<a chhan>`*:* admin te hnen a report tur in.
- •  @admin *:* Admin te hnen lama report tur in message kha reply rawh.
+ ➥  /report `<a chhan>`*:* admin te hnen a report tur in.
+ ➥  @admin *:* Admin te hnen lama report tur in message kha reply rawh.
 *NOTE:* Admin te hnen a report thlen theih tur in a khawi emaw zawk zawk khi a hman theih sa vek e.
 
 *Admin te tan bik:*
- •  /reports `<on/off>`*:* report setting siamthatna. Reports settings awm lai mek en na.
-   • Pm lam ah i ti fel tawh anih chuan, a rawn ti lang bawk ang.
-   • Group lam ah i ti anih chuan, Groups lama a awm dan a rawn ti lang ang.
+ ➥  /reports `<on/off>`*:* report setting siamthatna. Reports settings awm lai mek en na.
+   ➥ Pm lam ah i ti fel tawh anih chuan, a rawn ti lang bawk ang.
+   ➥ Group lam ah i ti anih chuan, Groups lama a awm dan a rawn ti lang ang.
 """
 
 SETTING_HANDLER = CommandHandler("reports", report_setting)
