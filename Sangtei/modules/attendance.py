@@ -129,7 +129,7 @@ __help__ = """
  ❍  /attendance :Start the attendance
  ❍  /end_attendance : End the attendance
  
- 'This command only works in groups.'
+ This command only works in groups.
  
   ©️@NickyLrca
 """
