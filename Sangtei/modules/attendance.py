@@ -13,7 +13,7 @@ from Sangtei.modules.helper_funcs.chat_status import user_admin, user_admin_no_r
 def start_attendance(update, context):
     if ('flag' in context.chat_data) and (context.chat_data['flag'] == 1):
         update.message.reply_text(
-            "Please close the current attendance first",
+            "Khawngaih in attendance awm sa hi khar hmasa rawh",
         )
     elif ('flag' not in context.chat_data) or (context.chat_data['flag'] == 0):
         context.chat_data['flag'] = 1
@@ -22,20 +22,20 @@ def start_attendance(update, context):
         keyboard = [
             [
                 InlineKeyboardButton(
-                    "Present",
+                    "Ka Awm",
                     callback_data='present',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "End Attendance ",
+                    "Attendance khâr ",
                     callback_data='end_attendance',
                 ),
             ],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         context.chat_data['message'] = update.message.reply_text(
-            "Please mark your attendance 👮‍♀️", reply_markup=reply_markup,
+            "Group ah hian i awm anih chuan, i awm ngei ani tih chian nan *Ka Awm* tih khu hmet rawh.", reply_markup=reply_markup,
         )
 
 
@@ -50,13 +50,13 @@ def mark_attendance(update, context):
         ] = f'{escape_markdown(update.effective_user.full_name)}'
         context.bot.answer_callback_query(
             callback_query_id=query.id,
-            text="Your attendance has been marked📝",
+            text="I attendance chu chhin chhiah ani e.",
             show_alert=True,
         )
     else:
         context.bot.answer_callback_query(
             callback_query_id=query.id,
-            text="Your attendance is already marked🔐",
+            text="I attendance chhin chhiah ani tawh.",
             show_alert=True,
         )
     query.answer()
@@ -76,8 +76,8 @@ def end_attendance(update, context):
         context.bot.edit_message_text(
             text="Attendance is over. " +
             str(len(context.chat_data['attendees'])) +
-            " member(s) marked attendance.\n" +
-            "Here is the list:\n- " + attendee_list,
+            " member te attendance chhin chhiah.\n" +
+            "Heng te hi chhin chhiah te an ni:\n- " + attendee_list,
             chat_id=context.chat_data['message'].chat_id,
             message_id=context.chat_data['message'].message_id,
             parse_mode=ParseMode.MARKDOWN,
@@ -95,7 +95,7 @@ def end_attendance(update, context):
 def end_attendance_cmd(update, context):
     if ('flag' not in context.chat_data) and (context.chat_data['flag'] != 1):
         update.message.reply_text(
-            "No Attendance is goind on.",
+            "Eng Attendance mah chhin chhiah tur a awm lo.",
         )
     else:
         if (context.chat_data['id'] != update.effective_chat.id):
@@ -108,15 +108,15 @@ def end_attendance_cmd(update, context):
             context.bot.edit_message_text(
                 text="Attendance is over. " +
                 str(len(context.chat_data['attendees'])) +
-                " members  marked attendance.\n" +
-                "Here is the list:\n- " + attendee_list,
+                " member te attendance chhin chhiah.\n" +
+                "Heng te hi chhin chhiah te an ni:\n- " + attendee_list,
                 chat_id=context.chat_data['message'].chat_id,
                 message_id=context.chat_data['message'].message_id,
                 parse_mode=ParseMode.MARKDOWN,
             )
         else:
             context.bot.edit_message_text(
-                text="Attendance is over. No one was present.",
+                text="Attendance lak khawm chu a zo a. Tumah awm an awm lo.",
                 chat_id=context.chat_data['message'].chat_id,
                 message_id=context.chat_data['message'].message_id,
             )
@@ -131,7 +131,7 @@ __help__ = """
  
  This command only works in groups.
  
-  ©️@NickyLrca
+  Copyright at @NickyLrca
 """
 
 START_ATTENDANCE = DisableAbleCommandHandler("attendance", start_attendance)
