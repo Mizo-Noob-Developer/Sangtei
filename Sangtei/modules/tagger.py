@@ -7,7 +7,7 @@ from telegram.utils.helpers import mention_html
 
 from Sangtei import dispatcher
 from Sangtei.modules.disable import DisableAbleCommandHandler
-from Sangtei.modules.helper_funcs.alternate import typing_action
+from Sangtei.modules.helper_funcs.athar1 import typing_action
 from Sangtei.modules.helper_funcs.chat_status import bot_admin, user_admin
 from Sangtei.modules.helper_funcs.extraction import extract_user_and_text
 
