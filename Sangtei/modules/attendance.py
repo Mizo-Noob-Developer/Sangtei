@@ -74,7 +74,7 @@ def end_attendance(update, context):
                 for id, name in context.chat_data['attendees'].items()
         ])
         context.bot.edit_message_text(
-            text="Attendance is over. " +
+            text="Attendance lak khawm hun a zo e. " +
             str(len(context.chat_data['attendees'])) +
             " member te attendance chhin chhiah.\n" +
             "Heng te hi chhin chhiah te an ni:\n- " + attendee_list,
@@ -84,7 +84,7 @@ def end_attendance(update, context):
         )
     else:
         context.bot.edit_message_text(
-            text="Attendance is over. No one was present.",
+            text="Attendance lak khawm chu a zo e. Tumah awm an awm lo.",
             chat_id=context.chat_data['message'].chat_id,
             message_id=context.chat_data['message'].message_id,
         )
@@ -106,7 +106,7 @@ def end_attendance_cmd(update, context):
                 for id, name in context.chat_data['attendees'].items()
             ])
             context.bot.edit_message_text(
-                text="Attendance is over. " +
+                text="Attendance lak khawm hun a zo e. " +
                 str(len(context.chat_data['attendees'])) +
                 " member te attendance chhin chhiah.\n" +
                 "Heng te hi chhin chhiah te an ni:\n- " + attendee_list,
