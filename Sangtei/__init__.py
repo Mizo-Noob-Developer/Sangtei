@@ -176,6 +176,16 @@ if not SPAMWATCH_API:
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
+REDIS_URL = Config.REDIS_URI
+REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
+
+try:
+    REDIS.ping()
+    LOGGER.info("Your redis server is now alive!")
+    
+except BaseException:
+    raise Exception("Your redis server is not alive, please check again.")
+
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sangtei", API_ID, API_HASH)
 pbot = Client("SangteiPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
