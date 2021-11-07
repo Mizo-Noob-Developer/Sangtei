@@ -74,9 +74,9 @@ def end_attendance(update, context):
                 for id, name in context.chat_data['attendees'].items()
         ])
         context.bot.edit_message_text(
-            text="Attendance lak khawm hun a zo e. " +
+            text="Attendance lak khawm hun a zo e. Member " +
             str(len(context.chat_data['attendees'])) +
-            " member te attendance chhin chhiah.\n" +
+            " te attendance chhin chhiah ani.\n" +
             "Heng te hi chhin chhiah te an ni:\n- " + attendee_list,
             chat_id=context.chat_data['message'].chat_id,
             message_id=context.chat_data['message'].message_id,
