@@ -35,7 +35,7 @@ def start_attendance(update, context):
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         context.chat_data['message'] = update.message.reply_text(
-            "Group ah hian i awm anih chuan, i awm ngei ani tih chian nan *Ka Awm* tih khu hmet rawh.", reply_markup=reply_markup,
+            "Group ah hian i awm anih chuan. \n\nI awm ngei ani tih chian nan **Ka Awm** tih khu hmet rawh.", reply_markup=reply_markup,
         )
 
 
