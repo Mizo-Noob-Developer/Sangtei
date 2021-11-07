@@ -389,6 +389,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from DewmiBot.modules import connection
+from Sangtei.modules import connection
 
 connected = connection.connected
