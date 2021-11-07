@@ -169,11 +169,6 @@
          "required": false,
          "value": ""
       },
-      },
-      "REDIS_URI": {
-         "description": "Required for database connections.",
-         "required": false,
-         "value": ""
-      },
+      
    }
 }
