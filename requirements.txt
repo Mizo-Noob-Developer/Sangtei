@@ -50,3 +50,4 @@ apscheduler
 pytz
 tzlocal==2.0
 validators
+Redis
