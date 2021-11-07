@@ -1,4 +1,4 @@
-# Written by Inukaasith for DewmiBot
+# Written by Inukaasith, re-edit by @Nickylrca
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from telegram.error import BadRequest
@@ -9,7 +9,7 @@ from Sangtei import dispatcher
 from Sangtei.modules.disable import DisableAbleCommandHandler
 from Sangtei.modules.helper_funcs.athar1 import typing_action
 from Sangtei.modules.helper_funcs.athar2 import bot_admin, user_admin
-from Sangtei.modules.helper_funcs.extraction import extract_user_and_text
+from Sangtei.modules.helper_funcs.athar3 import extract_user_and_text
 
 
 @run_async
