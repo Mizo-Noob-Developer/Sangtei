@@ -16,12 +16,12 @@ def convert(speed):
 def speedtestxyz(update: Update, context: CallbackContext):
     buttons = [
         [
-            InlineKeyboardButton("Image", callback_data="speedtest_image"),
-            InlineKeyboardButton("Text", callback_data="speedtest_text"),
+            InlineKeyboardButton("Thlalak", callback_data="speedtest_image"),
+            InlineKeyboardButton("Thuziak", callback_data="speedtest_text"),
         ]
     ]
     update.effective_message.reply_text(
-        "Select SpeedTest Mode", reply_markup=InlineKeyboardMarkup(buttons)
+        "Speed i enchhin duhdan thlang rawh", reply_markup=InlineKeyboardMarkup(buttons)
     )
 
 
@@ -30,12 +30,12 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
     query = update.callback_query
 
     if query.from_user.id in DEV_USERS:
-        msg = update.effective_message.edit_text("Running a speedtest....")
+        msg = update.effective_message.edit_text("Speed enchhin na neih mek ani....")
         speed = speedtest.Speedtest()
         speed.get_best_server()
         speed.download()
         speed.upload()
-        replymsg = "SpeedTest Results:"
+        replymsg = "Speed enchhin na neih zawh ani:"
 
         if query.data == "speedtest_image":
             speedtest_image = speed.results.share()
@@ -46,10 +46,10 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
 
         elif query.data == "speedtest_text":
             result = speed.results.dict()
-            replymsg += f"\nDownload: `{convert(result['download'])}Mb/s`\nUpload: `{convert(result['upload'])}Mb/s`\nPing: `{result['ping']}`"
+            replymsg += f"\nDownload chak zawng: `{convert(result['download'])}Mb/s`\nUpload chak zawng: `{convert(result['upload'])}Mb/s`\nPing: `{result['ping']}`"
             update.effective_message.edit_text(replymsg, parse_mode=ParseMode.MARKDOWN)
     else:
-        query.answer("You are required to join Heroes Association to use this command.")
+        query.answer("He command hmang tur hian Mizo Bot Developer Association i join hmasak a ngai.")
 
 
 SPEED_TEST_HANDLER = DisableAbleCommandHandler("speedtest", speedtestxyz)
