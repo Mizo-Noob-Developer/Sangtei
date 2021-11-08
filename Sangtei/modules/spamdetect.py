@@ -17,7 +17,7 @@
 
 #    This modules is re-constructed and for testing purposes only here, not for others non-mizo bot.
 
-from Sangtei import tbot
+from Sangtei import.athar tbot
 from datetime import datetime
 from pymongo import MongoClient
 from Sangtei import MONGO_DB_URI, OWNER_ID
