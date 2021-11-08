@@ -8,6 +8,12 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
 
+VERSION = "6.0"
+# enable logging
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO)
+
 StartTime = time.time()
 
 # enable logging
