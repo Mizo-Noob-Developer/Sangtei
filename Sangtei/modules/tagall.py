@@ -9,7 +9,7 @@
 
 from pyrogram import filters
 
-from Sangtei.pyrogramee.pluginshelper import admins_only, get_text
+from Sangtei.pyrogramee.puitu import admins_only, get_text
 from Sangtei import pbot
 
 
