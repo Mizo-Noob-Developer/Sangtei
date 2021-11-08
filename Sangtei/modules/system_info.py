@@ -60,7 +60,7 @@ def get_size(bytes, suffix="B"):
 @dev_plus
 @run_async
 def status(bot: Bot, update: Update):
-	chat = update.effective_chat
+	chat = context.effective_chat
 	
 	stat = "--- System Status ---\n"
 	stat += f"Sangtei Version: `{VERSION}`""\n"
