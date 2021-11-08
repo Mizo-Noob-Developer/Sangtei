@@ -161,6 +161,7 @@ else:
     API_OPENWEATHER = Config.API_OPENWEATHER
     MONGO_DB_URI = Config.MONGO_DB_URI
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
+    tbot = TelegramClient(None, API_KEY, API_HASH)
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
